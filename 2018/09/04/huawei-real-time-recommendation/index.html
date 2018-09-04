@@ -88,16 +88,16 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="概述图引擎服务提供的实时推荐算法是一种基于随机游走模型的实时推荐算法，能够推荐与输入节点相近程度高、关系或喜好相近的节点。 实时推荐过程主要是基于对图上多起点“source”的随机游走：其根据各节点的重要性给各请求节点分配不同的游走步长， 同时对各请求节点进行随机游走，综合各起点随机游走下候选节点的得分结果，进行推荐。 其中，随机游走过程：从请求节点”source“沿着边，根据一定的倾向性不断地“">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="c:/Users/唐观根/AppData/Local/Temp/1536045185212.png">
-<meta property="og:image" content="c:/Users/唐观根/AppData/Local/Temp/1536045628125.png">
-<meta property="og:image" content="c:/Users/唐观根/AppData/Local/Temp/1536046674109.png">
-<meta property="og:image" content="c:/Users/唐观根/AppData/Local/Temp/1536048298993.png">
-<meta property="og:image" content="c:/Users/唐观根/AppData/Local/Temp/1536049018099.png">
-<meta property="og:updated_time" content="2018-09-04T11:13:39.161Z">
+<meta property="og:image" content="https://tangguangen.com/huawei-real-time-recommendation/1536045185212.png">
+<meta property="og:image" content="https://tangguangen.com/huawei-real-time-recommendation/1536045628125.png">
+<meta property="og:image" content="https://tangguangen.com/huawei-real-time-recommendation/1536046674109.png">
+<meta property="og:image" content="https://tangguangen.com/huawei-real-time-recommendation/1536048298993.png">
+<meta property="og:image" content="https://tangguangen.com/huawei-real-time-recommendation/1536049018099.png">
+<meta property="og:updated_time" content="2018-09-04T11:39:06.173Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="华为云图引擎服务实时推荐（Real-time Recommendation）算法">
 <meta name="twitter:description" content="概述图引擎服务提供的实时推荐算法是一种基于随机游走模型的实时推荐算法，能够推荐与输入节点相近程度高、关系或喜好相近的节点。 实时推荐过程主要是基于对图上多起点“source”的随机游走：其根据各节点的重要性给各请求节点分配不同的游走步长， 同时对各请求节点进行随机游走，综合各起点随机游走下候选节点的得分结果，进行推荐。 其中，随机游走过程：从请求节点”source“沿着边，根据一定的倾向性不断地“">
-<meta name="twitter:image" content="c:/Users/唐观根/AppData/Local/Temp/1536045185212.png">
+<meta name="twitter:image" content="https://tangguangen.com/huawei-real-time-recommendation/1536045185212.png">
 
 
 
@@ -412,16 +412,16 @@
 <ul>
 <li><p>单个source</p>
 <p>例如：“当Mike打开某电影平台，向其推荐电影“时，可以输入sources为Mike, label为movie，其他参数如下图（左），点击运行。页面画布上将会出现含有推荐节点的子图，大小反映了推荐程度。</p>
-<p><img src="C:\Users\唐观根\AppData\Local\Temp\1536045185212.png" alt="1536045185212"></p>
+<p><img src="/huawei-real-time-recommendation/1536045185212.png" alt="1536045185212"></p>
 </li>
 <li><p>多个sources</p>
-<p>例如：“Leo的某个朋友，浏览了Leo主页，添加Steven Spielberg导演动态,为其进行电影推荐”，这时，我们可以输入参数如下图左，综合考虑这两种兴趣（“Leo”、“Steven Spielberg”）进行实时推荐：<br><img src="C:\Users\唐观根\AppData\Local\Temp\1536045628125.png" alt="1536045628125"></p>
+<p>例如：“Leo的某个朋友，浏览了Leo主页，添加Steven Spielberg导演动态,为其进行电影推荐”，这时，我们可以输入参数如下图左，综合考虑这两种兴趣（“Leo”、“Steven Spielberg”）进行实时推荐：<br><img src="/huawei-real-time-recommendation/1536045628125.png" alt="1536045628125"></p>
 </li>
 </ul>
 </li>
 <li><p>alpha</p>
 <p>alpha和N的值决定了总的游走步长。通过实验得知<strong>alpha的取值不应过小</strong>。当alpha取一个比较小的值（这里取的是0.3）时，推荐的结果中，得分从201过渡到34，如下图所示。而当alpha取一个较大值，例如0.85的时候就不会出现这种情况。</p>
-<p><img src="C:\Users\唐观根\AppData\Local\Temp\1536046674109.png" alt="1536046674109"></p>
+<p><img src="/huawei-real-time-recommendation/1536046674109.png" alt="1536046674109"></p>
 </li>
 <li><p>N</p>
 <p>总的游走步数，当达到总的游走步数上限”<strong>N</strong>“时结束。控制程序何时结束。</p>
@@ -431,7 +431,7 @@
 </li>
 <li><p>np</p>
 <p>若某个source节点的候选推荐节点达到“<strong>np</strong>”，对于该source节点的随机游走将提前结束。这是一个早停参数。如下图所示，当np=1000时，算法总耗时:0.0616 s，当np=10时，算法总耗时:0.0019 s。可知选择一个合适的np值可以减少耗时，提高效率。</p>
-<p><img src="C:\Users\唐观根\AppData\Local\Temp\1536048298993.png" alt="1536048298993"></p>
+<p><img src="/huawei-real-time-recommendation/1536048298993.png" alt="1536048298993"></p>
 </li>
 <li><p>label</p>
 <p>控制输出的点的类型。</p>
@@ -442,7 +442,7 @@
 </li>
 <li><p>directed</p>
 <p>是否考虑边的方向。当directed=true时，可以看到结果画布中Leo节点的入度为0。</p>
-<p><img src="C:\Users\唐观根\AppData\Local\Temp\1536049018099.png" alt="1536049018099"></p>
+<p><img src="/huawei-real-time-recommendation/1536049018099.png" alt="1536049018099"></p>
 </li>
 </ul>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://arxiv.org/pdf/1711.07601.pdf" target="_blank" rel="noopener">[1] Eksombatchai C, Jindal P, Liu J Z, et al. Pixie: A System for Recommending 3+ Billion Items to 200+ Million Users in Real-Time[J]. 2017.</a></p>
@@ -505,6 +505,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/04/hexo常用命令/" rel="prev" title="HEXO备忘">
+                HEXO备忘 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -588,7 +592,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -610,7 +614,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
