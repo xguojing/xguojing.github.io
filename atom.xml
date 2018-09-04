@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tangguangen.com/"/>
-  <updated>2018-08-02T08:26:06.808Z</updated>
+  <updated>2018-09-04T11:13:39.161Z</updated>
   <id>https://tangguangen.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>华为云图引擎服务实时推荐（Real-time Recommendation）算法</title>
+    <link href="https://tangguangen.com/2018/09/04/huawei-real-time-recommendation/"/>
+    <id>https://tangguangen.com/2018/09/04/huawei-real-time-recommendation/</id>
+    <published>2018-09-04T11:07:28.981Z</published>
+    <updated>2018-09-04T11:13:39.161Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>图引擎服务提供的实时推荐算法是一种基于随机游走模型的实时推荐算法，能够推荐与输入节点相近程度高、关系或喜好相近的节点。</p><p>实时推荐过程主要是基于对图上多起点“<strong>source</strong>”的随机游走：其根据各节点的重要性给各请求节点分配不同的游走步长， 同时对各请求节点进行随机游走，综合各起点随机游走下候选节点的得分结果，进行推荐。</p><p>其中，随机游走过程：从请求节点”<strong>source</strong>“沿着边，根据一定的倾向性不断地“游走“到相邻的节点，达到一定步数（步长）时返回起点重新游走。</p><p>游走步长：CurrSteps = SampleWalkLength(<strong>alpha</strong>)[1]</p><p>多次这样的游走后， 对于一个节点，如果其在随机游走过程被访问到，且被访问到的次数达到“<strong>nv</strong>”，则该节点将记入候选推荐的节点。若某个source节点的候选推荐节点达到“<strong>np</strong>”，对于该source节点的随机游走将提前结束，或者达到总的游走步数上限”<strong>N</strong>“时结束。</p><p>随机游走过程中，随着被经过的次数的增加，候选节点被推荐的得分也相应增加；当所有的随机游走结束时，系统将给出各候选节点的综合得分，得分越高被推荐的程度越大。</p><h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><p><strong>sources</strong>： 给定节点ID，点击”+”可添加多个节点，最多不超过30个。该参数必填。</p><p><strong>alpha</strong>：权重系数, 其值越大步长越长, 取值范围（0~1）, 实数，默认值为0.85。</p><p><strong>N</strong>：总的游走步数, [1,200000], 正整数，默认值10000。</p><p><strong>nv</strong>：候选推荐节点所需访问次数的最小值, 取值范围(0,10], 正整数，默认值5。</p><p><strong>np</strong>：游走过程提前结束参数：候选推荐节点个数。取值范围 [1,2000], 正整数，默认值1000。</p><p><strong>label</strong>：希望输出的点的类型。其值为空时，将不考虑点的类型，输出算法原始计算结果。对其赋值时，将从计算结果中过滤出具有该“label”的点的返回。</p><p><strong>directed</strong>：是否考虑边的方向。true 或false，布尔型。默认值true。</p><h2 id="参数分析"><a href="#参数分析" class="headerlink" title="参数分析"></a>参数分析</h2><ul><li><p>sources</p><ul><li><p>单个source</p><p>例如：“当Mike打开某电影平台，向其推荐电影“时，可以输入sources为Mike, label为movie，其他参数如下图（左），点击运行。页面画布上将会出现含有推荐节点的子图，大小反映了推荐程度。</p><p><img src="C:\Users\唐观根\AppData\Local\Temp\1536045185212.png" alt="1536045185212"></p></li><li><p>多个sources</p><p>例如：“Leo的某个朋友，浏览了Leo主页，添加Steven Spielberg导演动态,为其进行电影推荐”，这时，我们可以输入参数如下图左，综合考虑这两种兴趣（“Leo”、“Steven Spielberg”）进行实时推荐：<br><img src="C:\Users\唐观根\AppData\Local\Temp\1536045628125.png" alt="1536045628125"></p></li></ul></li><li><p>alpha</p><p>alpha和N的值决定了总的游走步长。通过实验得知<strong>alpha的取值不应过小</strong>。当alpha取一个比较小的值（这里取的是0.3）时，推荐的结果中，得分从201过渡到34，如下图所示。而当alpha取一个较大值，例如0.85的时候就不会出现这种情况。</p><p><img src="C:\Users\唐观根\AppData\Local\Temp\1536046674109.png" alt="1536046674109"></p></li><li><p>N</p><p>总的游走步数，当达到总的游走步数上限”<strong>N</strong>“时结束。控制程序何时结束。</p></li><li><p>nv</p><p>候选推荐节点所需访问次数的最小值。 对于一个节点，如果其在随机游走过程被访问到，且被访问到的次数达到“<strong>nv</strong>”，则该节点将记入候选推荐的节点。</p></li><li><p>np</p><p>若某个source节点的候选推荐节点达到“<strong>np</strong>”，对于该source节点的随机游走将提前结束。这是一个早停参数。如下图所示，当np=1000时，算法总耗时:0.0616 s，当np=10时，算法总耗时:0.0019 s。可知选择一个合适的np值可以减少耗时，提高效率。</p><p><img src="C:\Users\唐观根\AppData\Local\Temp\1536048298993.png" alt="1536048298993"></p></li><li><p>label</p><p>控制输出的点的类型。</p><ul><li>其值为空时，将不考虑点的类型，输出算法原始计算结果。</li><li>对其赋值时，将从计算结果中过滤出具有该“label”的点的返回。</li></ul></li><li><p>directed</p><p>是否考虑边的方向。当directed=true时，可以看到结果画布中Leo节点的入度为0。</p><p><img src="C:\Users\唐观根\AppData\Local\Temp\1536049018099.png" alt="1536049018099"></p></li></ul><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://arxiv.org/pdf/1711.07601.pdf" target="_blank" rel="noopener">[1] Eksombatchai C, Jindal P, Liu J Z, et al. Pixie: A System for Recommending 3+ Billion Items to 200+ Million Users in Real-Time[J]. 2017.</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;图引擎服务提供的实时推荐算法是一种基于随机游走模型的实时推荐算法，能够推荐与输入节点相近程度高、关系或喜好相近的节点。&lt;/p&gt;
+&lt;p&gt;实时推
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://tangguangen.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Artificial Intelligence" scheme="https://tangguangen.com/tags/Artificial-Intelligence/"/>
+    
+      <category term="华为云" scheme="https://tangguangen.com/tags/%E5%8D%8E%E4%B8%BA%E4%BA%91/"/>
+    
+  </entry>
   
   <entry>
     <title>The State of the Art in Semantic Representation</title>
