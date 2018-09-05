@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[华为云图引擎服务实时推荐（Real-time Recommendation）算法]]></title>
+    <url>%2F2018%2F09%2F05%2Fhuawei-real-time-recommendation%2F</url>
+    <content type="text"><![CDATA[概述图引擎服务提供的实时推荐算法是一种基于随机游走模型的实时推荐算法，能够推荐与输入节点相近程度高、关系或喜好相近的节点。 实时推荐过程主要是基于对图上多起点“source”的随机游走：其根据各节点的重要性给各请求节点分配不同的游走步长， 同时对各请求节点进行随机游走，综合各起点随机游走下候选节点的得分结果，进行推荐。 其中，随机游走过程：从请求节点”source“沿着边，根据一定的倾向性不断地“游走“到相邻的节点，达到一定步数（步长）时返回起点重新游走。 游走步长：CurrSteps = SampleWalkLength(alpha)[1] 多次这样的游走后， 对于一个节点，如果其在随机游走过程被访问到，且被访问到的次数达到“nv”，则该节点将记入候选推荐的节点。若某个source节点的候选推荐节点达到“np”，对于该source节点的随机游走将提前结束，或者达到总的游走步数上限”N“时结束。 随机游走过程中，随着被经过的次数的增加，候选节点被推荐的得分也相应增加；当所有的随机游走结束时，系统将给出各候选节点的综合得分，得分越高被推荐的程度越大。 参数说明sources： 给定节点ID，点击”+”可添加多个节点，最多不超过30个。该参数必填。 alpha：权重系数, 其值越大步长越长, 取值范围（0~1）, 实数，默认值为0.85。 N：总的游走步数, [1,200000], 正整数，默认值10000。 nv：候选推荐节点所需访问次数的最小值, 取值范围(0,10], 正整数，默认值5。 np：游走过程提前结束参数：候选推荐节点个数。取值范围 [1,2000], 正整数，默认值1000。 label：希望输出的点的类型。其值为空时，将不考虑点的类型，输出算法原始计算结果。对其赋值时，将从计算结果中过滤出具有该“label”的点的返回。 directed：是否考虑边的方向。true 或false，布尔型。默认值true。 参数分析 sources 单个source 例如：“当Mike打开某电影平台，向其推荐电影“时，可以输入sources为Mike, label为movie，其他参数如下图（左），点击运行。页面画布上将会出现含有推荐节点的子图，大小反映了推荐程度。 多个sources 例如：“Leo的某个朋友，浏览了Leo主页，添加Steven Spielberg导演动态,为其进行电影推荐”，这时，我们可以输入参数如下图左，综合考虑这两种兴趣（“Leo”、“Steven Spielberg”）进行实时推荐： alpha alpha和N的值决定了总的游走步长。通过实验得知alpha的取值不应过小。当alpha取一个比较小的值（这里取的是0.3）时，推荐的结果中，得分从201过渡到34，如下图所示。而当alpha取一个较大值，例如0.85的时候就不会出现这种情况。 N 总的游走步数，当达到总的游走步数上限”N“时结束。控制程序何时结束。 nv 候选推荐节点所需访问次数的最小值。 对于一个节点，如果其在随机游走过程被访问到，且被访问到的次数达到“nv”，则该节点将记入候选推荐的节点。 np 若某个source节点的候选推荐节点达到“np”，对于该source节点的随机游走将提前结束。这是一个早停参数。如下图所示，当np=1000时，算法总耗时:0.0616 s，当np=10时，算法总耗时:0.0019 s。可知选择一个合适的np值可以减少耗时，提高效率。 label 控制输出的点的类型。 其值为空时，将不考虑点的类型，输出算法原始计算结果。 对其赋值时，将从计算结果中过滤出具有该“label”的点的返回。 directed 是否考虑边的方向。当directed=true时，可以看到结果画布中Leo节点的入度为0。 参考文献[1] Eksombatchai C, Jindal P, Liu J Z, et al. Pixie: A System for Recommending 3+ Billion Items to 200+ Million Users in Real-Time[J]. 2017.]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Artificial Intelligence</tag>
+        <tag>华为云</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Natural-Language-Processing-Tasks-and-References]]></title>
+    <url>%2F2018%2F09%2F05%2FNatural-Language-Processing-Tasks-and-References%2F</url>
+    <content type="text"><![CDATA[Text Similarity WIKI Semantic similarity PAPER A Survey of Text Similarity Approaches PAPER Learning to Rank Short Text Pairs with Convolutional Deep Neural Networks PAPER Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks CHALLENGE SemEval-2014 Task 3: Cross-Level Semantic Similarity CHALLENGE SemEval-2014 Task 10: Multilingual Semantic Textual Similarity CHALLENGE SemEval-2017 Task 1: Semantic Textual Similarity WIKI Semantic Textual Similarity Wiki Reference[1] https://github.com/Kyubyong/nlp_tasks]]></content>
+      <categories>
+        <category>-技术</category>
+      </categories>
+      <tags>
+        <tag>-NLP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[HEXO备忘]]></title>
     <url>%2F2018%2F09%2F04%2Fhexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[hexo常用命令预览访问 1hexo server 部署步骤 123hexo cleanhexo generatehexo deploy 为文章添加附件Hexo配置文件的设置确保你的Hexo的配置文件_config.yml里面有个这个选项配置，并将其置为true 1post_asset_folder: true 插入图片在 \source\_posts 建立一个md文件来写博客，同时建立一个同名的文件夹去存放资源。 1![图片描述](/文件夹/图片名.png)]]></content>
@@ -9,18 +32,6 @@
       </categories>
       <tags>
         <tag>-hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[华为云图引擎服务实时推荐（Real-time Recommendation）算法]]></title>
-    <url>%2F2018%2F09%2F04%2Fhuawei-real-time-recommendation%2F</url>
-    <content type="text"><![CDATA[概述图引擎服务提供的实时推荐算法是一种基于随机游走模型的实时推荐算法，能够推荐与输入节点相近程度高、关系或喜好相近的节点。 实时推荐过程主要是基于对图上多起点“source”的随机游走：其根据各节点的重要性给各请求节点分配不同的游走步长， 同时对各请求节点进行随机游走，综合各起点随机游走下候选节点的得分结果，进行推荐。 其中，随机游走过程：从请求节点”source“沿着边，根据一定的倾向性不断地“游走“到相邻的节点，达到一定步数（步长）时返回起点重新游走。 游走步长：CurrSteps = SampleWalkLength(alpha)[1] 多次这样的游走后， 对于一个节点，如果其在随机游走过程被访问到，且被访问到的次数达到“nv”，则该节点将记入候选推荐的节点。若某个source节点的候选推荐节点达到“np”，对于该source节点的随机游走将提前结束，或者达到总的游走步数上限”N“时结束。 随机游走过程中，随着被经过的次数的增加，候选节点被推荐的得分也相应增加；当所有的随机游走结束时，系统将给出各候选节点的综合得分，得分越高被推荐的程度越大。 参数说明sources： 给定节点ID，点击”+”可添加多个节点，最多不超过30个。该参数必填。 alpha：权重系数, 其值越大步长越长, 取值范围（0~1）, 实数，默认值为0.85。 N：总的游走步数, [1,200000], 正整数，默认值10000。 nv：候选推荐节点所需访问次数的最小值, 取值范围(0,10], 正整数，默认值5。 np：游走过程提前结束参数：候选推荐节点个数。取值范围 [1,2000], 正整数，默认值1000。 label：希望输出的点的类型。其值为空时，将不考虑点的类型，输出算法原始计算结果。对其赋值时，将从计算结果中过滤出具有该“label”的点的返回。 directed：是否考虑边的方向。true 或false，布尔型。默认值true。 参数分析 sources 单个source 例如：“当Mike打开某电影平台，向其推荐电影“时，可以输入sources为Mike, label为movie，其他参数如下图（左），点击运行。页面画布上将会出现含有推荐节点的子图，大小反映了推荐程度。 多个sources 例如：“Leo的某个朋友，浏览了Leo主页，添加Steven Spielberg导演动态,为其进行电影推荐”，这时，我们可以输入参数如下图左，综合考虑这两种兴趣（“Leo”、“Steven Spielberg”）进行实时推荐： alpha alpha和N的值决定了总的游走步长。通过实验得知alpha的取值不应过小。当alpha取一个比较小的值（这里取的是0.3）时，推荐的结果中，得分从201过渡到34，如下图所示。而当alpha取一个较大值，例如0.85的时候就不会出现这种情况。 N 总的游走步数，当达到总的游走步数上限”N“时结束。控制程序何时结束。 nv 候选推荐节点所需访问次数的最小值。 对于一个节点，如果其在随机游走过程被访问到，且被访问到的次数达到“nv”，则该节点将记入候选推荐的节点。 np 若某个source节点的候选推荐节点达到“np”，对于该source节点的随机游走将提前结束。这是一个早停参数。如下图所示，当np=1000时，算法总耗时:0.0616 s，当np=10时，算法总耗时:0.0019 s。可知选择一个合适的np值可以减少耗时，提高效率。 label 控制输出的点的类型。 其值为空时，将不考虑点的类型，输出算法原始计算结果。 对其赋值时，将从计算结果中过滤出具有该“label”的点的返回。 directed 是否考虑边的方向。当directed=true时，可以看到结果画布中Leo节点的入度为0。 参考文献[1] Eksombatchai C, Jindal P, Liu J Z, et al. Pixie: A System for Recommending 3+ Billion Items to 200+ Million Users in Real-Time[J]. 2017.]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Artificial Intelligence</tag>
-        <tag>华为云</tag>
       </tags>
   </entry>
   <entry>
