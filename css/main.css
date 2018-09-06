@@ -186,7 +186,7 @@ th {
 body {
   position: relative;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2;
   color: #555;
   background: #fff;
@@ -203,7 +203,7 @@ body {
 }
 @media (min-width: 1600px) {
   body {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 h1,
@@ -226,51 +226,51 @@ h6 {
   margin: 20px 0 15px;
 }
 h1 {
-  font-size: 22px;
+  font-size: 30px;
 }
 @media (max-width: 767px) {
   h1 {
-    font-size: 18px;
+    font-size: 26px;
   }
 }
 h2 {
-  font-size: 20px;
+  font-size: 28px;
 }
 @media (max-width: 767px) {
   h2 {
-    font-size: 16px;
+    font-size: 24px;
   }
 }
 h3 {
-  font-size: 18px;
+  font-size: 26px;
 }
 @media (max-width: 767px) {
   h3 {
-    font-size: 14px;
+    font-size: 22px;
   }
 }
 h4 {
-  font-size: 16px;
+  font-size: 24px;
 }
 @media (max-width: 767px) {
   h4 {
-    font-size: 12px;
+    font-size: 20px;
   }
 }
 h5 {
-  font-size: 14px;
+  font-size: 22px;
 }
 @media (max-width: 767px) {
   h5 {
-    font-size: 10px;
+    font-size: 18px;
   }
 }
 h6 {
-  font-size: 12px;
+  font-size: 20px;
 }
 @media (max-width: 767px) {
   h6 {
-    font-size: 8px;
+    font-size: 16px;
   }
 }
 p {
@@ -1260,7 +1260,7 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: -20px auto 15px;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1478,7 +1478,7 @@ pre .javascript .function {
 .posts-expand .post-title {
   text-align: center;
   word-break: break-word;
-  font-weight: 400;
+  font-weight: 600;
 }
 .posts-expand .post-title-link {
   display: inline-block;
@@ -1844,7 +1844,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4db3b1;
+  background: #12d00d;
 }
 .links-of-blogroll {
   font-size: 13px;
