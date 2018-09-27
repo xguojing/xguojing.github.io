@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tangguangen.com/"/>
-  <updated>2018-09-06T00:29:47.293Z</updated>
+  <updated>2018-09-27T00:19:58.972Z</updated>
   <id>https://tangguangen.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>什么是大数据</title>
+    <link href="https://tangguangen.com/2018/09/27/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    <id>https://tangguangen.com/2018/09/27/什么是大数据/</id>
+    <published>2018-09-26T23:47:13.000Z</published>
+    <updated>2018-09-27T00:19:58.972Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>根据IBM前首席执行官郭士纳的观点，IT领域每隔十五年就会迎来一次重大变革。</p><img src="/2018/09/27/什么是大数据/第三次信息化浪潮.PNG"><p>物联网改变了数据产生的方式，迎来了大数据时代。</p><p>大数据时代的技术支撑：存储、计算、网络能力的大幅提升。</p><p>大数据的四个特性：4V</p><ul><li><strong>数据量大</strong>：大数据摩尔定律、人类在最近两年产生的数据量相当于之前产生的全部数据量；</li><li><strong>数据类型多</strong>：大数据是由结构化数据和非结构化数据组成，90%都是非结构化数据，结构化数据是存储在关系型数据库中的数据。</li><li><strong>数据处理速度快</strong></li><li><strong>数据价值密度低</strong>，商业价值高</li></ul><h2 id="大数据的影响"><a href="#大数据的影响" class="headerlink" title="大数据的影响"></a>大数据的影响</h2><p>Jim Gray博士，98年图灵奖得主，提出了事务理论</p><p>四种研究方式：</p><ul><li>实验，通过实验解决科学问题。</li><li>理论</li><li>计算</li><li>数据，以数据为驱动的全新的科学研究时代。通过对大量数据的分析找出问题。考数据驱动，发现问题，解决问题。</li></ul><p>在思维方式方面大数据完全颠覆了传统的思维方式</p><ul><li>全样而非抽样，不需要像以前一样做抽样</li><li>效率而非精确，因为以前是做抽样分析，所以要最前高精确度，使误差尽量小。大数据时代是对全样分析，不纯在误差放大问题，就不需要最求精确度，所以这时候追求的是效率。</li><li>相关而非因果，大数据时代只关注相关性，而不关注因果性。</li></ul><h2 id="大数据关键技术"><a href="#大数据关键技术" class="headerlink" title="大数据关键技术"></a>大数据关键技术</h2><p>两大核心技术：</p><ul><li>分布式存储：解决海量数据的存储问题</li><li>分布式处理：解决海量数据的处理问题</li></ul><p>大数据技术一谷歌公司技术为代表</p><ul><li>分布式数据库Big Table</li><li>分布式文件系统GFS</li><li>分布式并行处理技术MapReduce</li></ul><p>不同的计算模式需要使用不同的产品</p><p>大数据产品服务的计算模式是不一样的，有些是用于批处理，有些是用于实时计算，有些是用于交互式计算。</p><p>批处理计算：</p><ul><li>解决问题：针对大规模数据的批量处理</li><li>MapReduce是批处理计算模式的典型代表，适用于批处理，不适用于实时计算</li><li>15年异军突起的产品Spark，实时性比MapReduce更好，而且它解决了MapReduce当中的一些缺点，MapReduce无法高效的执行迭代计算，但是Spark可以进行迭代计算。许多应用中需要做迭代计算，比如数据挖掘，这时就不能用MapReduce要用Spark</li></ul><p>流计算：</p><ul><li>解决问题：针对流数据的实时计算</li><li>流计算是专门针对流数据的实时计算，流数据需要实时处理，给出实时响应，否则分析结果就会失去商业价值，只能用流计算框架进行处理，它是实现秒级的针对实时数据流的响应。</li><li>流计算代表产品：S4，Storm，Flume</li></ul><p>图计算：</p><ul><li>解决问题：针对大规模图结构数据的处理</li><li>图计算代表软件：Google Pregel</li><li>社交网络数据就是图结构数据</li></ul><p>查询分析计算：</p><ul><li>解决问题：大规模数据的存储管理和查询分析</li><li>大数据查询分析软件，满足交互式查询分析、</li><li>代表产品：Google Dremel，Hive，Cassandra，Impala</li></ul><p><strong>云计算</strong></p><p>云计算解决两大核心问题：</p><ul><li>分布式存储</li><li>分布式处理</li></ul><p>云计算电信特征：</p><ul><li>虚拟化</li><li>多租户</li></ul><p>云计算的概念：云计算是通过网络以服务的方式为用户提供非常廉价的IT资源</p><p>云计算的优势：企业不需要自建IT基础设施，可以租用云端资源</p><p>云计算的三种模式：</p><p>公有云：百度云</p><p>私有云</p><p>混合云</p><p>自底向上的三种服务：</p><ul><li>IaaS<ul><li>将基础设施（计算资源和存储）作为服务出租，如弹性云计算EC2</li><li>面向网络架构师</li></ul></li><li>PaaS<ul><li>平台即服务，云计算环境的开发平台</li><li>面向应用开发者</li></ul></li><li>SaaS<ul><li>典型案例：云财务软件</li></ul></li></ul><p>云计算的关键技术：</p><ul><li>虚拟化，</li><li>多租户，云计算同时为多个用户服务</li><li>云计算数据中心</li></ul><p><strong>物联网</strong></p><p>物联网层次架构：感知层，网络层，处理层，应用层</p><p>物联网的关键技术：</p><ul><li>识别技术</li><li>感知技术</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;根据IBM前首席执行官郭士纳的观点，IT领域每隔十五年就会迎来一次重大变革。&lt;/p&gt;
+&lt;img src=&quot;/2018/09/27/什么是大数
+      
+    
+    </summary>
+    
+      <category term="大数据" scheme="https://tangguangen.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="大数据" scheme="https://tangguangen.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>【转载】hexo框架基于next主题定制</title>
