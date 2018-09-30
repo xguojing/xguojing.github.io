@@ -93,7 +93,7 @@
 
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="唐观根, NLP" />
 
 
 
@@ -106,18 +106,21 @@
 
 
 
-<meta name="description" content="hexo常用命令预览访问 1hexo server 部署步骤 123hexo cleanhexo generatehexo deploy 为文章添加附件Hexo配置文件的设置确保你的Hexo的配置文件_config.yml里面有个这个选项配置，并将其置为true 1post_asset_folder: true 插入图片在 \source\_posts 建立一个md文件来写博客，同时建立一个同名的">
-<meta name="keywords" content="hexo">
+<meta name="description" content="Ipython Notebook非常适合用来做数据分析，在windows下安装anaconda就可以直接使用Ipython Notebook了。但是如果是要在云服务器的Linux环境下安装Ipython Notebook，并且在本地远程访问，就需要自己动手配置了。 环境服务器：阿里云ECS，Ubuntu16.04 64位 Xshell5 1.安装anacondaAnaconda指的是一个开源的Py">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HEXO备忘">
-<meta property="og:url" content="https://tangguangen.com/2018/09/04/hexo常用命令/index.html">
+<meta property="og:title" content="云服务器安装远程ipython notebook">
+<meta property="og:url" content="https://tangguangen.com/2018/09/28/云服务器安装远程ipython-notebook/index.html">
 <meta property="og:site_name" content="GuoJing">
-<meta property="og:description" content="hexo常用命令预览访问 1hexo server 部署步骤 123hexo cleanhexo generatehexo deploy 为文章添加附件Hexo配置文件的设置确保你的Hexo的配置文件_config.yml里面有个这个选项配置，并将其置为true 1post_asset_folder: true 插入图片在 \source\_posts 建立一个md文件来写博客，同时建立一个同名的">
+<meta property="og:description" content="Ipython Notebook非常适合用来做数据分析，在windows下安装anaconda就可以直接使用Ipython Notebook了。但是如果是要在云服务器的Linux环境下安装Ipython Notebook，并且在本地远程访问，就需要自己动手配置了。 环境服务器：阿里云ECS，Ubuntu16.04 64位 Xshell5 1.安装anacondaAnaconda指的是一个开源的Py">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T12:55:58.046Z">
+<meta property="og:image" content="https://tangguangen.com/2018/09/28/云服务器安装远程ipython-notebook/python测试.PNG">
+<meta property="og:image" content="https://tangguangen.com/2018/09/28/云服务器安装远程ipython-notebook/端口转发.PNG">
+<meta property="og:image" content="https://tangguangen.com/2018/09/28/云服务器安装远程ipython-notebook/本地远程访问.PNG">
+<meta property="og:updated_time" content="2018-09-30T01:15:03.465Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HEXO备忘">
-<meta name="twitter:description" content="hexo常用命令预览访问 1hexo server 部署步骤 123hexo cleanhexo generatehexo deploy 为文章添加附件Hexo配置文件的设置确保你的Hexo的配置文件_config.yml里面有个这个选项配置，并将其置为true 1post_asset_folder: true 插入图片在 \source\_posts 建立一个md文件来写博客，同时建立一个同名的">
+<meta name="twitter:title" content="云服务器安装远程ipython notebook">
+<meta name="twitter:description" content="Ipython Notebook非常适合用来做数据分析，在windows下安装anaconda就可以直接使用Ipython Notebook了。但是如果是要在云服务器的Linux环境下安装Ipython Notebook，并且在本地远程访问，就需要自己动手配置了。 环境服务器：阿里云ECS，Ubuntu16.04 64位 Xshell5 1.安装anacondaAnaconda指的是一个开源的Py">
+<meta name="twitter:image" content="https://tangguangen.com/2018/09/28/云服务器安装远程ipython-notebook/python测试.PNG">
 
 
 
@@ -147,13 +150,13 @@
 
 
 
-  <link rel="canonical" href="https://tangguangen.com/2018/09/04/hexo常用命令/"/>
+  <link rel="canonical" href="https://tangguangen.com/2018/09/28/云服务器安装远程ipython-notebook/"/>
 
 
 
 
 
-  <title>HEXO备忘 | GuoJing</title>
+  <title>云服务器安装远程ipython notebook | GuoJing</title>
   
 
 
@@ -324,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tangguangen.com/2018/09/04/hexo常用命令/">
+    <link itemprop="mainEntityOfPage" href="https://tangguangen.com/2018/09/28/云服务器安装远程ipython-notebook/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GuoJing">
@@ -341,7 +344,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">HEXO备忘</h2>
+          <h2 class="post-title" itemprop="name headline">云服务器安装远程ipython notebook</h2>
         
 
         <div class="post-meta">
@@ -353,8 +356,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T19:46:51+08:00">
-                2018-09-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-28T15:22:48+08:00">
+                2018-09-28
               </time>
             
 
@@ -364,28 +367,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -393,7 +374,7 @@
 
           
           
-             <span id="/2018/09/04/hexo常用命令/" class="leancloud_visitors" data-flag-title="HEXO备忘">
+             <span id="/2018/09/28/云服务器安装远程ipython-notebook/" class="leancloud_visitors" data-flag-title="云服务器安装远程ipython notebook">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -424,14 +405,30 @@
       
 
       
-        <h2 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h2><p>预览访问</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p>部署步骤</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<h2 id="为文章添加附件"><a href="#为文章添加附件" class="headerlink" title="为文章添加附件"></a>为文章添加附件</h2><h3 id="Hexo配置文件的设置"><a href="#Hexo配置文件的设置" class="headerlink" title="Hexo配置文件的设置"></a>Hexo配置文件的设置</h3><p>确保你的Hexo的配置文件_config.yml里面有个这个选项配置，并将其置为true</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
-<h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><p>在 \source\_posts 建立一个md文件来写博客，同时建立一个同名的文件夹去存放资源。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![图片描述](/文件夹/图片名.png)</span><br></pre></td></tr></table></figure>
+        <p>Ipython Notebook非常适合用来做数据分析，在windows下安装anaconda就可以直接使用Ipython Notebook了。但是如果是要在云服务器的Linux环境下安装Ipython Notebook，并且在本地远程访问，就需要自己动手配置了。</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>服务器：阿里云ECS，Ubuntu16.04 64位</p>
+<p>Xshell5</p>
+<h3 id="1-安装anaconda"><a href="#1-安装anaconda" class="headerlink" title="1.安装anaconda"></a>1.安装anaconda</h3><p>Anaconda指的是一个开源的<a href="https://baike.baidu.com/item/Python" target="_blank" rel="noopener">Python</a>发行版本，其包含了conda、Python等180多个科学包及其依赖项。</p>
+<p>首先在<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/" target="_blank" rel="noopener">清华大学开源软件镜像站</a>下载Anaconda3，下载最新版本就行了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update <span class="comment">#执行这条命令更新一下</span></span><br><span class="line">sudo wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.2.0-Linux-x86_64.sh	<span class="comment">#这里我选择的版本是3-5.2.0，64位。</span></span><br></pre></td></tr></table></figure>
+<p>下载好后，进入下载的anaconda 安装包的目录下进行安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash Anaconda3-5.2.0-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
+<p>最后一部是询问是否将python加入环境变量，选择yes，当然你也可以在安装完后手动添加到bash中。 </p>
+<p>安装完成之后要重启终端，anaconda才能生效。</p>
+<p>输入python进行测试安装是否成功，显示python版本这表示安装正确。</p>
+<img src="/2018/09/28/云服务器安装远程ipython-notebook/python测试.PNG">
+<h2 id="2-配置ipython-jupyter"><a href="#2-配置ipython-jupyter" class="headerlink" title="2. 配置ipython jupyter"></a>2. 配置ipython jupyter</h2><h3 id="2-1-生成配置文件"><a href="#2-1-生成配置文件" class="headerlink" title="2.1.生成配置文件"></a>2.1.生成配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成配置文件</span></span><br><span class="line">jupyter notebook --generate-config</span><br><span class="line"><span class="comment"># 此时生成配置文件：</span></span><br><span class="line"><span class="comment"># Writing default config to: /home/python/.jupyter/jupyter_notebook_config.py</span></span><br><span class="line"><span class="comment"># 这里 /home/python/... 中的python指的是用户名是python，将其改成自己的用户名就好了，下面的情况也是一样的。</span></span><br><span class="line"><span class="comment"># 创建登录密码</span></span><br><span class="line"><span class="comment"># 打开ipython，生成密钥，这一步也可以不做，如果不需要设置密码的话。</span></span><br><span class="line">$ ipython</span><br><span class="line">from notebook.auth import passwd</span><br><span class="line">passwd()</span><br><span class="line">Enter password:</span><br><span class="line">Verify password:</span><br><span class="line">Out[2]: <span class="string">'sha1:6f6193fcfbd5:614c4ba185334868fc8bbce2e9890b3ef7d1a79b'</span>  </span><br><span class="line"><span class="comment"># 我这里创建的密码是123456，对应的密钥是sha1xxxx的那一串</span></span><br><span class="line"><span class="comment"># 然后退出ipython</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-2-创建自签名的证书"><a href="#2-2-创建自签名的证书" class="headerlink" title="2.2.创建自签名的证书"></a>2.2.创建自签名的证书</h3><p>这一步使用openssl创建一个自签名证书，如果不担心安全问题，不使用ssl速度会快一些。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line"><span class="comment"># 在linux下执行，遇到询问的地方一路回车即可</span></span><br><span class="line">openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mycert.pem -out mycert.pem</span><br><span class="line"></span><br><span class="line"><span class="comment"># 会在当前文件夹下生成 mycert.pem，我将它移到.jupyter/secret文件夹下面，方便管理</span></span><br><span class="line"><span class="comment"># 先创建.secret文件夹</span></span><br><span class="line"><span class="built_in">cd</span> .jupyter</span><br><span class="line">mkdir secret  </span><br><span class="line"><span class="comment"># 移动</span></span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">mv mycert.pem .jupyter/secret/</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-修改配置文件"><a href="#2-3-修改配置文件" class="headerlink" title="2.3.修改配置文件"></a>2.3.修改配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开刚才创建的.jupyter/jupyter_notebook_config.py，先备份源文件，然后再修改</span></span><br><span class="line"><span class="comment"># 备份</span></span><br><span class="line">$ cp .jupyter/jupyter_notebook_config.py .jupyter/jupyter_notebook_config.py_bak</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改如下，可以先删除里面的内容添加，也可以修改，或者直接在头部添加，反正里面的原先的内容都是注释掉的：</span></span><br><span class="line">vi /home/python/.jupyter/jupyter_notebook_config.py</span><br><span class="line"></span><br><span class="line">c = get_config()</span><br><span class="line"><span class="comment"># Kernel config</span></span><br><span class="line">c.IPKernelApp.pylab = <span class="string">'inline'</span>  <span class="comment"># if you want plotting support always</span></span><br><span class="line"></span><br><span class="line">c.NotebookApp.ip = <span class="string">'*'</span>  <span class="comment"># 就是设置所有ip皆可访问，在144行</span></span><br><span class="line">c.NotebookApp.open_browser = False  <span class="comment"># 禁止自动打开浏览器</span></span><br><span class="line"><span class="comment"># 密钥，在194行。该密钥就是2.1步生成的</span></span><br><span class="line">c.NotebookApp.password = <span class="string">'sha1:74d233d59da1:50d7ef60a58456e2016dc427547fb42cdd971cea'</span></span><br><span class="line">c.NotebookApp.port = 6868  <span class="comment"># 访问端口，在197行</span></span><br><span class="line"><span class="comment"># 自签名证书位置，如果不使用ssl，可以不设置</span></span><br><span class="line">c.NotebookNotary.secret_file = <span class="string">'/home/python/.jupyter/secret/mycert.pem'</span></span><br><span class="line">c.NotebookApp.keyfile = <span class="string">'/home/python/.jupyter/.secret/mykey.key'</span></span><br><span class="line"><span class="comment"># 设置目录，存放创建的ipython notebook文件</span></span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">'/home/python/ipython'</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-XShell配置远程访问"><a href="#3-XShell配置远程访问" class="headerlink" title="3.XShell配置远程访问"></a>3.XShell配置远程访问</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动ipython jupyter，不使用ssl</span></span><br><span class="line">jupyter notebook</span><br><span class="line"><span class="comment"># 或者开启ssl</span></span><br><span class="line"><span class="comment"># jupyter notebook --certfile=mycert.pem --keyfile mykey.key</span></span><br><span class="line">jupyter notebook --certfile=/home/zhenyu/.jupyter/secret/mycert.pem</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出，看倒数第二行，显示的是IP地址和端口号，记下来</span></span><br><span class="line">[I 15:56:59.916 NotebookApp] JupyterLab beta preview extension loaded from /home/python/anaconda3/lib/python3.6/site-packages/jupyterlab</span><br><span class="line">[I 15:56:59.916 NotebookApp] JupyterLab application directory is /home/python/anaconda3/share/jupyter/lab</span><br><span class="line">[I 15:56:59.921 NotebookApp] Serving notebooks from <span class="built_in">local</span> directory: /home/python/ipython</span><br><span class="line">[I 15:56:59.921 NotebookApp] 0 active kernels</span><br><span class="line">[I 15:56:59.921 NotebookApp] The Jupyter Notebook is running at:</span><br><span class="line">[I 15:56:59.921 NotebookApp] http://127.0.0.1:6868/</span><br><span class="line">[I 15:56:59.921 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).</span><br></pre></td></tr></table></figure>
+<p>这时候退出XShell连接，再打开XShell，进入会话连接属性，添加一条转义规则，就可以在本地window机器上远程访问jupyter notebook使用python进行数据分析了。</p>
+<img src="/2018/09/28/云服务器安装远程ipython-notebook/端口转发.PNG">
+<p>打开浏览器，在地址栏输入<a href="http://localhost:5858就能远程访问云服务器中的6868端口了。" target="_blank" rel="noopener">http://localhost:5858就能远程访问云服务器中的6868端口了。</a></p>
+<img src="/2018/09/28/云服务器安装远程ipython-notebook/本地远程访问.PNG">
+<p>linux 下安装anaconda<a href="https://blog.csdn.net/u010414589/article/details/51303502" target="_blank" rel="noopener">https://blog.csdn.net/u010414589/article/details/51303502</a></p>
+<p>Linux 远程Ipython Notebook<a href="https://blog.csdn.net/suzyu12345/article/details/51037905" target="_blank" rel="noopener">https://blog.csdn.net/suzyu12345/article/details/51037905</a></p>
+<p>XShell–SSH端口转发<a href="https://blog.csdn.net/qq_34039315/article/details/77510923" target="_blank" rel="noopener">https://blog.csdn.net/qq_34039315/article/details/77510923</a></p>
 
       
     </div>
@@ -452,7 +449,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://tangguangen.com/2018/09/04/hexo常用命令/" title="HEXO备忘">https://tangguangen.com/2018/09/04/hexo常用命令/</a>
+    <a href="https://tangguangen.com/2018/09/28/云服务器安装远程ipython-notebook/" title="云服务器安装远程ipython notebook">https://tangguangen.com/2018/09/28/云服务器安装远程ipython-notebook/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -465,12 +462,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
-          
-        </div>
-      
 
       
       
@@ -480,8 +471,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/02/the-state-of-the-art-in-semantic-repesentation/" rel="next" title="The State of the Art in Semantic Representation">
-                <i class="fa fa-chevron-left"></i> The State of the Art in Semantic Representation
+              <a href="/2018/09/28/Hadoop在云服务器上的安装教程/" rel="next" title="Hadoop在云服务器上的安装教程">
+                <i class="fa fa-chevron-left"></i> Hadoop在云服务器上的安装教程
               </a>
             
           </div>
@@ -489,10 +480,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/05/huawei-real-time-recommendation/" rel="prev" title="华为云图引擎服务实时推荐（Real-time Recommendation）算法">
-                华为云图引擎服务实时推荐（Real-time Recommendation）算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -654,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo常用命令"><span class="nav-number">1.</span> <span class="nav-text">hexo常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为文章添加附件"><span class="nav-number">2.</span> <span class="nav-text">为文章添加附件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo配置文件的设置"><span class="nav-number">2.1.</span> <span class="nav-text">Hexo配置文件的设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入图片"><span class="nav-number">2.2.</span> <span class="nav-text">插入图片</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装anaconda"><span class="nav-number">1.1.</span> <span class="nav-text">1.安装anaconda</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置ipython-jupyter"><span class="nav-number">2.</span> <span class="nav-text">2. 配置ipython jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-生成配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">2.1.生成配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-创建自签名的证书"><span class="nav-number">2.2.</span> <span class="nav-text">2.2.创建自签名的证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-修改配置文件"><span class="nav-number">2.3.</span> <span class="nav-text">2.3.修改配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-XShell配置远程访问"><span class="nav-number">3.</span> <span class="nav-text">3.XShell配置远程访问</span></a></li></ol></div>
             
 
           </div>
