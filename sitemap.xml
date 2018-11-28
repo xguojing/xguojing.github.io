@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tangguangen.com/2018/09/05/Natural-Language-Processing-Tasks-and-References/</loc>
+    
+    <lastmod>2018-11-28T09:09:45.258Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/2018/11/20/CS22n%E7%AC%94%E8%AE%B001-Introduction-to-NLP-and-Deep-Learning/</loc>
+    
+    <lastmod>2018-11-28T09:07:49.185Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/2018/08/02/the-state-of-the-art-in-semantic-repesentation/</loc>
+    
+    <lastmod>2018-11-28T09:07:35.465Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/2018/11/28/LeetCode-292-Nim%E6%B8%B8%E6%88%8F/</loc>
+    
+    <lastmod>2018-11-28T07:32:18.954Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/2018/11/26/%E8%BD%AC%E8%BD%BD-%E5%8E%9F%E7%A0%81-%E5%8F%8D%E7%A0%81-%E8%A1%A5%E7%A0%81-%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2018-11-26T13:45:31.379Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tangguangen.com/2018/11/25/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9FShell/</loc>
     
     <lastmod>2018-11-26T12:08:58.689Z</lastmod>
@@ -37,13 +72,6 @@
   </url>
   
   <url>
-    <loc>https://tangguangen.com/2018/11/20/CS22n%E7%AC%94%E8%AE%B001-Introduction-to-NLP-and-Deep-Learning/</loc>
-    
-    <lastmod>2018-11-21T04:25:06.703Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://tangguangen.com/2018/11/19/%E5%AE%9E%E4%BD%93%E5%92%8C%E5%85%B3%E7%B3%BB%E7%9A%84%E8%81%94%E5%90%88%E6%8A%BD%E5%8F%96%E7%A0%94%E7%A9%B6%E7%BB%BC%E8%BF%B0/</loc>
     
     <lastmod>2018-11-20T01:54:07.931Z</lastmod>
@@ -68,13 +96,6 @@
     <loc>https://tangguangen.com/2018/09/28/Hadoop%E5%9C%A8%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
     
     <lastmod>2018-09-30T01:13:06.599Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/2018/08/02/the-state-of-the-art-in-semantic-repesentation/</loc>
-    
-    <lastmod>2018-09-27T00:20:57.095Z</lastmod>
     
   </url>
   
