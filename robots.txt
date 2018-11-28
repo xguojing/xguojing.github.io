@@ -9,4 +9,4 @@ Disallow: /vendors/
 Disallow: /fancybox/
 
 sitemap: https://tangguangen.com/sitemap.xml
-baidusitemap: https://tangguangen.com/baidusitemap.xml
+sitemap: https://tangguangen.com/baidusitemap.xml
