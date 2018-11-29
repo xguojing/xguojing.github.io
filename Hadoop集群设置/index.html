@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="nSQP7oenPvIzCYT8-uOKv9Ig5ENlY4CikQQkqyYkUSI" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/唐.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/唐.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.5.0',
+    sidebar: {"position":"left","width":240,"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="目的本文档描述了如何安装和配置Hadoop集群，范围从几个节点到具有数千个节点的极大集群。要使用Hadoop，您可能首先要将其安装在一台计算机上（请参阅单节点设置）。 本文档不包括安全性或高可用性等高级主题。 先决条件 安装Java。有关已知的好版本，请参阅Hadoop Wiki。 从Apache镜像下载稳定版本的Hadoop。  安装安装Hadoop集群通常涉及在集群中的所有计算机上解压缩软件，">
+<meta name="keywords" content="Hadoop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hadoop集群设置">
+<meta property="og:url" content="https://tangguangen.com/Hadoop集群设置/index.html">
+<meta property="og:site_name" content="逍遥&#39;s Blog">
+<meta property="og:description" content="目的本文档描述了如何安装和配置Hadoop集群，范围从几个节点到具有数千个节点的极大集群。要使用Hadoop，您可能首先要将其安装在一台计算机上（请参阅单节点设置）。 本文档不包括安全性或高可用性等高级主题。 先决条件 安装Java。有关已知的好版本，请参阅Hadoop Wiki。 从Apache镜像下载稳定版本的Hadoop。  安装安装Hadoop集群通常涉及在集群中的所有计算机上解压缩软件，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-26T12:08:36.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hadoop集群设置">
+<meta name="twitter:description" content="目的本文档描述了如何安装和配置Hadoop集群，范围从几个节点到具有数千个节点的极大集群。要使用Hadoop，您可能首先要将其安装在一台计算机上（请参阅单节点设置）。 本文档不包括安全性或高可用性等高级主题。 先决条件 安装Java。有关已知的好版本，请参阅Hadoop Wiki。 从Apache镜像下载稳定版本的Hadoop。  安装安装Hadoop集群通常涉及在集群中的所有计算机上解压缩软件，">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="逍遥's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://tangguangen.com/Hadoop集群设置/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Hadoop集群设置 | 逍遥's Blog</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a6d90ff0ab9ce0c3ca6663780d114c37";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">逍遥's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+    <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3hndW9qaW5n" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tangguangen.com/Hadoop集群设置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="逍遥">
+      <meta itemprop="description" content="路漫漫其修远兮，吾将上下而求索">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="逍遥's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Hadoop集群设置
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-24 15:34:01" itemprop="dateCreated datePublished" datetime="2018-11-24T15:34:01+08:00">2018-11-24</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/大数据/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/Hadoop集群设置/" class="leancloud_visitors" data-flag-title="Hadoop集群设置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>本文档描述了如何安装和配置Hadoop集群，范围从几个节点到具有数千个节点的极大集群。要使用Hadoop，您可能首先要将其安装在一台计算机上（请参阅<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2hhZG9vcC1wcm9qZWN0LWRpc3QvaGFkb29wLWNvbW1vbi9TaW5nbGVDbHVzdGVyLmh0bWw=" title="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html">单节点设置<i class="fa fa-external-link"></i></span>）。</p>
+<p>本文档不包括<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2hhZG9vcC1wcm9qZWN0LWRpc3QvaGFkb29wLWNvbW1vbi9TZWN1cmVNb2RlLmh0bWw=" title="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SecureMode.html">安全性<i class="fa fa-external-link"></i></span>或高可用性等高级主题。</p>
+<h2 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h2><ul>
+<li>安装Java。有关已知的好版本，请参阅<span class="exturl" data-url="aHR0cDovL3dpa2kuYXBhY2hlLm9yZy9oYWRvb3AvSGFkb29wSmF2YVZlcnNpb25z" title="http://wiki.apache.org/hadoop/HadoopJavaVersions">Hadoop Wiki<i class="fa fa-external-link"></i></span>。</li>
+<li>从Apache镜像下载稳定版本的Hadoop。</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hadoop集群通常涉及在集群中的所有计算机上解压缩软件，或者通过适合您的操作系统的打包系统进行安装。将硬件划分为几个功能非常重要。</p>
+<p>通常，群集中的<strong>一台计算机被指定为NameNode</strong>，而<strong>一台计算机则被指定为ResourceManager</strong>。这些都是<strong>masters</strong>。其他服务（例如Web App Proxy Server和MapReduce Job History server）通常在专用硬件或共享基础架构上运行，具体取决于负载。</p>
+<p>集群中的<strong>其余计算机充当DataNode和NodeManager</strong>。这些是<strong>slaves</strong>。</p>
+<h2 id="在非安全模式下配置Hadoop"><a href="#在非安全模式下配置Hadoop" class="headerlink" title="在非安全模式下配置Hadoop"></a>在非安全模式下配置Hadoop</h2><p>Hadoop的 Java 配置由两种类型的重要配置文件驱动：</p>
+<ul>
+<li><strong>只读默认配置</strong>  - <code>core-default.xml</code>, <code>hdfs-default.xml</code>, <code>yarn-default.xml</code> 和<code>mapred-default.xml</code>.</li>
+<li><strong>具体站点的配置</strong>- <code>etc/hadoop/core-site.xml</code>, <code>etc/hadoop/hdfs-site.xml</code>, <code>etc/hadoop/yarn-site.xml</code> 和<code>etc/hadoop/mapred-site.xml</code>.</li>
+</ul>
+<p>此外，您可以通过<code>etc/hadoop/hadoop-env.sh</code>和<code>etc/hadoop/yarn-env.sh</code>设置特定于站点的值来控制分发的 bin/ 目录中的Hadoop脚本。</p>
+<p>要配置Hadoop集群，您需要配置Hadoop后台进程执行的<code>environment</code>以及Hadoop后台进程的<code>configuration parameters</code>。</p>
+<p><strong>HDFS</strong>后台进程是 <strong>NameNode</strong>，<strong>SecondaryNameNode</strong> 和 <strong>DataNode</strong>。<strong>YARN</strong>后台进程是<strong>ResourceManager</strong>，<strong>NodeManager</strong>和<strong>WebAppProxy</strong>。如果要使用MapReduce，则MapReduce Job History Server也将运行。对于大型安装，这些通常运行在不同的主机上。</p>
+<h3 id="Hadoop的环境配置"><a href="#Hadoop的环境配置" class="headerlink" title="Hadoop的环境配置"></a>Hadoop的环境配置</h3><p>管理员应该使用<code>etc/hadoop/hadoop-env.sh</code>和<code>etc/hadoop/mapred-env.sh</code>以及<code>etc/hadoop/yarn-env.sh</code>脚本来对Hadoop环境进行特定于站点的自定义。</p>
+<p>至少，您必须指定<code>JAVA_HOME，</code>以便在每个远程节点上正确定义它。</p>
+<p>管理员可以使用下表中显示的配置选项配置各个后台进程：</p>
+<table>
+<thead>
+<tr>
+<th>Daemon</th>
+<th>Environment Variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NameNode</td>
+<td>HADOOP_NAMENODE_OPTS</td>
+</tr>
+<tr>
+<td>DataNode</td>
+<td>HADOOP_DATANODE_OPTS</td>
+</tr>
+<tr>
+<td>Secondary NameNode</td>
+<td>HADOOP_SECONDARYNAMENODE_OPTS</td>
+</tr>
+<tr>
+<td>ResourceManager</td>
+<td>YARN_RESOURCEMANAGER_OPTS</td>
+</tr>
+<tr>
+<td>NodeManager</td>
+<td>YARN_NODEMANAGER_OPTS</td>
+</tr>
+<tr>
+<td>WebAppProxy</td>
+<td>YARN_PROXYSERVER_OPTS</td>
+</tr>
+<tr>
+<td>Map Reduce Job History Server</td>
+<td>HADOOP_JOB_HISTORYSERVER_OPTS</td>
+</tr>
+</tbody>
+</table>
+<p>例如，要将NameNode配置为使用parallelGC，应在hadoop-env.sh中添加以下语句：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HADOOP_NAMENODE_OPTS=<span class="string">"-XX:+UseParallelGC"</span></span><br></pre></td></tr></table></figure>
+<p>有关其他示例，请参阅 etc/hadoop/hadoop-env.sh</p>
+<p>您可以自定义的其他有用配置参数包括：</p>
+<ul>
+<li><code>HADOOP_PID_DIR</code> - 存储后台进程的进程标识文件的目录。</li>
+<li><code>HADOOP_LOG_DIR</code> - 存储后台程序日志文件的目录。如果日志文件不存在，则会自动创建日志文件。</li>
+<li><code>HADOOP_HEAPSIZE</code> / <code>YARN_HEAPSIZE</code> - 要使用的最大堆大小，以MB为单位，例如，如果varibale设置为1000，则堆将设置为1000MB。这用于配置守护程序的堆大小。默认情况下，该值为1000.如果要为每个可以使用的守护程序单独配置值。</li>
+</ul>
+<p>在大多数情况下，您应该指定<code>HADOOP_PID_DIR</code>和<code>HADOOP_LOG_DIR</code>目录，以便它们只能由将要运行hadoop守护程序的用户写入。否则就有可能发生符号链接攻击。</p>
+<p>在系统范围的shell环境配置中配置<code>HADOOP_PREFIX</code>也是传统的。例如，在<code>/etc/profile.d中</code>有一个简单的脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HADOOP_PREFIX=/path/to/hadoop</span><br><span class="line">export HADOOP_PREFIX</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Daemon</th>
+<th>Environment Variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ResourceManager</td>
+<td>YARN_RESOURCEMANAGER_HEAPSIZE</td>
+</tr>
+<tr>
+<td>NodeManager</td>
+<td>YARN_NODEMANAGER_HEAPSIZE</td>
+</tr>
+<tr>
+<td>WebAppProxy</td>
+<td>YARN_PROXYSERVER_HEAPSIZE</td>
+</tr>
+<tr>
+<td>Map Reduce Job History Server</td>
+<td>HADOOP_JOB_HISTORYSERVER_HEAPSIZE</td>
+</tr>
+</tbody>
+</table>
+<h3 id="配置Hadoop"><a href="#配置Hadoop" class="headerlink" title="配置Hadoop"></a>配置Hadoop</h3><p>本节介绍在给定配置文件中指定的重要参数：</p>
+<ul>
+<li><code>etc/hadoop/core-site.xml</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fs.defaultFS</code></td>
+<td>NameNode URI</td>
+<td><span class="exturl" data-url="aGRmczovL2hvc3Q6cG9ydC8=" title="hdfs://host:port/">hdfs://host:port/<i class="fa fa-external-link"></i></span></td>
+</tr>
+<tr>
+<td><code>io.file.buffer.size</code></td>
+<td>131072</td>
+<td>SequenceFiles中使用的读/写缓冲区的大小。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>etc/hadoop/hdfs-site.xml</code></li>
+<li>NameNode的配置：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dfs.namenode.name.dir</code></td>
+<td>NameNode存储名称空间和持续事务日志的本地文件系统上的路径。</td>
+<td>如果这是一个以逗号分隔的目录列表，那么名称表将复制到所有目录中，以实现冗余。</td>
+</tr>
+<tr>
+<td><code>dfs.hosts</code> / <code>dfs.hosts.exclude</code></td>
+<td>List of permitted/excluded DataNodes.</td>
+<td>If necessary, use these files to control the list of allowable datanodes.</td>
+</tr>
+<tr>
+<td><code>dfs.blocksize</code></td>
+<td>268435456</td>
+<td>HDFS blocksize of 256MB for large file-systems.</td>
+</tr>
+<tr>
+<td><code>dfs.namenode.handler.count</code></td>
+<td>100</td>
+<td>More NameNode server threads to handle RPCs from large number of DataNodes.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Configurations for DataNode:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dfs.datanode.data.dir</code></td>
+<td>Comma separated list of paths on the local filesystem of a <code>DataNode</code> where it should store its blocks.</td>
+<td>If this is a comma-delimited list of directories, then data will be stored in all named directories, typically on different devices.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>etc/hadoop/yarn-site.xml</code></li>
+<li>ResourceManager和NodeManager的配置：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yarn.acl.enable</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Enable ACLs? Defaults to <em>false</em>.</td>
+</tr>
+<tr>
+<td><code>yarn.admin.acl</code></td>
+<td>Admin ACL</td>
+<td>ACL to set admins on the cluster. ACLs are of for <em>comma-separated-usersspacecomma-separated-groups</em>. Defaults to special value of <strong>*</strong> which means <em>anyone</em>. Special value of just <em>space</em> means no one has access.</td>
+</tr>
+<tr>
+<td><code>yarn.log-aggregation-enable</code></td>
+<td><em>false</em></td>
+<td>Configuration to enable or disable log aggregation</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>ResourceManager的配置：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yarn.resourcemanager.address</code></td>
+<td><code>ResourceManager</code>host:port for clients to submit jobs.</td>
+<td><em>host:port</em> If set, overrides the hostname set in <code>yarn.resourcemanager.hostname</code>.</td>
+</tr>
+<tr>
+<td><code>yarn.resourcemanager.scheduler.address</code></td>
+<td><code>ResourceManager</code>host:port for ApplicationMasters to talk to Scheduler to obtain resources.</td>
+<td><em>host:port</em> If set, overrides the hostname set in <code>yarn.resourcemanager.hostname</code>.</td>
+</tr>
+<tr>
+<td><code>yarn.resourcemanager.resource-tracker.address</code></td>
+<td><code>ResourceManager</code>host:port for NodeManagers.</td>
+<td><em>host:port</em> If set, overrides the hostname set in <code>yarn.resourcemanager.hostname</code>.</td>
+</tr>
+<tr>
+<td><code>yarn.resourcemanager.admin.address</code></td>
+<td><code>ResourceManager</code>host:port for administrative commands.</td>
+<td><em>host:port</em> If set, overrides the hostname set in <code>yarn.resourcemanager.hostname</code>.</td>
+</tr>
+<tr>
+<td><code>yarn.resourcemanager.webapp.address</code></td>
+<td><code>ResourceManager</code>web-ui host:port.</td>
+<td><em>host:port</em> If set, overrides the hostname set in <code>yarn.resourcemanager.hostname</code>.</td>
+</tr>
+<tr>
+<td><code>yarn.resourcemanager.hostname</code></td>
+<td><code>ResourceManager</code>host.</td>
+<td><em>host</em> Single hostname that can be set in place of setting all <code>yarn.resourcemanager*address</code> resources. Results in default ports for ResourceManager components.</td>
+</tr>
+<tr>
+<td><code>yarn.resourcemanager.scheduler.class</code></td>
+<td><code>ResourceManager</code>Scheduler class.</td>
+<td><code>CapacityScheduler</code> (recommended), <code>FairScheduler</code> (also recommended), or <code>FifoScheduler</code>. Use a fully qualified class name, e.g., <code>org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler</code>.</td>
+</tr>
+<tr>
+<td><code>yarn.scheduler.minimum-allocation-mb</code></td>
+<td>Minimum limit of memory to allocate to each container request at the <code>Resource Manager</code>.</td>
+<td>In MBs</td>
+</tr>
+<tr>
+<td><code>yarn.scheduler.maximum-allocation-mb</code></td>
+<td>Maximum limit of memory to allocate to each container request at the <code>Resource Manager</code>.</td>
+<td>In MBs</td>
+</tr>
+<tr>
+<td><code>yarn.resourcemanager.nodes.include-path</code> / <code>yarn.resourcemanager.nodes.exclude-path</code></td>
+<td>List of permitted/excluded NodeManagers.</td>
+<td>If necessary, use these files to control the list of allowable NodeManagers.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>NodeManager的配置：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yarn.nodemanager.resource.memory-mb</code></td>
+<td>Resource i.e. available physical memory, in MB, for given <code>NodeManager</code></td>
+<td>Defines total available resources on the <code>NodeManager</code> to be made available to running containers</td>
+</tr>
+<tr>
+<td><code>yarn.nodemanager.vmem-pmem-ratio</code></td>
+<td>Maximum ratio by which virtual memory usage of tasks may exceed physical memory</td>
+<td>The virtual memory usage of each task may exceed its physical memory limit by this ratio. The total amount of virtual memory used by tasks on the NodeManager may exceed its physical memory usage by this ratio.</td>
+</tr>
+<tr>
+<td><code>yarn.nodemanager.local-dirs</code></td>
+<td>Comma-separated list of paths on the local filesystem where intermediate data is written.</td>
+<td>Multiple paths help spread disk i/o.</td>
+</tr>
+<tr>
+<td><code>yarn.nodemanager.log-dirs</code></td>
+<td>Comma-separated list of paths on the local filesystem where logs are written.</td>
+<td>Multiple paths help spread disk i/o.</td>
+</tr>
+<tr>
+<td><code>yarn.nodemanager.log.retain-seconds</code></td>
+<td><em>10800</em></td>
+<td>Default time (in seconds) to retain log files on the NodeManager Only applicable if log-aggregation is disabled.</td>
+</tr>
+<tr>
+<td><code>yarn.nodemanager.remote-app-log-dir</code></td>
+<td><em>/logs</em></td>
+<td>HDFS directory where the application logs are moved on application completion. Need to set appropriate permissions. Only applicable if log-aggregation is enabled.</td>
+</tr>
+<tr>
+<td><code>yarn.nodemanager.remote-app-log-dir-suffix</code></td>
+<td><em>logs</em></td>
+<td>Suffix appended to the remote log dir. Logs will be aggregated to ${yarn.nodemanager.remote-app-log-dir}/${user}/${thisParam} Only applicable if log-aggregation is enabled.</td>
+</tr>
+<tr>
+<td><code>yarn.nodemanager.aux-services</code></td>
+<td>mapreduce_shuffle</td>
+<td>Shuffle service that needs to be set for Map Reduce applications.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Configurations for History Server (Needs to be moved elsewhere):</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yarn.log-aggregation.retain-seconds</code></td>
+<td><em>-1</em></td>
+<td>How long to keep aggregation logs before deleting them. -1 disables. Be careful, set this too small and you will spam the name node.</td>
+</tr>
+<tr>
+<td><code>yarn.log-aggregation.retain-check-interval-seconds</code></td>
+<td><em>-1</em></td>
+<td>Time between checks for aggregated log retention. If set to 0 or a negative value then the value is computed as one-tenth of the aggregated log retention time. Be careful, set this too small and you will spam the name node.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>etc/hadoop/mapred-site.xml</code></li>
+<li>MapReduce应用程序的配置：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mapreduce.framework.name</code></td>
+<td>yarn</td>
+<td>Execution framework set to Hadoop YARN.</td>
+</tr>
+<tr>
+<td><code>mapreduce.map.memory.mb</code></td>
+<td>1536</td>
+<td>Larger resource limit for maps.</td>
+</tr>
+<tr>
+<td><code>mapreduce.map.java.opts</code></td>
+<td>-Xmx1024M</td>
+<td>Larger heap-size for child jvms of maps.</td>
+</tr>
+<tr>
+<td><code>mapreduce.reduce.memory.mb</code></td>
+<td>3072</td>
+<td>Larger resource limit for reduces.</td>
+</tr>
+<tr>
+<td><code>mapreduce.reduce.java.opts</code></td>
+<td>-Xmx2560M</td>
+<td>Larger heap-size for child jvms of reduces.</td>
+</tr>
+<tr>
+<td><code>mapreduce.task.io.sort.mb</code></td>
+<td>512</td>
+<td>Higher memory-limit while sorting data for efficiency.</td>
+</tr>
+<tr>
+<td><code>mapreduce.task.io.sort.factor</code></td>
+<td>100</td>
+<td>More streams merged at once while sorting files.</td>
+</tr>
+<tr>
+<td><code>mapreduce.reduce.shuffle.parallelcopies</code></td>
+<td>50</td>
+<td>Higher number of parallel copies run by reduces to fetch outputs from very large number of maps.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Configurations for MapReduce JobHistory Server:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mapreduce.jobhistory.address</code></td>
+<td>MapReduce JobHistory Server <em>host:port</em></td>
+<td>Default port is 10020.</td>
+</tr>
+<tr>
+<td><code>mapreduce.jobhistory.webapp.address</code></td>
+<td>MapReduce JobHistory Server Web UI <em>host:port</em></td>
+<td>Default port is 19888.</td>
+</tr>
+<tr>
+<td><code>mapreduce.jobhistory.intermediate-done-dir</code></td>
+<td>/mr-history/tmp</td>
+<td>Directory where history files are written by MapReduce jobs.</td>
+</tr>
+<tr>
+<td><code>mapreduce.jobhistory.done-dir</code></td>
+<td>/mr-history/done</td>
+<td>Directory where history files are managed by the MR JobHistory Server.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="监控NodeManager的健康状况"><a href="#监控NodeManager的健康状况" class="headerlink" title="监控NodeManager的健康状况"></a>监控NodeManager的健康状况</h2><p>Hadoop提供了一种机制，管理员可以通过该机制定期运行管理员提供的脚本以确定节点是否健康。</p>
+<p>管理员可以通过在脚本中执行对其选择的任何检查来确定节点是否处于正常状态。如果脚本检测到节点处于不健康状态，则必须以字符串ERROR开头的标准输出行。NodeManager定期生成脚本并检查其输出。如果脚本的输出包含字符串ERROR，如上所述，节点的状态将报告为运行状况<code>不佳</code>并且ResourceManager将节点列入黑名单。不会为此节点分配其他任务。但是，NodeManager继续运行脚本，因此如果节点再次变得健康，它将自动从ResourceManager上的黑名单节点中删除。如果节点不健康，则可以在ResourceManager Web界面中为管理员提供节点的运行状况以及脚本的输出。自节点健康以来的时间也显示在Web界面上。</p>
+<p>以下参数可用于控制<code>etc / hadoop / yarn-site.xml中</code>的节点运行状况监视脚本。</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yarn.nodemanager.health-checker.script.path</code></td>
+<td>Node health script</td>
+<td>Script to check for node’s health status.</td>
+</tr>
+<tr>
+<td><code>yarn.nodemanager.health-checker.script.opts</code></td>
+<td>Node health script options</td>
+<td>Options for script to check for node’s health status.</td>
+</tr>
+<tr>
+<td><code>yarn.nodemanager.health-checker.interval-ms</code></td>
+<td>Node health script interval</td>
+<td>Time interval for running health script.</td>
+</tr>
+<tr>
+<td><code>yarn.nodemanager.health-checker.script.timeout-ms</code></td>
+<td>Node health script timeout interval</td>
+<td>Timeout for health script execution.</td>
+</tr>
+</tbody>
+</table>
+<p>如果只有部分本地磁盘变坏，则运行状况检查程序脚本不应该给出错误。NodeManager能够定期检查本地磁盘的运行状况（具体检查nodemanager-local-dirs和nodemanager-log-dirs），并在达到配置属性yarn.nodemanager设置的错误目录数阈值后.disk-health-checker.min-healthy-disks，整个节点被标记为运行状况不佳，此信息也会发送给资源管理器。引导磁盘被突袭或健康检查程序脚本识别引导磁盘中的故障。</p>
+<h2 id="Slaves-文件"><a href="#Slaves-文件" class="headerlink" title="Slaves 文件"></a>Slaves 文件</h2><p>列出<code>etc / hadoop / slaves</code>文件中的所有从属主机名或IP地址，每行一个。Helper脚本（如下所述）将使用<code>etc / hadoop / slaves</code>文件一次在多个主机上运行命令。它不用于任何基于Java的Hadoop配置。为了使用此功能，必须为用于运行Hadoop的帐户建立ssh信任（通过无密码ssh或其他方式，如Kerberos）。</p>
+<h2 id="Hadoop机架意识"><a href="#Hadoop机架意识" class="headerlink" title="Hadoop机架意识"></a>Hadoop机架意识</h2><p>许多Hadoop组件都具有机架感知功能，并利用网络拓扑结构提高性能和安全性。Hadoop守护程序通过调用管理员配置的模块来获取集群中从站的机架信息。有关更多具体信息，请参阅<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2hhZG9vcC1wcm9qZWN0LWRpc3QvaGFkb29wLWNvbW1vbi9SYWNrQXdhcmVuZXNzLmh0bWw=" title="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/RackAwareness.html">Rack Awareness<i class="fa fa-external-link"></i></span>文档。</p>
+<p>强烈建议在启动HDFS之前配置机架感知。</p>
+<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><p>Hadoop 通过Apache Commons Logging框架使用<span class="exturl" data-url="aHR0cDovL2xvZ2dpbmcuYXBhY2hlLm9yZy9sb2c0ai8yLngv" title="http://logging.apache.org/log4j/2.x/">Apache log4j<i class="fa fa-external-link"></i></span>进行日志记录。编辑<code>etc / hadoop / log4j.properties</code>文件以自定义Hadoop守护程序的日志记录配置（日志格式等）。</p>
+<h2 id="操作Hadoop集群"><a href="#操作Hadoop集群" class="headerlink" title="操作Hadoop集群"></a>操作Hadoop集群</h2><p>完成所有必要的配置后，将文件分发到所有计算机上的<code>HADOOP_CONF_DIR</code>目录。这应该是所有计算机上的相同目录。</p>
+<p>通常，建议HDFS和YARN作为单独的用户运行。在大多数安装中，HDFS进程以’hdfs’的形式执行。YARN通常使用’yarn’帐户。、</p>
+<h3 id="Hadoop启动"><a href="#Hadoop启动" class="headerlink" title="Hadoop启动"></a>Hadoop启动</h3><p>要启动Hadoop集群，您需要启动HDFS和YARN集群。</p>
+<p>第一次启动HDFS时，必须对其进行格式化。将新的分布式文件系统格式化为<em>hdfs</em>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hdfs]$ <span class="variable">$HADOOP_PREFIX</span>/bin/hdfs namenode -format &lt;cluster_name&gt;</span><br></pre></td></tr></table></figure>
+<p>在指定节点上使用以下命令以<em>hdfs</em>启动HDFS NameNode ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hdfs]$ <span class="variable">$HADOOP_PREFIX</span>/sbin/hadoop-daemon.sh --config <span class="variable">$HADOOP_CONF_DIR</span> --script hdfs start namenode</span><br></pre></td></tr></table></figure>
+<p>使用以下命令在每个指定节点上以<em>hdfs</em>启动HDFS DataNode ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hdfs]$ <span class="variable">$HADOOP_PREFIX</span>/sbin/hadoop-daemons.sh --config <span class="variable">$HADOOP_CONF_DIR</span> --script hdfs start datanode</span><br></pre></td></tr></table></figure>
+<p>如果配置了<code>etc/hadoop/slaves</code>和ssh trusted access（请参阅<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2hhZG9vcC1wcm9qZWN0LWRpc3QvaGFkb29wLWNvbW1vbi9TaW5nbGVDbHVzdGVyLmh0bWw=" title="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html">单节点设置<i class="fa fa-external-link"></i></span>），则可以使用<strong>实用程序脚本启动所有HDFS进程</strong>。作为<em>hdfs</em>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hdfs]$ <span class="variable">$HADOOP_PREFIX</span>/sbin/start-dfs.sh</span><br></pre></td></tr></table></figure>
+<p>使用以下命令启动YARN，在指定的ResourceManager上以<em>yarn形式运行</em>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[yarn]$ <span class="variable">$HADOOP_YARN_HOME</span>/sbin/yarn-daemon.sh --config <span class="variable">$HADOOP_CONF_DIR</span> start resourcemanager</span><br></pre></td></tr></table></figure>
+<p>运行脚本以在每个指定的主机上启动NodeManager作为<em>yarn</em>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[yarn]$ <span class="variable">$HADOOP_YARN_HOME</span>/sbin/yarn-daemons.sh --config <span class="variable">$HADOOP_CONF_DIR</span> start nodemanager</span><br></pre></td></tr></table></figure>
+<p>启动独立的WebAppProxy服务器。以<em>纱线形式</em>在WebAppProxy服务器上运行。如果使用多个服务器进行负载平衡，则应在每个服务器上运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[yarn]$ <span class="variable">$HADOOP_YARN_HOME</span>/sbin/yarn-daemon.sh --config <span class="variable">$HADOOP_CONF_DIR</span> start proxyserver</span><br></pre></td></tr></table></figure>
+<p>如果配置了<code>etc/hadoop/slaves</code>和ssh trusted access（请参阅<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2hhZG9vcC1wcm9qZWN0LWRpc3QvaGFkb29wLWNvbW1vbi9TaW5nbGVDbHVzdGVyLmh0bWw=" title="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html">单节点设置<i class="fa fa-external-link"></i></span>），则可以使用实用程序脚本启动所有YARN进程。作为 As <em>yarn</em>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[yarn]$ <span class="variable">$HADOOP_PREFIX</span>/sbin/start-yarn.sh</span><br></pre></td></tr></table></figure>
+<p>使用以下命令启动MapReduce JobHistory Server，在指定的服务器上以<em>mapred运行</em>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[mapred]$ <span class="variable">$HADOOP_PREFIX</span>/sbin/mr-jobhistory-daemon.sh --config <span class="variable">$HADOOP_CONF_DIR</span> start historyserver</span><br></pre></td></tr></table></figure>
+<h3 id="Hadoop关闭"><a href="#Hadoop关闭" class="headerlink" title="Hadoop关闭"></a>Hadoop关闭</h3><p>使用以下命令停止NameNode，在指定的NameNode上运行为<em>hdfs</em>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hdfs] $ $ HADOOP_PREFIX / sbin / hadoop-daemon.sh --config $ HADOOP_CONF_DIR --script hdfs stop namenode</span><br></pre></td></tr></table></figure>
+<p>运行脚本以将DataNode作为<em>hdfs</em>停止：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hdfs] $ $ HADOOP_PREFIX / sbin / hadoop-daemons.sh --config $ HADOOP_CONF_DIR --script hdfs stop datanode</span><br></pre></td></tr></table></figure>
+<p>如果配置了<code>etc / hadoop / slaves</code>和ssh trusted access（请参阅<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2hhZG9vcC1wcm9qZWN0LWRpc3QvaGFkb29wLWNvbW1vbi9TaW5nbGVDbHVzdGVyLmh0bWw=" title="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html">单节点设置<i class="fa fa-external-link"></i></span>），则可以使用实用程序脚本停止所有HDFS进程。作为<em>hdfs</em>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hdfs] $ $ HADOOP_PREFIX / sbin / stop-dfs.sh</span><br></pre></td></tr></table></figure>
+<p>使用以下命令停止ResourceManager，在指定的ResourceManager上作为<em>yarn运行</em>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[yarn] $ $ HADOOP_YARN_HOME / sbin / yarn-daemon.sh --config $ HADOOP_CONF_DIR stop resourcemanager</span><br></pre></td></tr></table></figure>
+<p>运行脚本以将从站上的NodeManager作为<em>yarn</em>停止：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[yarn] $ $ HADOOP_YARN_HOME / sbin / yarn-daemons.sh --config $ HADOOP_CONF_DIR stop nodemanager</span><br></pre></td></tr></table></figure>
+<p>如果配置了<code>etc / hadoop / slaves</code>和ssh trusted access（请参阅<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2hhZG9vcC1wcm9qZWN0LWRpc3QvaGFkb29wLWNvbW1vbi9TaW5nbGVDbHVzdGVyLmh0bWw=" title="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html">单节点设置<i class="fa fa-external-link"></i></span>），则可以使用实用程序脚本停止所有YARN进程。As <em>hdfs</em>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[yarn] $ $ HADOOP_PREFIX / sbin / stop-yarn.sh</span><br></pre></td></tr></table></figure>
+<p>停止WebAppProxy服务器。以<em>纱线形式</em>在WebAppProxy服务器上运行。如果使用多个服务器进行负载平衡，则应在每个服务器上运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[yarn] $ $ HADOOP_YARN_HOME / sbin / yarn-daemon.sh --config $ HADOOP_CONF_DIR stop proxyserver</span><br></pre></td></tr></table></figure>
+<p>使用以下命令停止MapReduce JobHistory Server，在指定的服务器上以<em>mapred运行</em>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[mapred] $ $ HADOOP_PREFIX / sbin / mr-jobhistory-daemon.sh --config $ HADOOP_CONF_DIR stop historyserver</span><br></pre></td></tr></table></figure>
+<h2 id="Web界面"><a href="#Web界面" class="headerlink" title="Web界面"></a>Web界面</h2><p>一旦Hadoop集群启动并运行，请检查组件的web-ui，如下所述：</p>
+<table>
+<thead>
+<tr>
+<th>Daemon</th>
+<th>Web Interface</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NameNode</td>
+<td><span class="exturl" data-url="aHR0cDovL25uX2hvc3Q6cG9ydC8=" title="http://nn_host:port/">http://nn_host:port/<i class="fa fa-external-link"></i></span></td>
+<td>Default HTTP port is 50070.</td>
+</tr>
+<tr>
+<td>ResourceManager</td>
+<td><span class="exturl" data-url="aHR0cDovL3JtX2hvc3Q6cG9ydC8=" title="http://rm_host:port/">http://rm_host:port/<i class="fa fa-external-link"></i></span></td>
+<td>Default HTTP port is 8088.</td>
+</tr>
+<tr>
+<td>MapReduce JobHistory Server</td>
+<td><span class="exturl" data-url="aHR0cDovL2poc19ob3N0OnBvcnQv" title="http://jhs_host:port/">http://jhs_host:port/<i class="fa fa-external-link"></i></span></td>
+<td>Default HTTP port is 19888.</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    <div>
+  
+      <div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+  
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>逍遥</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://tangguangen.com/Hadoop集群设置/" title="Hadoop集群设置">https://tangguangen.com/Hadoop集群设置/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hadoop/" rel="tag"><i class="fa fa-tag"></i> Hadoop</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Hadoop-设置单个节点集群/" rel="next" title="Hadoop: 设置单个节点集群">
+                <i class="fa fa-chevron-left"></i> Hadoop: 设置单个节点集群
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Hadoop-FileSystem-Shell/" rel="prev" title="Hadoop: FileSystem Shell">
+                Hadoop: FileSystem Shell <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODU3NS8xNTEwMw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/me.jpg"
+                alt="逍遥" />
+            
+              <p class="site-author-name" itemprop="name">逍遥</p>
+              <p class="site-description motion-element" itemprop="description">路漫漫其修远兮，吾将上下而求索</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3hndW9qaW5n" title="GitHub &rarr; https://github.com/xguojing"><i class="fa fa-fw fa-github"></i>GitHub</span>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="bWFpbHRvOmd1YW5nZW4udGFuZ0BnbWFpbC5jb20=" title="E-Mail &rarr; mailto:guangen.tang@gmail.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</span>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" /></span>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#先决条件"><span class="nav-number">2.</span> <span class="nav-text">先决条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在非安全模式下配置Hadoop"><span class="nav-number">4.</span> <span class="nav-text">在非安全模式下配置Hadoop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop的环境配置"><span class="nav-number">4.1.</span> <span class="nav-text">Hadoop的环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Hadoop"><span class="nav-number">4.2.</span> <span class="nav-text">配置Hadoop</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监控NodeManager的健康状况"><span class="nav-number">5.</span> <span class="nav-text">监控NodeManager的健康状况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Slaves-文件"><span class="nav-number">6.</span> <span class="nav-text">Slaves 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop机架意识"><span class="nav-number">7.</span> <span class="nav-text">Hadoop机架意识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#记录"><span class="nav-number">8.</span> <span class="nav-text">记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作Hadoop集群"><span class="nav-number">9.</span> <span class="nav-text">操作Hadoop集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop启动"><span class="nav-number">9.1.</span> <span class="nav-text">Hadoop启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop关闭"><span class="nav-number">9.2.</span> <span class="nav-text">Hadoop关闭</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web界面"><span class="nav-number">10.</span> <span class="nav-text">Web界面</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">  <span class="exturl" data-url="aHR0cDovL3d3dy5taWl0YmVpYW4uZ292LmNu">浙ICP备18019569号 </span>&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">逍遥</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+    <script type="text/javascript">
+      window.livereOptions = {
+        refer: 'Hadoop集群设置/'
+      };
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "FYLDj00PapcSmcPw07cBM2fi-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "FYLDj00PapcSmcPw07cBM2fi-gzGzoHsz",
+                'X-LC-Key': "UT8Ng3EYweYgf39BSxjUJ5gC",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=6.5.0"></script>
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js"></script>
+    <script type="text/javascript">
+    var options = {
+      pdfOpenParams: {
+        navpanes: 0,
+        toolbar: 0,
+        statusbar: 0,
+        pagemode: "thumbs",
+        view: "FitV"
+      },
+      PDFJS_URL: "/lib/pdf/web/viewer.html",
+      height: "500px"
+    };
+    $("#main a").each(function() {
+      var href = $(this).attr("href");
+      if (!href) return;
+      if (href.endsWith(".pdf") || href.endsWith(".pdf/")) {
+        var id = "pdf" + Math.floor(Math.random() * 10000);
+        $(this).after("<div id='" + id + "'></div>").remove();
+        PDFObject.embed(href, "#" + id, options);
+      }
+    });
+    </script>
+    <style>
+    .pdfobject-container {
+      position: relative;
+      overflow: auto;
+      width: 100%;
+      height: 500px;
+    }
+    </style>
+  
+
+
+</body>
+</html>

@@ -1,6 +1,10 @@
 # hexo robots.txt
-User-agent: * Allow: /
+User-agent: * 
+Allow: /
 Allow: /archives/
+Allow: /categories/
+Allow: /about/
+
 Disallow: /vendors/
 Disallow: /js/
 Disallow: /css/
@@ -8,5 +12,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-sitemap: https://tangguangen.com/sitemap.xml
-sitemap: https://tangguangen.com/baidusitemap.xml
+Sitemap: https://tangguangen.com/sitemap.xml
+Sitemap: https://tangguangen.com/baidusitemap.xml
