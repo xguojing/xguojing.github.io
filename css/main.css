@@ -1771,15 +1771,56 @@ pre .javascript .function {
 .fancybox-close:hover {
   border: none;
 }
-.post-copyright {
-  margin: 2em 0 0;
+.post_copyright {
+  width: 85%;
+  max-width: 45em;
+  margin: 2.8em auto 0;
   padding: 0.5em 1em;
-  border-left: 3px solid #ff1700;
-  background-color: #f9f9f9;
-  list-style: none;
+  border: 1px solid #d3d3d3;
+  font-size: 0.93rem;
+  line-height: 1.6em;
+  word-break: break-all;
+  background: rgba(255,255,255,0.4);
 }
-.post-copyright i.fa {
-  font-size: 15px;
+.post_copyright p {
+  margin: 0;
+}
+.post_copyright span {
+  display: inline-block;
+  width: 5.2em;
+  color: #b5b5b5;
+  font-weight: bold;
+}
+.post_copyright .raw {
+  margin-left: 1em;
+  width: 5em;
+}
+.post_copyright a {
+  color: #808080;
+  border-bottom: 0;
+}
+.post_copyright a:hover {
+  color: #a3d2a3;
+  text-decoration: underline;
+}
+.post_copyright:hover .fa-clipboard {
+  color: #000;
+}
+.post_copyright .post-url:hover {
+  font-weight: normal;
+}
+.post_copyright .copy-path {
+  margin-left: 1em;
+  width: 1em;
+}
+@media (max-width: 767px) {
+  .post_copyright .copy-path {
+    display: none;
+  }
+}
+.post_copyright .copy-path:hover {
+  color: #808080;
+  cursor: pointer;
 }
 .rtl.post-body p,
 .rtl.post-body a,
@@ -1967,7 +2008,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffd4ff;
+  background: #ff87ab;
 }
 .links-of-blogroll {
   font-size: 13px;
