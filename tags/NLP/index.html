@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -90,7 +90,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '6.5.0',
     sidebar: {"position":"left","width":240,"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: false,
@@ -303,6 +303,23 @@
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
 
   </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
+
+  </li>
 
       
       
@@ -373,6 +390,9 @@
             
 
     
+    
+      
+      
     
       
       
@@ -543,7 +563,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -648,51 +668,7 @@
                   
                     
                   
-                  <span class="exturl" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="Weibo &rarr; https://weibo.com/yourname"><i class="fa fa-fw fa-weibo"></i>Weibo</span>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
                   <span class="exturl" data-url="bWFpbHRvOmd1YW5nZW4udGFuZ0BnbWFpbC5jb20=" title="E-Mail &rarr; mailto:guangen.tang@gmail.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</span>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vdS82OWE4ZTJhNWU0MTI=" title="Jianshu &rarr; https://www.jianshu.com/u/69a8e2a5e412"><i class="fa fa-fw fa-grimace"></i>Jianshu</span>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <span class="exturl" data-url="aHR0cHM6Ly9qdWVqaW4uaW0vdXNlci81YmZlOTEwNmU1MWQ0NTY1NGE0N2ViZjE=" title="Juejin &rarr; https://juejin.im/user/5bfe9106e51d45654a47ebf1"><i class="fa fa-fw fa-grin-beam"></i>Juejin</span>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS95b3VybmFtZQ==" title="StackOverflow &rarr; https://stackoverflow.com/yourname"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</span>
                 </span>
               
             </div>
@@ -754,7 +730,7 @@
 
 
 
-  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Pisces</span></div>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span></div>
 
 
 
@@ -1345,75 +1321,6 @@
   
 
   
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
-        
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
-
 
   
   
