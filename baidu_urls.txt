@@ -1,5 +1,1 @@
 https://tangguangen.com/2018/11/28/LeetCode-292-Nim游戏/
-https://tangguangen.com/2018/11/26/转载-原码-反码-补码-详解/
-https://tangguangen.com/2018/11/26/Hadoop兼容性/
-https://tangguangen.com/2018/11/25/文件系统Shell/
-https://tangguangen.com/2018/11/25/Hadoop-FileSystem-Shell/
