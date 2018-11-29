@@ -104,6 +104,12 @@
     <title><![CDATA[实体和关系的联合抽取研究]]></title>
     <url>%2F%E5%AE%9E%E4%BD%93%E5%92%8C%E5%85%B3%E7%B3%BB%E7%9A%84%E8%81%94%E5%90%88%E6%8A%BD%E5%8F%96%E7%A0%94%E7%A9%B6%E7%BB%BC%E8%BF%B0%2F</url>
     <content type="text"><![CDATA[Abstract实体关系联合抽取旨在识别出非结构化文本中的实体, 并同时提取出实体之间隐含的语义关系。它是信息抽取任务中一个非常重要研究方向。本文总结了该领域的主要研究方向和最新进展。 Introduction实体关系联合抽取旨在识别出非结构化文本中的实体, 并同时提取出实体之间隐含的语义关系。如图一所示 与开放信息抽取 (Open IE) (Banko et al., 2007) 不同的是，实体关系联合抽取任务中的关系词是从预定义的关系集合中抽取出来的，它可能不会出现在给定的句子当中。这是知识提取（knowledge extraction）和知识库（knowledge base）自动构建中的一个重要问题。 实体关系抽取任务的传统方法采用流水线方式（pipelined manner），例如：首先提取出实体(Nadeau and Sekine, 2007)，然后对实体间的关系进行分类(Rink, 2010)。这种框架将实体的识别和关系的分类分为两个子任务，使得实体和关系的抽取任务变得简单，每个组件都很灵活。由于每一个子任务都是一个独立的模型，忽略了这两个子任务之间的相关性，实体识别的结果会对关系分类的性能造成影响，产生误差传递(Li and Ji, 2014)。 联合学习方法是使用一个模型同时抽取实体和关系。 Reference[1]张晓斌,陈福才,黄瑞阳.基于CNN和双向LSTM融合的实体关系抽取[J].网络与信息安全学报,2018(09):44-51. [2]Michele Banko, Michael J Cafarella, Stephen Soderland, Matthew Broadhead, and Oren Etzioni. 2007. Open information extraction from the web. In IJCAI. volume 7, pages 2670–2676.]]></content>
+      <categories>
+        <category>NLP</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[云服务器安装远程ipython notebook]]></title>
