@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,6 +25,13 @@
 
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -90,9 +97,9 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Muse',
     version: '6.5.0',
-    sidebar: {"position":"left","width":240,"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","width":240,"display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -122,14 +129,10 @@
 <meta property="og:site_name" content="逍遥&#39;s Blog">
 <meta property="og:description" content="Ipython Notebook非常适合用来做数据分析，在windows下安装anaconda就可以直接使用Ipython Notebook了。但是如果是要在云服务器的Linux环境下安装Ipython Notebook，并且在本地远程访问，就需要自己动手配置了。 环境服务器：阿里云ECS，Ubuntu16.04 64位 Xshell5 1.安装anacondaAnaconda指的是一个开源的Py">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://tangguangen.com/云服务器安装远程ipython-notebook/python测试.PNG">
-<meta property="og:image" content="https://tangguangen.com/云服务器安装远程ipython-notebook/端口转发.PNG">
-<meta property="og:image" content="https://tangguangen.com/云服务器安装远程ipython-notebook/本地远程访问.PNG">
 <meta property="og:updated_time" content="2018-09-30T01:20:53.200Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="云服务器安装远程ipython notebook">
 <meta name="twitter:description" content="Ipython Notebook非常适合用来做数据分析，在windows下安装anaconda就可以直接使用Ipython Notebook了。但是如果是要在云服务器的Linux环境下安装Ipython Notebook，并且在本地远程访问，就需要自己动手配置了。 环境服务器：阿里云ECS，Ubuntu16.04 64位 Xshell5 1.安装anacondaAnaconda指的是一个开源的Py">
-<meta name="twitter:image" content="https://tangguangen.com/云服务器安装远程ipython-notebook/python测试.PNG">
 
 
 
@@ -340,6 +343,9 @@
   
 
   
+    
+
+  
 
   
     <div class="site-search">
@@ -377,23 +383,11 @@
     </header>
 
     
-  
-  
-  
-  
-
-  
-
-    <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3hndW9qaW5n" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
-
 
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
-            
-
           
           <div id="content" class="content">
             
@@ -530,16 +524,16 @@
 <p>最后一部是询问是否将python加入环境变量，选择yes，当然你也可以在安装完后手动添加到bash中。 </p>
 <p>安装完成之后要重启终端，anaconda才能生效。</p>
 <p>输入python进行测试安装是否成功，显示python版本这表示安装正确。</p>
-<img src="/云服务器安装远程ipython-notebook/python测试.PNG">
+
 <h2 id="2-配置ipython-jupyter"><a href="#2-配置ipython-jupyter" class="headerlink" title="2. 配置ipython jupyter"></a>2. 配置ipython jupyter</h2><h3 id="2-1-生成配置文件"><a href="#2-1-生成配置文件" class="headerlink" title="2.1.生成配置文件"></a>2.1.生成配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成配置文件</span></span><br><span class="line">jupyter notebook --generate-config</span><br><span class="line"><span class="comment"># 此时生成配置文件：</span></span><br><span class="line"><span class="comment"># Writing default config to: /home/python/.jupyter/jupyter_notebook_config.py</span></span><br><span class="line"><span class="comment"># 这里 /home/python/... 中的python指的是用户名是python，将其改成自己的用户名就好了，下面的情况也是一样的。</span></span><br><span class="line"><span class="comment"># 创建登录密码</span></span><br><span class="line"><span class="comment"># 打开ipython，生成密钥，这一步也可以不做，如果不需要设置密码的话。</span></span><br><span class="line">$ ipython</span><br><span class="line">from notebook.auth import passwd</span><br><span class="line">passwd()</span><br><span class="line">Enter password:</span><br><span class="line">Verify password:</span><br><span class="line">Out[2]: <span class="string">'sha1:6f6193fcfbd5:614c4ba185334868fc8bbce2e9890b3ef7d1a79b'</span>  </span><br><span class="line"><span class="comment"># 我这里创建的密码是123456，对应的密钥是sha1xxxx的那一串</span></span><br><span class="line"><span class="comment"># 然后退出ipython</span></span><br></pre></td></tr></table></figure>
 <h3 id="2-2-创建自签名的证书"><a href="#2-2-创建自签名的证书" class="headerlink" title="2.2.创建自签名的证书"></a>2.2.创建自签名的证书</h3><p>这一步使用openssl创建一个自签名证书，如果不担心安全问题，不使用ssl速度会快一些。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line"><span class="comment"># 在linux下执行，遇到询问的地方一路回车即可</span></span><br><span class="line">openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mycert.pem -out mycert.pem</span><br><span class="line"></span><br><span class="line"><span class="comment"># 会在当前文件夹下生成 mycert.pem，我将它移到.jupyter/secret文件夹下面，方便管理</span></span><br><span class="line"><span class="comment"># 先创建.secret文件夹</span></span><br><span class="line"><span class="built_in">cd</span> .jupyter</span><br><span class="line">mkdir secret  </span><br><span class="line"><span class="comment"># 移动</span></span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">mv mycert.pem .jupyter/secret/</span><br></pre></td></tr></table></figure>
 <h3 id="2-3-修改配置文件"><a href="#2-3-修改配置文件" class="headerlink" title="2.3.修改配置文件"></a>2.3.修改配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开刚才创建的.jupyter/jupyter_notebook_config.py，先备份源文件，然后再修改</span></span><br><span class="line"><span class="comment"># 备份</span></span><br><span class="line">$ cp .jupyter/jupyter_notebook_config.py .jupyter/jupyter_notebook_config.py_bak</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改如下，可以先删除里面的内容添加，也可以修改，或者直接在头部添加，反正里面的原先的内容都是注释掉的：</span></span><br><span class="line">vi /home/python/.jupyter/jupyter_notebook_config.py</span><br><span class="line"></span><br><span class="line">c = get_config()</span><br><span class="line"><span class="comment"># Kernel config</span></span><br><span class="line">c.IPKernelApp.pylab = <span class="string">'inline'</span>  <span class="comment"># if you want plotting support always</span></span><br><span class="line"></span><br><span class="line">c.NotebookApp.ip = <span class="string">'*'</span>  <span class="comment"># 就是设置所有ip皆可访问，在144行</span></span><br><span class="line">c.NotebookApp.open_browser = False  <span class="comment"># 禁止自动打开浏览器</span></span><br><span class="line"><span class="comment"># 密钥，在194行。该密钥就是2.1步生成的</span></span><br><span class="line">c.NotebookApp.password = <span class="string">'sha1:74d233d59da1:50d7ef60a58456e2016dc427547fb42cdd971cea'</span></span><br><span class="line">c.NotebookApp.port = 6868  <span class="comment"># 访问端口，在197行</span></span><br><span class="line"><span class="comment"># 自签名证书位置，如果不使用ssl，可以不设置</span></span><br><span class="line">c.NotebookNotary.secret_file = <span class="string">'/home/python/.jupyter/secret/mycert.pem'</span></span><br><span class="line">c.NotebookApp.keyfile = <span class="string">'/home/python/.jupyter/.secret/mykey.key'</span></span><br><span class="line"><span class="comment"># 设置目录，存放创建的ipython notebook文件</span></span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">'/home/python/ipython'</span></span><br></pre></td></tr></table></figure>
 <h2 id="3-XShell配置远程访问"><a href="#3-XShell配置远程访问" class="headerlink" title="3.XShell配置远程访问"></a>3.XShell配置远程访问</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动ipython jupyter，不使用ssl</span></span><br><span class="line">jupyter notebook</span><br><span class="line"><span class="comment"># 或者开启ssl</span></span><br><span class="line"><span class="comment"># jupyter notebook --certfile=mycert.pem --keyfile mykey.key</span></span><br><span class="line">jupyter notebook --certfile=/home/zhenyu/.jupyter/secret/mycert.pem</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出，看倒数第二行，显示的是IP地址和端口号，记下来</span></span><br><span class="line">[I 15:56:59.916 NotebookApp] JupyterLab beta preview extension loaded from /home/python/anaconda3/lib/python3.6/site-packages/jupyterlab</span><br><span class="line">[I 15:56:59.916 NotebookApp] JupyterLab application directory is /home/python/anaconda3/share/jupyter/lab</span><br><span class="line">[I 15:56:59.921 NotebookApp] Serving notebooks from <span class="built_in">local</span> directory: /home/python/ipython</span><br><span class="line">[I 15:56:59.921 NotebookApp] 0 active kernels</span><br><span class="line">[I 15:56:59.921 NotebookApp] The Jupyter Notebook is running at:</span><br><span class="line">[I 15:56:59.921 NotebookApp] http://127.0.0.1:6868/</span><br><span class="line">[I 15:56:59.921 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).</span><br></pre></td></tr></table></figure>
 <p>这时候退出XShell连接，再打开XShell，进入会话连接属性，添加一条转义规则，就可以在本地window机器上远程访问jupyter notebook使用python进行数据分析了。</p>
-<img src="/云服务器安装远程ipython-notebook/端口转发.PNG">
+
 <p>打开浏览器，在地址栏输入<span class="exturl" data-url="aHR0cDovL2xvY2FsaG9zdDo1ODU45bCx6IO96L+c56iL6K6/6Zeu5LqR5pyN5Yqh5Zmo5Lit55qENjg2OOerr+WPo+S6huOAgg==" title="http://localhost:5858就能远程访问云服务器中的6868端口了。">http://localhost:5858就能远程访问云服务器中的6868端口了。<i class="fa fa-external-link"></i></span></p>
-<img src="/云服务器安装远程ipython-notebook/本地远程访问.PNG">
+
 <p>linux 下安装anaconda<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA0MTQ1ODkvYXJ0aWNsZS9kZXRhaWxzLzUxMzAzNTAy" title="https://blog.csdn.net/u010414589/article/details/51303502">https://blog.csdn.net/u010414589/article/details/51303502<i class="fa fa-external-link"></i></span></p>
 <p>Linux 远程Ipython Notebook<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N1enl1MTIzNDUvYXJ0aWNsZS9kZXRhaWxzLzUxMDM3OTA1" title="https://blog.csdn.net/suzyu12345/article/details/51037905">https://blog.csdn.net/suzyu12345/article/details/51037905<i class="fa fa-external-link"></i></span></p>
 <p>XShell–SSH端口转发<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0MDM5MzE1L2FydGljbGUvZGV0YWlscy83NzUxMDkyMw==" title="https://blog.csdn.net/qq_34039315/article/details/77510923">https://blog.csdn.net/qq_34039315/article/details/77510923<i class="fa fa-external-link"></i></span></p>
@@ -649,6 +643,8 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -831,7 +827,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装anaconda"><span class="nav-number">1.1.</span> <span class="nav-text">1.安装anaconda</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置ipython-jupyter"><span class="nav-number">2.</span> <span class="nav-text">2. 配置ipython jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-生成配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">2.1.生成配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-创建自签名的证书"><span class="nav-number">2.2.</span> <span class="nav-text">2.2.创建自签名的证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-修改配置文件"><span class="nav-number">2.3.</span> <span class="nav-text">2.3.修改配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-XShell配置远程访问"><span class="nav-number">3.</span> <span class="nav-text">3.XShell配置远程访问</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装anaconda"><span class="nav-text">1.安装anaconda</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置ipython-jupyter"><span class="nav-text">2. 配置ipython jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-生成配置文件"><span class="nav-text">2.1.生成配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-创建自签名的证书"><span class="nav-text">2.2.创建自签名的证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-修改配置文件"><span class="nav-text">2.3.修改配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-XShell配置远程访问"><span class="nav-text">3.XShell配置远程访问</span></a></li></ol></div>
             
 
           </div>
@@ -871,7 +867,7 @@
 
 
 
-  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span></div>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Muse</span></div>
 
 
 
@@ -965,13 +961,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
@@ -1462,6 +1451,9 @@
   
 
   
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.5.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.5.0"></script>
+
 
   
   <script type="text/javascript" src="/js/src/exturl.js?v=6.5.0"></script>
