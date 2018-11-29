@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tangguangen.com/LeetCode-292-Nim%E6%B8%B8%E6%88%8F/</loc>
+    
+    <lastmod>2018-11-29T05:53:20.459Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tangguangen.com/%E5%AE%9E%E4%BD%93%E5%92%8C%E5%85%B3%E7%B3%BB%E7%9A%84%E8%81%94%E5%90%88%E6%8A%BD%E5%8F%96%E7%A0%94%E7%A9%B6%E7%BB%BC%E8%BF%B0/</loc>
     
     <lastmod>2018-11-29T05:50:31.477Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://tangguangen.com/the-state-of-the-art-in-semantic-repesentation/</loc>
     
     <lastmod>2018-11-29T05:49:06.855Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/LeetCode-292-Nim%E6%B8%B8%E6%88%8F/</loc>
-    
-    <lastmod>2018-11-29T05:48:26.822Z</lastmod>
     
   </url>
   
