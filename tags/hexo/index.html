@@ -118,7 +118,7 @@
 <meta name="keywords" content="大数据, Java, NLP, 程序员">
 <meta property="og:type" content="website">
 <meta property="og:title" content="逍遥&#39;s Blog">
-<meta property="og:url" content="https://tangguangen.com/tags/hexo/index.html">
+<meta property="og:url" content="https://tangguangen.com/tags/Hexo/index.html">
 <meta property="og:site_name" content="逍遥&#39;s Blog">
 <meta property="og:description" content="路漫漫其修远兮，吾将上下而求索">
 <meta property="og:locale" content="zh-CN">
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="https://tangguangen.com/tags/hexo/"/>
+  <link rel="canonical" href="https://tangguangen.com/tags/Hexo/"/>
 
 
 
@@ -143,7 +143,7 @@
   };
 </script>
 
-  <title>标签: hexo | 逍遥's Blog</title>
+  <title>标签: Hexo | 逍遥's Blog</title>
   
 
 
@@ -422,7 +422,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h2>hexo<small>标签</small>
+        <h2>Hexo<small>标签</small>
         </h2>
       </div>
 
@@ -434,37 +434,9 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/【转载】hexo框架基于next主题定制/" itemprop="url">
+            <a class="post-title-link" href="/Hexo-website-seo/" itemprop="url">
               
-                <span itemprop="name">【转载】hexo框架基于next主题定制</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-06T08:13:18+08:00"
-              content="2018-09-06" >
-          09-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/hexo常用命令/" itemprop="url">
-              
-                <span itemprop="name">HEXO备忘</span>
+                <span itemprop="name">Hexo 网站优化之SEO</span>
               
             </a>
         
@@ -472,9 +444,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-04T19:46:51+08:00"
-              content="2018-09-04" >
-          09-04
+              datetime="2018-11-29T11:05:10+08:00"
+              content="2018-11-29" >
+          11-29
         </time>
       </div>
 
@@ -1312,6 +1284,36 @@
         navpanes: 0,
         toolbar: 0,
         statusbar: 0,
+        pagemode: "thumbs",
+        view: "FitV"
+      },
+      PDFJS_URL: "/lib/pdf/web/viewer.html",
+      height: "500px"
+    };
+    $("#main a").each(function() {
+      var href = $(this).attr("href");
+      if (!href) return;
+      if (href.endsWith(".pdf") || href.endsWith(".pdf/")) {
+        var id = "pdf" + Math.floor(Math.random() * 10000);
+        $(this).after("<div id='" + id + "'></div>").remove();
+        PDFObject.embed(href, "#" + id, options);
+      }
+    });
+    </script>
+    <style>
+    .pdfobject-container {
+      position: relative;
+      overflow: auto;
+      width: 100%;
+      height: 500px;
+    }
+    </style>
+  
+
+
+</body>
+</html>
+      statusbar: 0,
         pagemode: "thumbs",
         view: "FitV"
       },
