@@ -1,3 +1,5 @@
+https://tangguangen.com/string-stringbuffer-and-stringbuilder-in-java/
+https://tangguangen.com/leetcode-344-reverse-string/
 https://tangguangen.com/secret-to-be-in-top-2-of-kaggle/
 https://tangguangen.com/Hexo-website-seo/
 https://tangguangen.com/LeetCode-292-Nim游戏/

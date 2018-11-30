@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tangguangen.com/leetcode-344-reverse-string/</loc>
+    
+    <lastmod>2018-11-30T07:27:44.494Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/string-stringbuffer-and-stringbuilder-in-java/</loc>
+    
+    <lastmod>2018-11-30T07:16:37.557Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tangguangen.com/secret-to-be-in-top-2-of-kaggle/</loc>
     
     <lastmod>2018-11-30T02:39:12.071Z</lastmod>
