@@ -1,3 +1,7 @@
+https://tangguangen.com/hadoop-introduction/
+https://tangguangen.com/hadoop-big-data-solutions/
+https://tangguangen.com/hadoop-big-data-overview/
+https://tangguangen.com/hadoop-tutorial-home/
 https://tangguangen.com/string-stringbuffer-and-stringbuilder-in-java/
 https://tangguangen.com/leetcode-344-reverse-string/
 https://tangguangen.com/secret-to-be-in-top-2-of-kaggle/
@@ -19,5 +23,3 @@ https://tangguangen.com/1936年9月竺可桢校长在浙大开学典礼上的讲
 https://tangguangen.com/huawei-real-time-recommendation/
 https://tangguangen.com/Natural-Language-Processing-Tasks-and-References/
 https://tangguangen.com/hexo常用命令/
-https://tangguangen.com/the-state-of-the-art-in-semantic-repesentation/
-https://tangguangen.com/hello-world/
