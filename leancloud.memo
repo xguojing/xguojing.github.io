@@ -13,6 +13,7 @@
 {"title":"Hello World","url":"/hello-world/"},
 {"title":"HEXO备忘","url":"/hexo常用命令/"},
 {"title":"华为云图引擎服务实时推荐（Real-time Recommendation）算法","url":"/huawei-real-time-recommendation/"},
+{"title":"Kaggle比赛top2%特征探索之featexp","url":"/secret-to-be-in-top-2-of-kaggle/"},
 {"title":"The State of the Art in Semantic Representation","url":"/the-state-of-the-art-in-semantic-repesentation/"},
 {"title":"【转载】hexo框架基于next主题定制","url":"/【转载】hexo框架基于next主题定制/"},
 {"title":"云服务器安装远程ipython notebook","url":"/云服务器安装远程ipython-notebook/"},
