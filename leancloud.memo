@@ -18,6 +18,7 @@
 {"title":"Hadoop教程：HDFS操作","url":"/hadoop-hdfs-operations/"},
 {"title":"Hadoop教程：HDFS概述","url":"/hadoop-hdfs-overview/"},
 {"title":"Hadoop教程：Hadoop介绍","url":"/hadoop-introduction/"},
+{"title":"Hadoop教程：MapReduce","url":"/hadoop-mapreduce/"},
 {"title":"Hadoop教程","url":"/hadoop-tutorial-home/"},
 {"title":"Hello World","url":"/hello-world/"},
 {"title":"HEXO备忘","url":"/hexo常用命令/"},

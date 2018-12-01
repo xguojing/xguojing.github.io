@@ -1,1 +1,1 @@
-https://tangguangen.com/hadoop-mapreduce/
+https://tangguangen.com/hadoop-streaming/
