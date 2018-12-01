@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tangguangen.com/"/>
-  <updated>2018-12-01T10:07:44.438Z</updated>
+  <updated>2018-12-01T10:24:28.709Z</updated>
   <id>https://tangguangen.com/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hadoop教程：HDFS操作</title>
+    <title>Hadoop教程：命令手册</title>
+    <link href="https://tangguangen.com/hadoop-command-reference/"/>
+    <id>https://tangguangen.com/hadoop-command-reference/</id>
+    <published>2018-12-01T10:11:02.000Z</published>
+    <updated>2018-12-01T10:24:28.709Z</updated>
+    
+    <content type="html"><![CDATA[<p>与这里演示的相比，<strong>“$HADOOP_HOME/bin/hadoop fs”</strong>中有更多的命令，尽管这些基本操作可以帮助您入门。不带附加参数运行./bin/hadoop dfs将列出所有可以与FsShell系统一起运行的命令。此外，如果遇到问题，<strong>$HADOOP_HOME/bin/hadoop fs -help</strong>命令名将显示有关操作的简短使用摘要。</p><p>所有操作的表如下所示。参数使用以下约定:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"&lt;path&gt;"</span> means any file or directory name. </span><br><span class="line"><span class="string">"&lt;path&gt;..."</span> means one or more file or directory names. </span><br><span class="line"><span class="string">"&lt;file&gt;"</span> means any filename. </span><br><span class="line"><span class="string">"&lt;src&gt;"</span> and <span class="string">"&lt;dest&gt;"</span> are path names <span class="keyword">in</span> a directed operation. </span><br><span class="line"><span class="string">"&lt;localSrc&gt;"</span> and <span class="string">"&lt;localDest&gt;"</span> are paths as above, but on the <span class="built_in">local</span> file system.</span><br></pre></td></tr></table></figure><p>所有其他文件和路径名都引用HDFS中的对象。</p><table><thead><tr><th>序号</th><th>命令</th></tr></thead><tbody><tr><td>1.</td><td><strong>ls <path></path></strong> <br>列出路径指定的目录的内容，显示每个条目的名称、权限、所有者、大小和修改日期。</td></tr><tr><td>2.</td><td><strong>lsr <path></path></strong><br>行为类似于-ls，但是递归地显示path的所有子目录中的条目。</td></tr><tr><td>3.</td><td><strong>du <path></path></strong><br>显示与路径匹配的所有文件的磁盘使用情况(以字节为单位);使用完整的HDFS协议前缀报告文件名。</td></tr><tr><td>4.</td><td><strong>dus <path></path></strong><br>与-du类似，但打印路径中所有文件/目录的磁盘使用情况摘要。</td></tr><tr><td>5.</td><td><strong>mv <src><dest></dest></src></strong><br>将src指示的文件或目录移动到HDFS内的dest。</td></tr><tr><td>6.</td><td><strong>cp <src> <dest></dest></src></strong><br>在HDFS中将src标识的文件或目录复制到dest。</td></tr><tr><td>7.</td><td><strong>rm <path></path></strong><br>删除路径标识的文件或空目录。</td></tr><tr><td>8.</td><td><strong>rmr <path></path></strong><br>删除路径标识的文件或目录。递归地删除任何子条目 (i.e., files or subdirectories of path).</td></tr><tr><td>9.</td><td><strong>put <localsrc> <dest></dest></localsrc></strong><br>将由localSrc标识的本地文件系统中的文件或目录复制到DFS中的dest。</td></tr><tr><td>10.</td><td><strong>copyFromLocal <localsrc> <dest><br></dest></localsrc></strong>-put相同</td></tr><tr><td>11.</td><td><strong>moveFromLocal <localsrc> <dest></dest></localsrc></strong><br>将由localSrc标识的本地文件系统中的文件或目录复制到HDFS中的dest，然后成功删除本地副本。</td></tr><tr><td>12.</td><td><strong>get [-crc] <src> <localdest></localdest></src></strong><br>将src标识的HDFS中的文件或目录复制到localDest标识的本地文件系统路径。</td></tr><tr><td>13.</td><td><strong>getmerge <src> <localdest></localdest></src></strong><br>检索与HDFS中的路径src匹配的所有文件，并将它们复制到localDest标识的本地文件系统中合并的单个文件。</td></tr><tr><td>14.</td><td><strong>cat <filen-ame></filen-ame></strong><br>在标准输出上显示文件名的内容。</td></tr><tr><td>15.</td><td><strong>copyToLocal <src> <localdest></localdest></src></strong><br>与 -get相同</td></tr><tr><td>16.</td><td><strong>moveToLocal <src> <localdest></localdest></src></strong><br>类似于-get，但成功时删除HDFS副本。</td></tr><tr><td>17.</td><td><strong>mkdir <path></path></strong><br>在HDFS中创建一个名为path的目录。<br>在路径中创建缺少的任何父目录(e.g., mkdir -p in Linux).</td></tr><tr><td>18.</td><td><strong>setrep [-R][-w] rep <path></path></strong><br>为通过路径到rep标识的文件设置目标复制因子(随着时间的推移，实际复制因子将向目标移动)</td></tr><tr><td>19.</td><td><strong>touchz <path></path></strong><br>在包含当前时间作为时间戳的路径上创建一个文件。如果文件在路径上已经存在，则失败，除非文件的大小已经为0。</td></tr><tr><td>20.</td><td><strong>test -[ezd] <path></path></strong><br>如果路径存在，返回1;长度为零;或者是目录，或者是0。</td></tr><tr><td>21.</td><td><strong>stat [format] <path></path></strong><br>打印关于路径的信息。Format是一个字符串，它接受块大小(%b)、文件名(%n)、块大小(%o)、复制(%r)和修改日期(%y， %y)。</td></tr><tr><td>22.</td><td><strong>tail [-f] <file2name></file2name></strong><br>显示stdout上文件的最后1KB。</td></tr><tr><td>23.</td><td><strong>chmod [-R] mode,mode,… <path></path>…</strong><br>与一个或多个相关联的文件权限对象的更改了路径….使用r模式递归执行更改是3位八进制模式，或{augo}+/-{rwxX}。假设没有指定范围且不应用umask。</td></tr><tr><td>24.</td><td><strong>chown [-R][owner][:[group]] <path></path>…</strong><br>集拥有用户和/或组的文件或目录被路径….如果指定-R，则递归设置所有者。</td></tr><tr><td>25.</td><td>chgrp [-R] group <path></path>…<br>设置拥有小组确认的文件或目录路径….如果指定-R，则递归地设置组。</td></tr><tr><td>26.</td><td><strong>help <cmd-name></cmd-name></strong><br>返回上述命令之一的使用信息。你必须省略cmd中的“-”字符。</td></tr></tbody></table><p><strong>原文链接：</strong><span class="exturl" data-url="aHR0cHM6Ly93d3cudHV0b3JpYWxzcG9pbnQuY29tL2hhZG9vcC9oYWRvb3BfY29tbWFuZF9yZWZlcmVuY2UuaHRt" title="https://www.tutorialspoint.com/hadoop/hadoop_command_reference.htm">https://www.tutorialspoint.com/…<i class="fa fa-external-link"></i></span></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;与这里演示的相比，&lt;strong&gt;“$HADOOP_HOME/bin/hadoop fs”&lt;/strong&gt;中有更多的命令，尽管这些基本操作可以帮助您入门。不带附加参数运行./bin/hadoop dfs将列出所有可以与FsShell系统一起运行的命令。此外，如果遇到问题，
+      
+    
+    </summary>
+    
+      <category term="Hadoop" scheme="https://tangguangen.com/categories/Hadoop/"/>
+    
+      <category term="大数据" scheme="https://tangguangen.com/categories/Hadoop/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="Hadoop" scheme="https://tangguangen.com/tags/Hadoop/"/>
+    
+      <category term="大数据" scheme="https://tangguangen.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop教程：HDFS操作</title>
     <link href="https://tangguangen.com/hadoop-hdfs-operations/"/>
     <id>https://tangguangen.com/hadoop-hdfs-operations/</id>
     <published>2018-12-01T09:58:19.000Z</published>
-    <updated>2018-12-01T10:07:44.438Z</updated>
+    <updated>2018-12-01T10:11:24.390Z</updated>
     
     <content type="html"><![CDATA[<h2 id="启动HDFS"><a href="#启动HDFS" class="headerlink" title="启动HDFS"></a>启动HDFS</h2><p>首先，您必须格式化配置的HDFS文件系统，打开namenode (HDFS服务器)，并执行以下命令。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoop namenode -format</span><br></pre></td></tr></table></figure><p>格式化HDFS之后，启动分布式文件系统。下面的命令将启动namenode以及数据节点作为集群。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ start-dfs.sh</span><br></pre></td></tr></table></figure><h2 id="列出HDFS中的文件"><a href="#列出HDFS中的文件" class="headerlink" title="列出HDFS中的文件"></a>列出HDFS中的文件</h2><p>在服务器中加载信息后，我们可以使用“ls”查找目录中的文件列表、文件状态。下面给出了可以作为参数传递到目录或文件名的ls语法。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="variable">$HADOOP_HOME</span>/bin/hadoop fs -ls &lt;args&gt;</span><br></pre></td></tr></table></figure><h2 id="将数据插入HDFS"><a href="#将数据插入HDFS" class="headerlink" title="将数据插入HDFS"></a>将数据插入HDFS</h2><p>假设我们在本地系统中一个名为file.txt的文件，应该保存在hdfs文件系统中。按照下面给出的步骤在Hadoop文件系统中插入所需的文件。</p><h3 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h3><p>您必须创建一个输入目录。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="variable">$HADOOP_HOME</span>/bin/hadoop fs -mkdir /user/input</span><br></pre></td></tr></table></figure><h3 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h3><p>使用put命令将数据文件从本地系统传输和存储到Hadoop文件系统。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="variable">$HADOOP_HOME</span>/bin/hadoop fs -put /home/file.txt /user/input</span><br></pre></td></tr></table></figure><h3 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h3><p>您可以使用ls命令验证该文件。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="variable">$HADOOP_HOME</span>/bin/hadoop fs -ls /user/input</span><br></pre></td></tr></table></figure><h2 id="从HDFS检索数据"><a href="#从HDFS检索数据" class="headerlink" title="从HDFS检索数据"></a>从HDFS检索数据</h2><p>假设HDFS中有一个名为outfile的文件。下面是一个从Hadoop文件系统检索所需文件的简单演示。</p><h3 id="Step-1-1"><a href="#Step-1-1" class="headerlink" title="Step 1"></a>Step 1</h3><p>首先，使用cat命令查看来自HDFS的数据。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="variable">$HADOOP_HOME</span>/bin/hadoop fs -cat /user/output/outfile</span><br></pre></td></tr></table></figure><h3 id="Step-2-1"><a href="#Step-2-1" class="headerlink" title="Step 2"></a>Step 2</h3><p>使用get命令将文件从HDFS获取到本地文件系统。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="variable">$HADOOP_HOME</span>/bin/hadoop fs -get /user/output/ /home/hadoop_tp/</span><br></pre></td></tr></table></figure><h2 id="关闭HDFS"><a href="#关闭HDFS" class="headerlink" title="关闭HDFS"></a>关闭HDFS</h2><p>可以使用以下命令关闭HDFS</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ stop-dfs.sh</span><br></pre></td></tr></table></figure><p><strong>原文链接：</strong><span class="exturl" data-url="aHR0cHM6Ly93d3cudHV0b3JpYWxzcG9pbnQuY29tL2hhZG9vcC9oYWRvb3BfaGRmc19vcGVyYXRpb25zLmh0bQ==" title="https://www.tutorialspoint.com/hadoop/hadoop_hdfs_operations.htm">https://www.tutorialspoint.com/…<i class="fa fa-external-link"></i></span></p>]]></content>
     
@@ -535,31 +564,6 @@
     
     
       <category term="CS224n" scheme="https://tangguangen.com/tags/CS224n/"/>
-    
-      <category term="NLP" scheme="https://tangguangen.com/tags/NLP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实体和关系的联合抽取研究</title>
-    <link href="https://tangguangen.com/%E5%AE%9E%E4%BD%93%E5%92%8C%E5%85%B3%E7%B3%BB%E7%9A%84%E8%81%94%E5%90%88%E6%8A%BD%E5%8F%96%E7%A0%94%E7%A9%B6%E7%BB%BC%E8%BF%B0/"/>
-    <id>https://tangguangen.com/实体和关系的联合抽取研究综述/</id>
-    <published>2018-11-19T12:54:25.000Z</published>
-    <updated>2018-11-29T05:50:31.477Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>实体关系联合抽取旨在识别出非结构化文本中的实体, 并同时提取出实体之间隐含的语义关系。它是信息抽取任务中一个非常重要研究方向。本文总结了该领域的主要研究方向和最新进展。</p><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>实体关系联合抽取旨在识别出非结构化文本中的实体, 并同时提取出实体之间隐含的语义关系。如图一所示</p><p>与<strong>开放信息抽取 (Open IE)</strong> (<em>Banko et al., 2007</em>) 不同的是，实体关系联合抽取任务中的关系词是从预定义的关系集合中抽取出来的，它可能不会出现在给定的句子当中。这是<strong>知识提取（knowledge extraction）</strong>和<strong>知识库（knowledge base）</strong>自动构建中的一个重要问题。</p><p>实体关系抽取任务的传统方法采用<strong>流水线方式（pipelined manner）</strong>，例如：首先提取出<strong>实体</strong>(<em>Nadeau and Sekine, 2007</em>)，然后对实体间的关系进行<strong>分类</strong>(<em>Rink, 2010</em>)。这种框架将实体的识别和关系的分类分为两个子任务，使得实体和关系的抽取任务变得简单，每个组件都很灵活。由于每一个子任务都是一个独立的模型，忽略了这两个子任务之间的相关性，实体识别的结果会对关系分类的性能造成影响，产生<strong>误差传递</strong>(<em>Li and Ji, 2014</em>)。</p><p><strong>联合学习</strong>方法是使用一个模型同时抽取实体和关系。</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]张晓斌,陈福才,黄瑞阳.基于CNN和双向LSTM融合的实体关系抽取[J].网络与信息安全学报,2018(09):44-51.</p><p>[2]Michele Banko, Michael J Cafarella, Stephen Soderland, Matthew Broadhead, and Oren Etzioni. 2007. Open information extraction from the web. In IJCAI. volume 7, pages 2670–2676.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h2&gt;&lt;p&gt;实体关系联合抽取旨在识别出非结构化文本中的实体, 并同时提取出实体之间隐含的语义关系。它是信
-      
-    
-    </summary>
-    
-      <category term="NLP" scheme="https://tangguangen.com/categories/NLP/"/>
-    
     
       <category term="NLP" scheme="https://tangguangen.com/tags/NLP/"/>
     
