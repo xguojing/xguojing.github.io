@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://tangguangen.com/hadoop-enviornment-setup/</loc>
+    <lastmod>2018-12-01T09:24:51.064Z</lastmod>
+  </url>  <url>
     <loc>https://tangguangen.com/hadoop-tutorial-home/</loc>
-    <lastmod>2018-11-30T14:51:00.020Z</lastmod>
+    <lastmod>2018-12-01T09:20:57.680Z</lastmod>
   </url>  <url>
     <loc>https://tangguangen.com/hadoop-introduction/</loc>
     <lastmod>2018-11-30T14:19:52.898Z</lastmod>
