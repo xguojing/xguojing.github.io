@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tangguangen.com/hadoop-big-data-solutions/</loc>
+    
+    <lastmod>2018-12-01T13:32:15.841Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/hadoop-hdfs-operations/</loc>
+    
+    <lastmod>2018-12-01T13:29:14.706Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/hadoop-command-reference/</loc>
+    
+    <lastmod>2018-12-01T13:27:21.973Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tangguangen.com/hadoop-tutorial-home/</loc>
     
     <lastmod>2018-12-01T13:20:44.502Z</lastmod>
@@ -30,20 +51,6 @@
   </url>
   
   <url>
-    <loc>https://tangguangen.com/hadoop-command-reference/</loc>
-    
-    <lastmod>2018-12-01T10:29:11.807Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/hadoop-hdfs-operations/</loc>
-    
-    <lastmod>2018-12-01T10:11:24.390Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://tangguangen.com/hadoop-hdfs-overview/</loc>
     
     <lastmod>2018-12-01T09:51:28.208Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>https://tangguangen.com/hadoop-introduction/</loc>
     
     <lastmod>2018-11-30T14:19:52.898Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/hadoop-big-data-solutions/</loc>
-    
-    <lastmod>2018-11-30T14:19:32.337Z</lastmod>
     
   </url>
   

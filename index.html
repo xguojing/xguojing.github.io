@@ -1320,11 +1320,8 @@ MapReduce的主要优点是，它很容易在多个计算节点上扩展数据�
 
       
         
-          
-          与这里演示的相比，“$HADOOP_HOME/bin/hadoop fs”中有更多的命令，尽管这些基本操作可以帮助您入门。不带附加参数运行./bin/hadoop dfs将列出所有可以与FsShell系统一起运行的命令。此外，如果遇到问题，$HADOOP_HOME/bin/hadoop fs -help命令名将显示有关操作的简短使用摘要。
-所有操作的表如下所示。参数使用以下约定:
-12345"&lt;path&gt;" means any file or directory name. "&lt;path&gt;..." means one or more file or directory 
-          ...
+          <p>与这里演示的相比，<strong> “$HADOOP_HOME/bin/hadoop fs” </strong> 中有更多的命令，尽管这些基本操作可以帮助您入门。不带附加参数运行 ./bin/hadoop dfs 将列出所有可以与 FsShell 系统一起运行的命令。此外，如果遇到问题，<strong> $HADOOP_HOME/bin/hadoop fs -help </strong>命令名将显示有关操作的简短使用摘要。</p>
+<p>所有操作的表如下所示。参数使用以下约定:</p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1332,7 +1329,7 @@ MapReduce的主要优点是，它很容易在多个计算节点上扩展数据�
                 阅读全文 &raquo;
               </a>
             </div>
-          
+         
           <!--/noindex-->
         
       
@@ -1512,15 +1509,7 @@ MapReduce的主要优点是，它很容易在多个计算节点上扩展数据�
 
       
         
-          
-          启动HDFS首先，您必须格式化配置的HDFS文件系统，打开namenode (HDFS服务器)，并执行以下命令。
-1$ hadoop namenode -format
-格式化HDFS之后，启动分布式文件系统。下面的命令将启动namenode以及数据节点作为集群。
-1$ start-dfs.sh
-列出HDFS中的文件在服务器中加载信息后，我们可以使用“ls”查找目录中的文件列表、文件状态。下面给出了可以作为参数传递到目录或文件名的ls语法。
-1$ $HADOOP_HOME/bin/hadoop fs -ls &lt;args&gt;
-将数据插入HDFS假设我们在本地系统中一个名为file.txt
-          ...
+          <h2 id="启动HDFS"><a href="#启动HDFS" class="headerlink" title="启动HDFS"></a>启动HDFS</h2><p>首先，您必须格式化配置的HDFS文件系统，打开namenode (HDFS服务器)，并执行以下命令。</p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1528,7 +1517,7 @@ MapReduce的主要优点是，它很容易在多个计算节点上扩展数据�
                 阅读全文 &raquo;
               </a>
             </div>
-          
+         
           <!--/noindex-->
         
       
@@ -2296,11 +2285,7 @@ Hadoop分布式文件系统(H
 
       
         
-          
-          传统方法在这种方式下，企业将使用一台计算机来存储和处理数据，处理所需的数据，并将其呈现给用户以供分析之用。在这里，数据将存储在RDBMS，如：Oracle数据库、MS SQL Server或DB2以及可以与数据库交互的复杂软件。
-｛% qnimg traditional_approach.jpg title:traditional_approach alt:traditional_approach.jpg %｝
-局限性这种方法在标准数据库服务器可以容纳的数据量更少或处理数据的处理器的极限的情况下工作得很好。但是当涉及到处理大量数据时，通过传统的数据库服务器来处理这些数据确实是一项非常繁琐的任务
-          ...
+          <h2 id="传统方法"><a href="#传统方法" class="headerlink" title="传统方法"></a>传统方法</h2><p>在这种方式下，企业将使用一台计算机来存储和处理数据，处理所需的数据，并将其呈现给用户以供分析之用。在这里，数据将存储在RDBMS，如：Oracle数据库、MS SQL Server或DB2以及可以与数据库交互的复杂软件。</p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -2308,7 +2293,7 @@ Hadoop分布式文件系统(H
                 阅读全文 &raquo;
               </a>
             </div>
-          
+         
           <!--/noindex-->
         
       
