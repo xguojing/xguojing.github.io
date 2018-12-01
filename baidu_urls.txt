@@ -1,1 +1,1 @@
-https://tangguangen.com/hadoop-enviornment-setup/
+https://tangguangen.com/hadoop-hdfs-overview/

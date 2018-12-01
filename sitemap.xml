@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://tangguangen.com/hadoop-enviornment-setup/</loc>
+    <loc>https://tangguangen.com/hadoop-hdfs-overview/</loc>
     
-    <lastmod>2018-12-01T09:24:51.064Z</lastmod>
+    <lastmod>2018-12-01T09:51:28.208Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://tangguangen.com/hadoop-tutorial-home/</loc>
     
-    <lastmod>2018-12-01T09:20:57.680Z</lastmod>
+    <lastmod>2018-12-01T09:37:12.026Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/hadoop-enviornment-setup/</loc>
+    
+    <lastmod>2018-12-01T09:29:10.735Z</lastmod>
     
   </url>
   
