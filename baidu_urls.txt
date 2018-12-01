@@ -1,1 +1,1 @@
-https://tangguangen.com/hadoop-hdfs-overview/
+https://tangguangen.com/hadoop-hdfs-operations/
