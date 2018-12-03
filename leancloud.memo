@@ -25,6 +25,7 @@
 {"title":"Hello World","url":"/hello-world/"},
 {"title":"HEXO备忘","url":"/hexo常用命令/"},
 {"title":"华为云图引擎服务实时推荐（Real-time Recommendation）算法","url":"/huawei-real-time-recommendation/"},
+{"title":"Kaggle机器学习入门教程一","url":"/kaggle-learn-machine-learning-introduction/"},
 {"title":"LeetCode 344.反转字符串","url":"/leetcode-344-reverse-string/"},
 {"title":"Kaggle比赛top2%特征探索之featexp","url":"/secret-to-be-in-top-2-of-kaggle/"},
 {"title":"Java中的String、StringBuffer、StringBuilder有什么区别？","url":"/string-stringbuffer-and-stringbuilder-in-java/"},
