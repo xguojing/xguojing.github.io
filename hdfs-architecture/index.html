@@ -121,20 +121,22 @@
 
 
 
-  <meta name="description" content="Hadoop文件系统采用分布式文件系统设计开发。它在普通硬件上运行。与其他分布式系统不同，HDFS具有很高的容错性，并且使用低成本的硬件进行设计。 HDFS存储大量数据并提供更容易的访问。为了存储如此巨大的数据，文件被存储在多台机器上。这些文件以冗余的方式存储，以便在发生故障时将系统从可能的数据损失中拯救出来。HDFS还使应用程序可用于并行处理。 HDFS的特点 适用于分布式存储和处理。 Hado">
-<meta name="keywords" content="hadoop, big data">
+  <meta name="description" content="Hadoop分布式文件系统（HDFS）是一种分布式文件系统。它与现有的分布式文件系统有许多相似之处。但是，与其他分布式文件系统的差异是值得我们注意的：  HDFS具有高度容错能力，旨在部署在低成本硬件上。(高容错) HDFS提供对数据的高吞吐量访问，适用于具有海量数据集的应用程序。（高吞吐量） HDFS放宽了一些POSIX要求，以实现对文件系统数据的流式访问。（流式访问）  HDFS最初是作为Ap">
+<meta name="keywords" content="HDFS,Hadoop,Big Data">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hadoop教程：HDFS概述">
-<meta property="og:url" content="https://tangguangen.com/hadoop-hdfs-overview/index.html">
+<meta property="og:title" content="深入理解Hadoop之HDFS架构">
+<meta property="og:url" content="https://tangguangen.com/hdfs-architecture/index.html">
 <meta property="og:site_name" content="逍遥&#39;s Blog">
-<meta property="og:description" content="Hadoop文件系统采用分布式文件系统设计开发。它在普通硬件上运行。与其他分布式系统不同，HDFS具有很高的容错性，并且使用低成本的硬件进行设计。 HDFS存储大量数据并提供更容易的访问。为了存储如此巨大的数据，文件被存储在多台机器上。这些文件以冗余的方式存储，以便在发生故障时将系统从可能的数据损失中拯救出来。HDFS还使应用程序可用于并行处理。 HDFS的特点 适用于分布式存储和处理。 Hado">
+<meta property="og:description" content="Hadoop分布式文件系统（HDFS）是一种分布式文件系统。它与现有的分布式文件系统有许多相似之处。但是，与其他分布式文件系统的差异是值得我们注意的：  HDFS具有高度容错能力，旨在部署在低成本硬件上。(高容错) HDFS提供对数据的高吞吐量访问，适用于具有海量数据集的应用程序。（高吞吐量） HDFS放宽了一些POSIX要求，以实现对文件系统数据的流式访问。（流式访问）  HDFS最初是作为Ap">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://cdn.tangguangen.com/images/hdfs_architecture.jpg">
-<meta property="og:updated_time" content="2018-12-04T06:04:00.752Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15167924-f4c1ebcbc6191438.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15167924-50c8113a159e8a74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15167924-3842129a5a9d163b.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-12-05T03:22:37.880Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hadoop教程：HDFS概述">
-<meta name="twitter:description" content="Hadoop文件系统采用分布式文件系统设计开发。它在普通硬件上运行。与其他分布式系统不同，HDFS具有很高的容错性，并且使用低成本的硬件进行设计。 HDFS存储大量数据并提供更容易的访问。为了存储如此巨大的数据，文件被存储在多台机器上。这些文件以冗余的方式存储，以便在发生故障时将系统从可能的数据损失中拯救出来。HDFS还使应用程序可用于并行处理。 HDFS的特点 适用于分布式存储和处理。 Hado">
-<meta name="twitter:image" content="http://cdn.tangguangen.com/images/hdfs_architecture.jpg">
+<meta name="twitter:title" content="深入理解Hadoop之HDFS架构">
+<meta name="twitter:description" content="Hadoop分布式文件系统（HDFS）是一种分布式文件系统。它与现有的分布式文件系统有许多相似之处。但是，与其他分布式文件系统的差异是值得我们注意的：  HDFS具有高度容错能力，旨在部署在低成本硬件上。(高容错) HDFS提供对数据的高吞吐量访问，适用于具有海量数据集的应用程序。（高吞吐量） HDFS放宽了一些POSIX要求，以实现对文件系统数据的流式访问。（流式访问）  HDFS最初是作为Ap">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15167924-f4c1ebcbc6191438.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -143,7 +145,7 @@
 
 
 
-  <link rel="canonical" href="https://tangguangen.com/hadoop-hdfs-overview/"/>
+  <link rel="canonical" href="https://tangguangen.com/hdfs-architecture/"/>
 
 
 
@@ -153,7 +155,7 @@
   };
 </script>
 
-  <title>Hadoop教程：HDFS概述 | 逍遥's Blog</title>
+  <title>深入理解Hadoop之HDFS架构 | 逍遥's Blog</title>
   
 
 
@@ -410,7 +412,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tangguangen.com/hadoop-hdfs-overview/">
+    <link itemprop="mainEntityOfPage" href="https://tangguangen.com/hdfs-architecture/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="逍遥">
@@ -427,7 +429,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Hadoop教程：HDFS概述
+          <h2 class="post-title" itemprop="name headline">深入理解Hadoop之HDFS架构
               
             
           </h2>
@@ -454,7 +456,7 @@
                 
               
 
-              <time title="创建时间：2018-12-01 17:35:37" itemprop="dateCreated datePublished" datetime="2018-12-01T17:35:37+08:00">2018-12-01</time>
+              <time title="创建时间：2018-12-04 21:43:48" itemprop="dateCreated datePublished" datetime="2018-12-04T21:43:48+08:00">2018-12-04</time>
             
 
             
@@ -479,7 +481,7 @@
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/大数据/Hadoop/" itemprop="url" rel="index"><span itemprop="name">Hadoop</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/大数据/HDFS/" itemprop="url" rel="index"><span itemprop="name">HDFS</span></a></span>
 
                 
                 
@@ -493,7 +495,7 @@
 
           
           
-             <span id="/hadoop-hdfs-overview/" class="leancloud_visitors" data-flag-title="Hadoop教程：HDFS概述">
+             <span id="/hdfs-architecture/" class="leancloud_visitors" data-flag-title="深入理解Hadoop之HDFS架构">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -524,36 +526,90 @@
       
 
       
-        <p>Hadoop文件系统采用分布式文件系统设计开发。它在普通硬件上运行。与其他分布式系统不同，HDFS具有很高的容错性，并且使用低成本的硬件进行设计。</p>
-<p>HDFS存储大量数据并提供更容易的访问。为了存储如此巨大的数据，文件被存储在多台机器上。这些文件以冗余的方式存储，以便在发生故障时将系统从可能的数据损失中拯救出来。HDFS还使应用程序可用于并行处理。</p>
-<h2 id="HDFS的特点"><a href="#HDFS的特点" class="headerlink" title="HDFS的特点"></a>HDFS的特点</h2><ul>
-<li>适用于分布式存储和处理。</li>
-<li>Hadoop提供了一个与HDFS交互的命令接口。</li>
-<li>namenode和datanode的内置服务器可以方便地检查集群的状态。</li>
-<li>对文件系统数据的流访问。</li>
-<li>HDFS提供文件权限和身份验证。</li>
-</ul>
-<h2 id="HDFS架构"><a href="#HDFS架构" class="headerlink" title="HDFS架构"></a>HDFS架构</h2><p>下面给出Hadoop文件系统的架构。</p>
-<img title="hdfs_architecture" alt="hdfs_architecture" src="http://cdn.tangguangen.com/images/hdfs_architecture.jpg">
-<p>HDFS遵循主从体系结构，它具有以下元素。</p>
-<h3 id="Namenode"><a href="#Namenode" class="headerlink" title="Namenode"></a>Namenode</h3><p>namenode是包含GNU/Linux操作系统和namenode软件的商品硬件。它是一种可以在普通硬件上运行的软件。具有namenode的系统充当主服务器，它执行以下任务:</p>
+        <p>Hadoop分布式文件系统（HDFS）是一种分布式文件系统。它与现有的分布式文件系统有许多相似之处。但是，与其他分布式文件系统的差异是值得我们注意的：</p>
+<ol>
+<li>HDFS具有<strong>高度容错</strong>能力，旨在部署在<strong>低成本</strong>硬件上。(高容错)</li>
+<li>HDFS提供对数据的<strong>高吞吐量</strong>访问，适用于具有<strong>海量数据集</strong>的应用程序。（高吞吐量）</li>
+<li>HDFS放宽了一些POSIX要求，以实现对文件系统数据的<strong>流式访问</strong>。（流式访问）</li>
+</ol>
+<p>HDFS最初是作为Apache Nutch网络搜索引擎项目的基础设施而构建的。HDFS是Apache Hadoop Core项目的一部分。项目URL是<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnLw==" title="http://hadoop.apache.org/">http://hadoop.apache.org/<i class="fa fa-external-link"></i></span></p>
+<a id="more"></a>
+<h2 id="目标和假设"><a href="#目标和假设" class="headerlink" title="目标和假设"></a>目标和假设</h2><p><strong>硬件故障检测</strong>：<strong>硬件故障是常态而非例外。</strong>Hadoop通常部署在低成本的硬件上，并且通常包含成百上千的服务器，每个服务器都存储文件系统数据的一部分。由于存在大量的组件，并且每个组件都具有不可忽略（non-trivial ）的故障概率，这意味着HDFS的某些组件始终都不起作用。因此，<strong>故障检测</strong>并<strong>快速恢复</strong>是HDFS的<strong>核心</strong>架构目标。</p>
+<p><strong>流式访问</strong>：HDFS更适合<strong>批处理</strong>而不是交互式使用，更加注重数据访问的<strong>高吞吐量</strong>而不是数据访问的低延迟。在HDFS上运行的应用程序需要对其数据集进行<strong>流式访问</strong>。</p>
+<p><strong>海量数据集</strong>：运行在HDFS上的应用程序具有大型数据集，HDFS中的一个典型文件的大小是g到tb，因此，HDFS被调优为支持大文件。它应该提供高聚合数据带宽，并可扩展到单个集群中的数百个节点。它应该在一个实例中支持数千万个文件。</p>
+<p><strong>一致性模型</strong>：HDFS应用程序需要一个一次写入多次读取的文件访问模型。文件一旦创建、写入和关闭，除了追加和截断操作外，无需要更改。支持将内容追加到文件末尾，但无法在任意点更新。该假设简化了数据一致性问题并实现了高吞吐量数据访问。MapReduce应用程序或Web爬虫应用程序完全适合此模型。</p>
+<p><strong>移动计算比移动数据便宜</strong>：应用程序请求的计算如果在其操作的数据附近执行，效率会高得多。当数据集的大小很大时尤其如此。这可以最大限度地减少网络拥塞并提高系统的整体吞吐量。<strong>因此更好的做法是将计算迁移到更靠近数据所在的位置</strong>，而不是将数据移动到运行应用程序的位置。HDFS为应用程序提供了一些接口，使它们自己更接近数据所在的位置。</p>
+<p><strong>跨平台和可移植</strong>：Hadoop使用Java语言开发，使得Hadoop具有良好的跨平台性。</p>
+<h2 id="NameNode和DataNodes"><a href="#NameNode和DataNodes" class="headerlink" title="NameNode和DataNodes"></a>NameNode和DataNodes</h2><p>HDFS具有<strong>主/从</strong>（ <strong>master/slave</strong>）架构。HDFS集群由一个<strong>NameNode</strong>和许多<strong>DataNode</strong>组成，NameNode是一个主服务器（master），管理文件系统名称空间并管理客端对数据的访问（<strong>NameNode在Hadoop集群中充当<u>管家</u>的角色</strong>）。此外集群中每个节点通常是一个DataNode，DataNode管理它们的节点上存储的数据。</p>
+<p>HDFS公开文件系统名称空间，并允许用户数据存储在文件中。在内部，文件被分成一个或多个块（block），这些块存储在DataNode中。NameNode执行文件系统名称空间的相关操作，如打开、关闭和重命名文件和目录。它还确定了块到DataNode的映射（块存储到哪个DataNode中）。数据节点负责服务来自文件系统客户端的读写请求。数据节点还根据NameNode的指令执行块创建、删除和复制。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15167924-f4c1ebcbc6191438.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="HDFS架构"></p>
+<p>集群中单一NameNode的结构大大简化了系统的架构。NameNode是所有HDFS元数据的仲裁者和管理者，这样，用户数据永远不会流过NameNode。</p>
+<h2 id="文件系统名称空间-namespace"><a href="#文件系统名称空间-namespace" class="headerlink" title="文件系统名称空间(namespace)"></a>文件系统名称空间(namespace)</h2><p>HDFS支持传统的<strong>层次型</strong>文件组织结构。用户或者应用程序可以创建目录，然后将文件保存在这些目录里。文件系统名称空间的层次结构和大多数现有的文件系统类似：用户可以创建、删除、移动或重命名文件。当前，HDFS不支持用户磁盘配额和访问权限控制，也不支持硬链接和软链接。但是HDFS架构并不妨碍实现这些特性。</p>
+<p>NameNode负责维护文件系统的名称空间，任何对文件系统名称空间或属性的修改都将被NameNode记录下来。应用程序可以设置HDFS保存的文件的副本数目。文件副本的数目称为文件的副本系数，这个信息也是由NameNode保存的。</p>
+<p>如果想深入了解HDFS文件系统名称空间可以查看这篇博文：<span class="exturl" data-url="aHR0cDovL2xlb3RzZTkwLmNvbS8yMDE1LzEwLzAxL0hERlMlRTYlOTYlODclRTQlQkIlQjYlRTclQjMlQkIlRTclQkIlOUYlRTUlOTElQkQlRTUlOTAlOEQlRTclQTklQkElRTklOTclQjQv" title="http://leotse90.com/2015/10/01/HDFS%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/">http://leotse90.com/…<i class="fa fa-external-link"></i></span></p>
+<h2 id="数据复制"><a href="#数据复制" class="headerlink" title="数据复制"></a>数据复制</h2><p>HDFS被设计成能够在一个大集群中跨机器可靠地存储超大文件。它将每个文件存储成一系列的数据块，除了最后一个，所有的数据块都是同样大小的。为了容错，文件的所有数据块都会有副本。每个文件的数据块大小和副本系数都是可配置的。应用程序可以指定某个文件的副本数目。副本系数可以在文件创建的时候指定，也可以在之后改变。HDFS中的文件都是一次性写入的，并且严格要求在任何时候只能有一个写入者。</p>
+<p><strong>NameNode</strong>全权管理数据块的复制，它周期性地从集群中的每个<strong>DataNode</strong>接收<strong>心跳</strong>信号(Heartbeat )和<strong>块状态报告</strong>(Blockreport)。</p>
 <ul>
-<li>管理文件系统名称空间。</li>
-<li>管理客户对文件的访问。</li>
-<li>它还执行文件系统操作，如重命名、关闭和打开文件和目录。</li>
+<li>接收到心跳信号意味着该DataNode节点工作正常。</li>
+<li>块状态报告包含了一个该Datanode上所有数据块的列表。</li>
 </ul>
-<h3 id="Datanode"><a href="#Datanode" class="headerlink" title="Datanode"></a>Datanode</h3><p>datanode是一种具有GNU/Linux操作系统和datanode软件的普通硬件。对于集群中的每个节点(商品硬件/系统)，都将有一个datanode。这些节点管理其系统的数据存储。</p>
-<ul>
-<li>数据节点根据客户端请求在文件系统上执行读写操作。</li>
-<li>它们还根据namenode的指令执行块创建、删除和复制等操作。</li>
-</ul>
-<h3 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h3><p>用户数据一般存储在HDFS文件中。文件系统中的文件将被分成一个或多个段和/或存储在单个数据节点中。这些文件段称为块。换句话说，HDFS可以读写的最小数据量称为块。默认块大小为64MB，但是可以根据需要在HDFS配置中进行更改而增加。</p>
-<h2 id="HDFS的目标"><a href="#HDFS的目标" class="headerlink" title="HDFS的目标"></a>HDFS的目标</h2><ul>
-<li><strong>故障检测与恢复:</strong> 由于HDFS包含大量的商用硬件，部件故障频繁。因此，HDFS应该具有快速、自动的故障检测和恢复机制。</li>
-<li><strong>海量的数据集:</strong> HDFS每个集群应该有数百个节点，以管理拥有庞大数据集的应用程序。</li>
-<li><strong>硬件在数据上</strong> 当计算发生在数据附近时，可以有效地完成请求的任务。特别是在涉及到大量数据集的情况下，它会减少网络流量并增加吞吐量。</li>
-</ul>
-<p><strong>原文链接：</strong><span class="exturl" data-url="aHR0cHM6Ly93d3cudHV0b3JpYWxzcG9pbnQuY29tL2hhZG9vcC9oYWRvb3BfaGRmc19vdmVydmlldy5odG0=" title="https://www.tutorialspoint.com/hadoop/hadoop_hdfs_overview.htm">https://www.tutorialspoint.com/…<i class="fa fa-external-link"></i></span></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15167924-50c8113a159e8a74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据块的复制"></p>
+<h3 id="副本存放-最最开始的一步"><a href="#副本存放-最最开始的一步" class="headerlink" title="副本存放: 最最开始的一步"></a>副本存放: 最最开始的一步</h3><p>副本的存放是HDFS<strong>可靠性</strong>和<strong>性能</strong>的关键。<strong>优化的副本存放策略是HDFS区分于其他大部分分布式文件系统的重要特性。</strong>这种特性需要做大量的调优，并需要经验的积累。HDFS采用一种称为<strong>机架感知</strong>(rack-aware)的策略来改进数据的可靠性、可用性和网络带宽的利用率。目前实现的副本存放策略只是在这个方向上的第一步。实现这个策略的短期目标是验证它在生产环境下的有效性，观察它的行为，为实现更先进的策略打下测试和研究的基础。</p>
+<p>大型HDFS实例一般运行在跨越多个机架的计算机组成的集群上，不同机架上的两台机器之间的通讯需要经过交换机。在大多数情况下，<strong>同一个机架内的两台机器间的带宽会比不同机架的两台机器间的带宽大。</strong></p>
+<p>通过一个<span class="exturl" data-url="aHR0cHM6Ly9oYWRvb3AuYXBhY2hlLm9yZy9kb2NzL3IxLjAuNC9jbi9jbHVzdGVyX3NldHVwLmh0bWwjSGFkb29wJUU3JTlBJTg0JUU2JTlDJUJBJUU2JTlFJUI2JUU2JTg0JTlGJUU3JTlGJUE1" title="https://hadoop.apache.org/docs/r1.0.4/cn/cluster_setup.html#Hadoop%E7%9A%84%E6%9C%BA%E6%9E%B6%E6%84%9F%E7%9F%A5">机架感知<i class="fa fa-external-link"></i></span>的过程，NameNode可以确定每个DataNode所属的机架id。一个简单但没有优化的策略就是将副本存放在不同的机架上。这样可以有效防止当整个机架失效时数据的丢失，并且允许读数据的时候充分利用多个机架的带宽。这种策略设置可以将副本均匀分布在集群中，有利于当组件失效情况下的负载均衡。但是，因为这种策略的一个写操作需要传输数据块到多个机架，这增加了写的代价。</p>
+<p>在大多数情况下，副本系数是3，HDFS的存放策略是将一个副本存放在本地机架的节点上，一个副本放在同一机架的另一个节点上，最后一个副本放在不同机架的节点上。这种策略减少了机架间的数据传输，这就提高了写操作的效率。机架的错误远远比节点的错误少，所以这个策略不会影响到数据的可靠性和可用性。于此同时，因为数据块只放在两个（不是三个）不同的机架上，所以此策略减少了读取数据时需要的网络传输总带宽。在这种策略下，副本并不是均匀分布在不同的机架上。三分之一的副本在一个节点上，三分之二的副本在一个机架上，其他副本均匀分布在剩下的机架中，这一策略在不损害数据可靠性和读取性能的情况下改进了写的性能。</p>
+<h3 id="副本选择"><a href="#副本选择" class="headerlink" title="副本选择"></a>副本选择</h3><p>为了降低整体的带宽消耗和读取延时，HDFS会尽量让读取程序读取离它最近的副本。如果在读取程序的同一个机架上有一个副本，那么就读取该副本。如果一个HDFS集群跨越多个数据中心，那么客户端也将首先读本地数据中心的副本。(<strong>就近原则</strong>)</p>
+<h3 id="安全模式"><a href="#安全模式" class="headerlink" title="安全模式"></a>安全模式</h3><p>NameNode启动后会进入一个称为安全模式的特殊状态。处于安全模式的NameNode是不会进行数据块的复制的。NameNode从所有的 DataNode接收心跳信号和块状态报告。块状态报告包括了某个DataNode所有的数据块列表。每个数据块都有一个指定的最小副本数。当NameNode检测确认某个数据块的副本数目达到这个最小值，那么该数据块就会被认为是<strong>副本安全</strong>(safely replicated)的；在一定百分比（这个参数可配置）的数据块被NameNode检测确认是安全之后（加上一个额外的30秒等待时间），NameNode将退出安全模式状态。接下来它会确定还有哪些数据块的副本没有达到指定数目，并将这些数据块复制到其他DataNode上。</p>
+<h2 id="文件系统元数据的持久化"><a href="#文件系统元数据的持久化" class="headerlink" title="文件系统元数据的持久化"></a>文件系统元数据的持久化</h2><p>NameNode上保存着HDFS的DataNode空间。对于任何对文件系统元数据产生修改的操作，NameNode都会使用一种称为EditLog的事务日志记录下来。例如，在HDFS中创建一个文件，NameNode就会在Editlog中插入一条记录来表示；同样地，修改文件的副本系数也将往Editlog插入一条记录。NameNode在本地操作系统的文件系统中存储这个Editlog。整个文件系统的DataNode空间，包括数据块到文件的映射、文件的属性等，都存储在一个称为FsImage的文件中，这个文件也是放在NameNode所在的本地文件系统上。</p>
+<p>NameNode在内存中保存着整个文件系统的DataNode空间和文件数据块映射(Blockmap)的映像。这个关键的元数据结构设计得很紧凑，因而一个有4G内存的NameNode足够支撑大量的文件和目录。当NameNode启动时，它从硬盘中读取Editlog和FsImage，将所有Editlog中的事务作用在内存中的FsImage上，并将这个新版本的FsImage从内存中保存到本地磁盘上，然后删除旧的Editlog，因为这个旧的Editlog的事务都已经作用在FsImage上了。这个过程称为一个检查点(checkpoint)。在当前实现中，检查点只发生在NameNode启动时，在不久的将来将实现支持周期性的检查点。</p>
+<p>Datanode将HDFS数据以文件的形式存储在本地的文件系统中，它并不知道有关HDFS文件的信息。它把每个HDFS数据块存储在本地文件系统的一个单独的文件中。Datanode并不在同一个目录创建所有的文件，实际上，它用试探的方法来确定每个目录的最佳文件数目，并且在适当的时候创建子目录。在同一个目录中创建所有的本地文件并不是最优的选择，这是因为本地文件系统可能无法高效地在单个目录中支持大量的文件。当一个Datanode启动时，它会扫描本地文件系统，产生一个这些本地文件对应的所有HDFS数据块的列表，然后作为报告发送到NameNode，这个报告就是块状态报告。</p>
+<h2 id="通讯协议"><a href="#通讯协议" class="headerlink" title="通讯协议"></a>通讯协议</h2><p>所有的HDFS通讯协议都是建立在TCP/IP协议之上。客户端通过一个可配置的TCP端口连接到NameNode，通过ClientProtocol协议与NameNode交互。而Datanode使用DatanodeProtocol协议与NameNode交互。一个远程过程调用(RPC)模型被抽象出来封装ClientProtocol和Datanodeprotocol协议。在设计上，NameNode不会主动发起RPC，而是响应来自客户端或 Datanode 的RPC请求。</p>
+<h2 id="健壮性"><a href="#健壮性" class="headerlink" title="健壮性"></a>健壮性</h2><p>HDFS的主要目标就是即使在出错的情况下也要保证数据存储的可靠性。常见的三种出错情况是：NameNode出错, Datanode出错和网络割裂(network partitions)。</p>
+<h3 id="磁盘数据错误，心跳检测和重新复制"><a href="#磁盘数据错误，心跳检测和重新复制" class="headerlink" title="磁盘数据错误，心跳检测和重新复制"></a>磁盘数据错误，心跳检测和重新复制</h3><p>每个Datanode节点周期性地向NameNode发送心跳信号。网络割裂可能导致一部分Datanode跟NameNode失去联系。NameNode通过心跳信号的缺失来检测这一情况，并将这些近期不再发送心跳信号Datanode标记为宕机，不会再将新的IO请求发给它们。任何存储在宕机Datanode上的数据将不再有效。Datanode的宕机可能会引起一些数据块的副本系数低于指定值，NameNode不断地检测这些需要复制的数据块，一旦发现就启动复制操作。在下列情况下，可能需要重新复制：某个Datanode节点失效，某个副本遭到损坏，Datanode上的硬盘错误，或者文件的副本系数增大。</p>
+<h3 id="集群均衡"><a href="#集群均衡" class="headerlink" title="集群均衡"></a>集群均衡</h3><p>HDFS的架构支持数据均衡策略。如果某个Datanode节点上的空闲空间低于特定的临界点，按照均衡策略系统就会自动地将数据从这个Datanode移动到其他空闲的Datanode。当对某个文件的请求突然增加，那么也可能启动一个计划创建该文件新的副本，并且同时重新平衡集群中的其他数据。这些均衡策略目前还没有实现。</p>
+<h3 id="数据完整性"><a href="#数据完整性" class="headerlink" title="数据完整性"></a>数据完整性</h3><p>从某个Datanode获取的数据块有可能是损坏的，损坏可能是由Datanode的存储设备错误、网络错误或者软件bug造成的。HDFS客户端软件实现了对HDFS文件内容的校验和(checksum)检查。当客户端创建一个新的HDFS文件，会计算这个文件每个数据块的校验和，并将校验和作为一个单独的隐藏文件保存在同一个HDFSDataNode空间下。当客户端获取文件内容后，它会检验从Datanode获取的数据跟相应的校验和文件中的校验和是否匹配，如果不匹配，客户端可以选择从其他Datanode获取该数据块的副本。</p>
+<h3 id="元数据磁盘错误"><a href="#元数据磁盘错误" class="headerlink" title="元数据磁盘错误"></a>元数据磁盘错误</h3><p>FsImage和Editlog是HDFS的核心数据结构。如果这些文件损坏了，整个HDFS实例都将失效。因而，NameNode可以配置成支持维护多个FsImage和Editlog的副本。任何对FsImage或者Editlog的修改，都将同步到它们的副本上。这种多副本的同步操作可能会降低NameNode每秒处理的DataNode空间事务数量。然而这个代价是可以接受的，因为即使HDFS的应用是数据密集的，它们也非元数据密集的。当NameNode重启的时候，它会选取最近的完整的FsImage和Editlog来使用。</p>
+<p>增加故障恢复能力的另一个选择是使用多个NameNode <span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2hhZG9vcC1wcm9qZWN0LWRpc3QvaGFkb29wLWhkZnMvSERGU0hpZ2hBdmFpbGFiaWxpdHlXaXRoTkZTLmh0bWw=" title="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HDFSHighAvailabilityWithNFS.html">在NFS上<i class="fa fa-external-link"></i></span>使用<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2hhZG9vcC1wcm9qZWN0LWRpc3QvaGFkb29wLWhkZnMvSERGU0hpZ2hBdmFpbGFiaWxpdHlXaXRoTkZTLmh0bWw=" title="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HDFSHighAvailabilityWithNFS.html">共享存储<i class="fa fa-external-link"></i></span>或使用<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2hhZG9vcC1wcm9qZWN0LWRpc3QvaGFkb29wLWhkZnMvSERGU0hpZ2hBdmFpbGFiaWxpdHlXaXRoUUpNLmh0bWw=" title="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HDFSHighAvailabilityWithQJM.html">分布式编辑日志<i class="fa fa-external-link"></i></span>（称为Journal）来启用高可用性。后者是推荐的方法。</p>
+<h3 id="快照"><a href="#快照" class="headerlink" title="快照"></a>快照</h3><p><span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2hhZG9vcC1wcm9qZWN0LWRpc3QvaGFkb29wLWhkZnMvSGRmc1NuYXBzaG90cy5odG1s" title="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsSnapshots.html">快照<i class="fa fa-external-link"></i></span>支持在特定时刻存储数据副本。快照功能的一种用途可以是将损坏的HDFS实例回滚到先前已知的良好时间点。</p>
+<h2 id="数据组织"><a href="#数据组织" class="headerlink" title="数据组织"></a>数据组织</h2><h3 id="数据块"><a href="#数据块" class="headerlink" title="数据块"></a>数据块</h3><p>HDFS被设计成支持大文件，适用HDFS的是那些需要处理大规模的数据集的应用。这些应用都是只写入数据一次，但却读取一次或多次，并且读取速度应能满足流式读取的需要。HDFS支持文件的“一次写入多次读取”语义。一个典型的数据块大小是128MB。因而，HDFS中的文件总是按照128M被切分成不同的块，每个块尽可能地存储于不同的Datanode中。</p>
+<h3 id="流水线复制"><a href="#流水线复制" class="headerlink" title="流水线复制"></a>流水线复制</h3><p>当客户端向HDFS文件写入数据的时候，一开始是写到本地临时文件中。假设该文件的副本系数设置为3，当本地临时文件累积到一个数据块的大小时，客户端会从NameNode获取一个Datanode列表用于存放副本。然后客户端开始向第一个Datanode传输数据，第一个Datanode一小部分一小部分(4 KB)地接收数据，将每一部分写入本地仓库，并同时传输该部分到列表中第二个Datanode节点。第二个Datanode也是这样，一小部分一小部分地接收数据，写入本地仓库，并同时传给第三个Datanode。最后，第三个Datanode接收数据并存储在本地。因此，Datanode能流水线式地从前一个节点接收数据，并在同时转发给下一个节点，数据以流水线的方式从前一个Datanode复制到下一个。</p>
+<h2 id="可访问性"><a href="#可访问性" class="headerlink" title="可访问性"></a>可访问性</h2><p>可以通过多种不同方式从应用程序访问HDFS。本地，HDFS 为应用程序提供了<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3MvY3VycmVudC9hcGkv" title="http://hadoop.apache.org/docs/current/api/">FileSystem Java API<i class="fa fa-external-link"></i></span>。一<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2hhZG9vcC1wcm9qZWN0LWRpc3QvaGFkb29wLWhkZnMvTGliSGRmcy5odG1s" title="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/LibHdfs.html">本Java API的C语言包装<i class="fa fa-external-link"></i></span>和<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2hhZG9vcC1wcm9qZWN0LWRpc3QvaGFkb29wLWhkZnMvV2ViSERGUy5odG1s" title="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html">REST API<i class="fa fa-external-link"></i></span>也是可用的。此外，还有HTTP浏览器，也可用于浏览HDFS实例的文件。通过使用<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2hhZG9vcC1wcm9qZWN0LWRpc3QvaGFkb29wLWhkZnMvSGRmc05mc0dhdGV3YXkuaHRtbA==" title="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsNfsGateway.html">NFS网关<i class="fa fa-external-link"></i></span>，HDFS可以作为客户端本地文件系统的一部分进行安装。</p>
+<h3 id="FS-Shell"><a href="#FS-Shell" class="headerlink" title="FS Shell"></a>FS Shell</h3><p>HDFS以文件和目录的形式组织用户数据。它提供了一个命令行的接口(FS Shell)让用户与HDFS中的数据进行交互。命令的语法和用户熟悉的其他shell(例如 bash, csh)工具类似。下面是一些动作/命令的示例：</p>
+<table>
+<thead>
+<tr>
+<th>创建一个名为<code>/foodir</code>的目录</th>
+<th><code>bin /hadoop dfs -mkdir /foodir</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>删除名为<code>/foodir</code>的目录</td>
+<td><code>bin /hadoop fs -rm -R /foodir</code></td>
+</tr>
+<tr>
+<td>查看名为<code>/foodir/myfile.txt</code>的文件的内容</td>
+<td><code>bin /hadoop dfs -cat /foodir/myfile.txt</code></td>
+</tr>
+</tbody>
+</table>
+<p>FS shell适用于需要脚本语言与存储数据交互的应用程序。</p>
+<h3 id="DFSAdmin"><a href="#DFSAdmin" class="headerlink" title="DFSAdmin"></a>DFSAdmin</h3><p>典型的HDFS安装配置Web服务器以通过可配置的TCP端口公开HDFS命名空间。这允许用户使用Web浏览器导航HDFS命名空间并查看其文件的内容。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15167924-3842129a5a9d163b.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Web界面"></p>
+<h2 id="存储空间回收"><a href="#存储空间回收" class="headerlink" title="存储空间回收"></a>存储空间回收</h2><h3 id="文件的删除和恢复"><a href="#文件的删除和恢复" class="headerlink" title="文件的删除和恢复"></a>文件的删除和恢复</h3><p>如果启用了回收站配置，当用户或应用程序删除某个文件时，这个文件并没有立刻从HDFS中删除。实际上，HDFS会将这个文件重命名转移到/trash目录(/user/<username>/.Trash)。只要文件还在/trash目录中，该文件就可以被迅速地恢复。文件在/trash中保存的时间是可配置的，当超过这个时间时，NameNode就会将该文件从DataNode空间中删除。删除文件会使得该文件相关的数据块被释放。注意，从用户删除文件到HDFS空闲空间的增加之间会有一定时间的延迟。</username></p>
+<p>以下是一个示例，它将显示FS Shell如何从HDFS中删除文件。我们在目录delete下创建了2个文件（test1和test2）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ hadoop fs -mkdir -p delete/test1</span><br><span class="line">$ hadoop fs -mkdir -p delete/test2</span><br><span class="line">$ hadoop fs -ls delete/</span><br><span class="line">Found 2 items</span><br><span class="line">drwxr-xr-x   - hadoop hadoop          0 2015-05-08 12:39 delete/test1</span><br><span class="line">drwxr-xr-x   - hadoop hadoop          0 2015-05-08 12:40 delete/test2</span><br></pre></td></tr></table></figure>
+<p>我们将删除文件test1。下面的注释显示该文件已移至/trash目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hadoop fs -rm -r delete/test1</span><br><span class="line">Moved: hdfs://localhost:8020/user/hadoop/delete/test1 to trash at: hdfs://localhost:8020/user/hadoop/.Trash/Current</span><br></pre></td></tr></table></figure>
+<p>现在我们将使用skipTrash选项删除该文件，该选项不会将文件发送到Trash。它将从HDFS中完全删除。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hadoop fs -rm -r -skipTrash delete/test2</span><br><span class="line">Deleted delete/test2</span><br></pre></td></tr></table></figure>
+<p>我们现在可以看到Trash目录只包含文件test1。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hadoop fs -ls .Trash/Current/user/hadoop/delete/</span><br><span class="line">Found 1 items\</span><br><span class="line">drwxr-xr-x   - hadoop hadoop          0 2015-05-08 12:39 .Trash/Current/user/hadoop/delete/test1</span><br></pre></td></tr></table></figure>
+<p>因此文件test1进入垃圾箱并永久删除文件test2。</p>
+<h3 id="减少副本系数"><a href="#减少副本系数" class="headerlink" title="减少副本系数"></a>减少副本系数</h3><p>当一个文件的副本系数被减小后，NameNode会选择过剩的副本删除。下次心跳检测时会将该信息传递给Datanode。Datanode遂即移除相应的数据块，集群中的空闲空间加大。同样，在调用setReplication API结束和集群中空闲空间增加间会有一定的延迟。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>Hadoop <span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3MvY3VycmVudC9hcGkv" title="http://hadoop.apache.org/docs/current/api/">JavaDoc API<i class="fa fa-external-link"></i></span></p>
+<p>HDFS源代码：<span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL3ZlcnNpb25fY29udHJvbC5odG1s" title="http://hadoop.apache.org/version_control.html">http://hadoop.apache.org/…<i class="fa fa-external-link"></i></span></p>
+<p>Hadoop Doc: <span class="exturl" data-url="aHR0cDovL2hhZG9vcC5hcGFjaGUub3JnL2RvY3Mvc3RhYmxlL2luZGV4Lmh0bWw=" title="http://hadoop.apache.org/docs/stable/index.html">http://hadoop.apache.org/docs/…<i class="fa fa-external-link"></i></span></p>
 
       
     </div>
@@ -585,7 +641,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   
   <div style="text-align:left;"><strong>欢迎转载，请注明本文的链接地址：</strong></div>
-  <div style="text-align:left;"><a href="/hadoop-hdfs-overview/" title="Hadoop教程：HDFS概述">https://tangguangen.com/hadoop-hdfs-overview/</a><span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://tangguangen.com/hadoop-hdfs-overview/"  aria-label="复制成功！"></i></span></div>
+  <div style="text-align:left;"><a href="/hdfs-architecture/" title="深入理解Hadoop之HDFS架构">https://tangguangen.com/hdfs-architecture/</a><span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://tangguangen.com/hdfs-architecture/"  aria-label="复制成功！"></i></span></div>
   
   
     
@@ -624,6 +680,8 @@
           
             <a href="/tags/大数据/" rel="tag"><i class="fa fa-tag"></i> 大数据</a>
           
+            <a href="/tags/HDFS/" rel="tag"><i class="fa fa-tag"></i> HDFS</a>
+          
         </div>
       
 
@@ -635,8 +693,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hadoop-enviornment-setup/" rel="next" title="Hadoop教程：安装与环境设置">
-                <i class="fa fa-chevron-left"></i> Hadoop教程：安装与环境设置
+              <a href="/leetcode-190-revers-bits/" rel="next" title="LeetCode 190.颠倒二进制位">
+                <i class="fa fa-chevron-left"></i> LeetCode 190.颠倒二进制位
               </a>
             
           </div>
@@ -644,10 +702,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/hadoop-hdfs-operations/" rel="prev" title="Hadoop教程：HDFS操作">
-                Hadoop教程：HDFS操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -901,7 +955,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HDFS的特点"><span class="nav-text">HDFS的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HDFS架构"><span class="nav-text">HDFS架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Namenode"><span class="nav-text">Namenode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Datanode"><span class="nav-text">Datanode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Block"><span class="nav-text">Block</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HDFS的目标"><span class="nav-text">HDFS的目标</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标和假设"><span class="nav-text">目标和假设</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NameNode和DataNodes"><span class="nav-text">NameNode和DataNodes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统名称空间-namespace"><span class="nav-text">文件系统名称空间(namespace)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据复制"><span class="nav-text">数据复制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#副本存放-最最开始的一步"><span class="nav-text">副本存放: 最最开始的一步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#副本选择"><span class="nav-text">副本选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全模式"><span class="nav-text">安全模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统元数据的持久化"><span class="nav-text">文件系统元数据的持久化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通讯协议"><span class="nav-text">通讯协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#健壮性"><span class="nav-text">健壮性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘数据错误，心跳检测和重新复制"><span class="nav-text">磁盘数据错误，心跳检测和重新复制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集群均衡"><span class="nav-text">集群均衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据完整性"><span class="nav-text">数据完整性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元数据磁盘错误"><span class="nav-text">元数据磁盘错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快照"><span class="nav-text">快照</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据组织"><span class="nav-text">数据组织</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据块"><span class="nav-text">数据块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流水线复制"><span class="nav-text">流水线复制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可访问性"><span class="nav-text">可访问性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FS-Shell"><span class="nav-text">FS Shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DFSAdmin"><span class="nav-text">DFSAdmin</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储空间回收"><span class="nav-text">存储空间回收</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的删除和恢复"><span class="nav-text">文件的删除和恢复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少副本系数"><span class="nav-text">减少副本系数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -1056,7 +1110,7 @@
   
     <script type="text/javascript">
       window.livereOptions = {
-        refer: 'hadoop-hdfs-overview/'
+        refer: 'hdfs-architecture/'
       };
       (function(d, s) {
         var j, e = d.getElementsByTagName(s)[0];
