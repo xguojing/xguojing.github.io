@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tangguangen.com/hadoop-tutorial-home/</loc>
+    
+    <lastmod>2018-12-05T03:28:31.697Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tangguangen.com/hdfs-architecture/</loc>
     
     <lastmod>2018-12-05T03:22:37.880Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://tangguangen.com/hadoop-command-reference/</loc>
     
     <lastmod>2018-12-04T06:04:42.912Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/hadoop-tutorial-home/</loc>
-    
-    <lastmod>2018-12-04T06:04:34.218Z</lastmod>
     
   </url>
   

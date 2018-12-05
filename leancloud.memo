@@ -22,6 +22,7 @@
 {"title":"Hadoop教程：多节点集群","url":"/hadoop-multi-node-cluster/"},
 {"title":"Hadoop教程：流","url":"/hadoop-streaming/"},
 {"title":"Hadoop教程","url":"/hadoop-tutorial-home/"},
+{"title":"深入理解Hadoop之HDFS架构","url":"/hdfs-architecture/"},
 {"title":"Hello World","url":"/hello-world/"},
 {"title":"HEXO备忘","url":"/hexo常用命令/"},
 {"title":"【转载】hexo框架基于next主题定制","url":"/hexo框架基于next主题定制/"},
