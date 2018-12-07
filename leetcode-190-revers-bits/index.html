@@ -129,7 +129,7 @@
 <meta property="og:site_name" content="逍遥&#39;s Blog">
 <meta property="og:description" content="题目描述颠倒给定的 32 位无符号整数的二进制位。 示例: 12345&amp;gt; 输入: 43261596&amp;gt; 输出: 964176192&amp;gt; 解释: 43261596 的二进制表示形式为 00000010100101000001111010011100 ，&amp;gt;      返回 964176192，其二进制表示形式为 00111001011110000010100101000000 。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-04T13:05:51.947Z">
+<meta property="og:updated_time" content="2018-12-07T05:12:31.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 190.颠倒二进制位">
 <meta name="twitter:description" content="题目描述颠倒给定的 32 位无符号整数的二进制位。 示例: 12345&amp;gt; 输入: 43261596&amp;gt; 输出: 964176192&amp;gt; 解释: 43261596 的二进制表示形式为 00000010100101000001111010011100 ，&amp;gt;      返回 964176192，其二进制表示形式为 00111001011110000010100101000000 。">
@@ -523,6 +523,7 @@
 <blockquote>
 <p><strong>进阶</strong>:<br>如果多次调用这个函数，你将如何优化你的算法？</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>通过位运算<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU0JUJEJThEJUU2JTkzJThEJUU0JUJEJTlD" title="https://zh.wikipedia.org/wiki/%E4%BD%8D%E6%93%8D%E4%BD%9C">wiki<i class="fa fa-external-link"></i></span>，依次截取n的二进制位的低位，放入result的高位。这一题是简单题，需掌握位运算</p>
 <h2 id="AC代码（Java）"><a href="#AC代码（Java）" class="headerlink" title="AC代码（Java）"></a>AC代码（Java）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// you need treat n as an unsigned value</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverseBits</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">32</span>;i++)</span><br><span class="line">            ans|=((n&gt;&gt;&gt;i)&amp;<span class="number">1</span>)&lt;&lt;(<span class="number">31</span>-i);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
