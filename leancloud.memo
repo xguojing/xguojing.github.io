@@ -30,6 +30,7 @@
 {"title":"Kaggle机器学习入门教程一","url":"/kaggle-learn-machine-learning-introduction/"},
 {"title":"LeetCode 190.颠倒二进制位","url":"/leetcode-190-revers-bits/"},
 {"title":"LeetCode 219. 存在重复元素 II","url":"/leetcode-219-contain-duplicate-two/"},
+{"title":"LeetCode 226. 翻转二叉树","url":"/leetcode-226-invert-binary-tree/"},
 {"title":"LeetCode 344.反转字符串","url":"/leetcode-344-reverse-string/"},
 {"title":"LeetCode 557. 反转字符串中的单词 III","url":"/leetcode-557-reverse-words/"},
 {"title":"Kaggle比赛top2%特征探索之featexp","url":"/secret-to-be-in-top-2-of-kaggle/"},
