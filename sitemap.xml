@@ -2,6 +2,104 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tangguangen.com/hadoop-command-reference/</loc>
+    
+    <lastmod>2018-12-07T05:24:01.612Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/kaggle-learn-machine-learning-introduction/</loc>
+    
+    <lastmod>2018-12-07T05:22:35.617Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/%E8%BD%AC%E8%BD%BD-%E5%8E%9F%E7%A0%81-%E5%8F%8D%E7%A0%81-%E8%A1%A5%E7%A0%81-%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2018-12-07T05:21:53.696Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/hadoop-streaming/</loc>
+    
+    <lastmod>2018-12-07T05:21:31.241Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/hadoop-multi-node-cluster/</loc>
+    
+    <lastmod>2018-12-07T05:21:23.266Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/hadoop-mapreduce/</loc>
+    
+    <lastmod>2018-12-07T05:21:14.139Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/hadoop-introduction/</loc>
+    
+    <lastmod>2018-12-07T05:21:05.296Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/hadoop-hdfs-overview/</loc>
+    
+    <lastmod>2018-12-07T05:20:56.303Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/hadoop-hdfs-operations/</loc>
+    
+    <lastmod>2018-12-07T05:20:47.876Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/Hadoop-FileSystem-Shell/</loc>
+    
+    <lastmod>2018-12-07T05:20:41.052Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/hadoop-enviornment-setup/</loc>
+    
+    <lastmod>2018-12-07T05:20:24.974Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/hadoop-big-data-overview/</loc>
+    
+    <lastmod>2018-12-07T05:19:51.034Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/CS22n%E7%AC%94%E8%AE%B001-Introduction-to-NLP-and-Deep-Learning/</loc>
+    
+    <lastmod>2018-12-07T05:19:35.036Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tangguangen.com/1936%E5%B9%B49%E6%9C%88%E7%AB%BA%E5%8F%AF%E6%A1%A2%E6%A0%A1%E9%95%BF%E5%9C%A8%E6%B5%99%E5%A4%A7%E5%BC%80%E5%AD%A6%E5%85%B8%E7%A4%BC%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D/</loc>
+    
+    <lastmod>2018-12-07T05:19:18.397Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tangguangen.com/leetcode-219-contain-duplicate-two/</loc>
     
     <lastmod>2018-12-07T05:13:17.767Z</lastmod>
@@ -65,76 +163,6 @@
   </url>
   
   <url>
-    <loc>https://tangguangen.com/hadoop-hdfs-operations/</loc>
-    
-    <lastmod>2018-12-04T06:04:51.496Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/hadoop-command-reference/</loc>
-    
-    <lastmod>2018-12-04T06:04:42.912Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/hadoop-multi-node-cluster/</loc>
-    
-    <lastmod>2018-12-04T06:04:24.991Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/hadoop-streaming/</loc>
-    
-    <lastmod>2018-12-04T06:04:16.902Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/hadoop-mapreduce/</loc>
-    
-    <lastmod>2018-12-04T06:04:09.274Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/hadoop-hdfs-overview/</loc>
-    
-    <lastmod>2018-12-04T06:04:00.752Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/hadoop-enviornment-setup/</loc>
-    
-    <lastmod>2018-12-04T06:03:52.213Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/hadoop-introduction/</loc>
-    
-    <lastmod>2018-12-04T06:03:43.609Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/hadoop-big-data-overview/</loc>
-    
-    <lastmod>2018-12-04T06:03:30.038Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/kaggle-learn-machine-learning-introduction/</loc>
-    
-    <lastmod>2018-12-03T14:15:24.185Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://tangguangen.com/string-stringbuffer-and-stringbuilder-in-java/</loc>
     
     <lastmod>2018-11-30T07:46:59.542Z</lastmod>
@@ -170,13 +198,6 @@
   </url>
   
   <url>
-    <loc>https://tangguangen.com/Hadoop-FileSystem-Shell/</loc>
-    
-    <lastmod>2018-11-29T00:35:29.698Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://tangguangen.com/googlede412a15310d8808.html</loc>
     
     <lastmod>2018-11-28T11:59:47.538Z</lastmod>
@@ -187,20 +208,6 @@
     <loc>https://tangguangen.com/Natural-Language-Processing-Tasks-and-References/</loc>
     
     <lastmod>2018-11-28T09:09:45.258Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/CS22n%E7%AC%94%E8%AE%B001-Introduction-to-NLP-and-Deep-Learning/</loc>
-    
-    <lastmod>2018-11-28T09:07:49.185Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/%E8%BD%AC%E8%BD%BD-%E5%8E%9F%E7%A0%81-%E5%8F%8D%E7%A0%81-%E8%A1%A5%E7%A0%81-%E8%AF%A6%E8%A7%A3/</loc>
-    
-    <lastmod>2018-11-26T13:45:31.379Z</lastmod>
     
   </url>
   
@@ -229,13 +236,6 @@
     <loc>https://tangguangen.com/Hadoop%E5%91%BD%E4%BB%A4%E6%8C%87%E5%8D%97/</loc>
     
     <lastmod>2018-11-26T12:08:23.645Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tangguangen.com/1936%E5%B9%B49%E6%9C%88%E7%AB%BA%E5%8F%AF%E6%A1%A2%E6%A0%A1%E9%95%BF%E5%9C%A8%E6%B5%99%E5%A4%A7%E5%BC%80%E5%AD%A6%E5%85%B8%E7%A4%BC%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D/</loc>
-    
-    <lastmod>2018-11-20T01:24:50.345Z</lastmod>
     
   </url>
   

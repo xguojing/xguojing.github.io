@@ -129,7 +129,7 @@
 <meta property="og:site_name" content="逍遥&#39;s Blog">
 <meta property="og:description" content="本章介绍了Hadoop多节点集群在分布式环境中的设置。 由于无法演示整个集群，我们使用三个系统(一个主系统和两个从系统)解释Hadoop集群环境;以下是他们的IP地址。  Hadoop Master: 192.168.1.15 (hadoop-master) Hadoop Slave: 192.168.1.16 (hadoop-slave-1) Hadoop Slave: 192.168.1.17">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-04T06:04:24.991Z">
+<meta property="og:updated_time" content="2018-12-07T05:21:23.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop教程：多节点集群">
 <meta name="twitter:description" content="本章介绍了Hadoop多节点集群在分布式环境中的设置。 由于无法演示整个集群，我们使用三个系统(一个主系统和两个从系统)解释Hadoop集群环境;以下是他们的IP地址。  Hadoop Master: 192.168.1.15 (hadoop-master) Hadoop Slave: 192.168.1.16 (hadoop-slave-1) Hadoop Slave: 192.168.1.17">
@@ -530,6 +530,7 @@
 <li>Hadoop Slave: 192.168.1.17 (hadoop-slave-2)</li>
 </ul>
 <p>按照下面给出的步骤设置Hadoop多节点集群。</p>
+<a id="more"></a>
 <h2 id="安装Java"><a href="#安装Java" class="headerlink" title="安装Java"></a>安装Java</h2><p>参考：<a href="https://tangguangen.com/hadoop-enviornment-setup">Hadoop安装与环境设置</a></p>
 <h2 id="映射节点"><a href="#映射节点" class="headerlink" title="映射节点"></a>映射节点</h2><p>您必须在<strong>/etc/</strong>文件夹中编辑所有节点上的<strong>hosts</strong> 文件，指定每个系统的IP地址及其主机名。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> vi /etc/hosts</span></span><br><span class="line">enter the following lines in the /etc/hosts file.</span><br><span class="line">192.168.1.109 hadoop-master </span><br><span class="line">192.168.1.145 hadoop-slave-1 </span><br><span class="line">192.168.56.1 hadoop-slave-2</span><br></pre></td></tr></table></figure>

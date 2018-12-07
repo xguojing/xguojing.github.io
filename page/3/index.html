@@ -891,15 +891,18 @@ Setp 1: 安装sitemap站点地图自动生成插件
 
       
         
-          
-          
-作者：张子秋出处：http://www.cnblogs.com/zhangziqiu/ 
-
-本篇文章讲解了计算机的原码, 反码和补码. 并且进行了深入探求了为何要使用反码和补码, 以及更进一步的论证了为何可以用反码, 补码的加法计算原码的减法. 论证部分如有不对的地方请各位牛人帮忙指正! 希望本文对大家学习计算机基础有所帮助!
-一. 机器数和真值在学习原码, 反码和补码之前, 需要先了解机器数和真值的概念.
-1、机器数一个数在计算机中的二进制表示形式,  叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号, 正数为0, 负数为1.
-比如，十进制中的数 +3 ，计算机字长为
-          ...
+          <blockquote>
+<p>作者：<a href="http://www.cnblogs.com/zhangziqiu/" target="_blank" rel="noopener">张子秋</a><br>出处：<a href="http://www.cnblogs.com/zhangziqiu/" target="_blank" rel="noopener">http://www.cnblogs.com/zhangziqiu/</a> </p>
+</blockquote>
+<p>本篇文章讲解了计算机的原码, 反码和补码. 并且进行了深入探求了为何要使用反码和补码, 以及更进一步的论证了为何可以用反码, 补码的加法计算原码的减法. 论证部分如有不对的地方请各位牛人帮忙指正! 希望本文对大家学习计算机基础有所帮助!</p>
+<h2 id="一-机器数和真值"><a href="#一-机器数和真值" class="headerlink" title="一. 机器数和真值"></a>一. 机器数和真值</h2><p>在学习原码, 反码和补码之前, 需要先了解机器数和真值的概念.</p>
+<h3 id="1、机器数"><a href="#1、机器数" class="headerlink" title="1、机器数"></a>1、机器数</h3><p>一个数在计算机中的二进制表示形式,  叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号, 正数为0, 负数为1.</p>
+<p>比如，十进制中的数 +3 ，计算机字长为8位，转换成二进制就是00000011。如果是 -3 ，就是 10000011 。</p>
+<p>那么，这里的 00000011 和 10000011 就是机器数。</p>
+<h3 id="2、真值"><a href="#2、真值" class="headerlink" title="2、真值"></a>2、真值</h3><blockquote>
+<p>因为第一位是符号位，所以机器数的形式值就不等于真正的数值。例如上面的有符号数 10000011，其最高位1代表负，其真正数值是 -3 而不是形式值131（10000011转换成十进制等于131）。所以，为区别起见，将带符号位的机器数对应的真正数值称为机器数的真值。</p>
+</blockquote>
+<p>例：0000 0001的真值 = +000 0001 = +1，1000 0001的真值 = –000 0001 = –1</p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -907,7 +910,7 @@ Setp 1: 安装sitemap站点地图自动生成插件
                 阅读全文 &raquo;
               </a>
             </div>
-          
+         
           <!--/noindex-->
         
       
@@ -1270,11 +1273,9 @@ InterfaceAudience：捕获目标受众，可能的值是Public（对于最终用
 
       
         
-          
-          概览文件系统（FS）shell包括各种类似shell的命令，这些命令直接与Hadoop分布式文件系统（HDFS）以及Hadoop支持的其他文件系统交互，例如本地FS，HFTP FS，S3 FS等。FS shell由以下方式调用：
-1bin/hadoop fs &lt;args&gt;
-所有FS shell命令都将路径URI作为参数。URI格式为scheme：// authority / path。对于HDFS，方案是hdfs，对于本地FS，方案是文件。该计划和权限是可选的。如果未指定，则使用配置中指定的默认方案。可以将HDFS文件或目录（例如/ parent / child）指定为hdfs：/
-          ...
+          <h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p>文件系统（FS）shell包括各种类似shell的命令，这些命令直接与Hadoop分布式文件系统（HDFS）以及Hadoop支持的其他文件系统交互，例如本地FS，HFTP FS，S3 FS等。FS shell由以下方式调用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/hadoop fs &lt;args&gt;</span><br></pre></td></tr></table></figure>
+<p>所有FS shell命令都将路径URI作为参数。URI格式为<code>scheme：// authority / path</code>。对于HDFS，方案是<code>hdfs</code>，对于本地FS，方案是<code>文件</code>。该计划和权限是可选的。如果未指定，则使用配置中指定的默认方案。可以将HDFS文件或目录（例如/ parent / child）指定为<code>hdfs：// namenodehost / parent / child</code>或简单地指定为<code>/ parent / child</code>（假设您的配置设置为指向<code>hdfs：// namenodehost</code>）。</p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1282,7 +1283,7 @@ InterfaceAudience：捕获目标受众，可能的值是Public（对于最终用
                 阅读全文 &raquo;
               </a>
             </div>
-          
+         
           <!--/noindex-->
         
       
@@ -2034,13 +2035,9 @@ Overwrites the default Configuration directory. Default is ${HADOOP_HOME}/conf.
 
       
         
-          
-          主要参考自http://www.hankcs.com/nlp/cs224n-introduction-to-nlp-and-deep-learning.html
-什么是自然语言处理自然语言处理是计算机科学、人工智能和语言学的交叉学科。虽然语言只是人工智能的一部分（人工智能还包括计算机视觉等），但它是非常独特的一部分。这个星球上有许多生物拥有超过人类的视觉系统，但只有人类才拥有这么高级的语言。
-自然语言处理的目标是让计算机处理或说“理解”自然语言，以完成有意义的任务，比如订机票购物或QA等。完全理解和表达语言是极其困难的，完美的语言理解等效于实现人工智能。
-自然语言处理涉及的几个层次
-作为输入一
-          ...
+          <p>主要参考自<a href="http://www.hankcs.com/nlp/cs224n-introduction-to-nlp-and-deep-learning.html" target="_blank" rel="noopener">http://www.hankcs.com/nlp/cs224n-introduction-to-nlp-and-deep-learning.html</a></p>
+<h2 id="什么是自然语言处理"><a href="#什么是自然语言处理" class="headerlink" title="什么是自然语言处理"></a>什么是自然语言处理</h2><p>自然语言处理是<strong>计算机科学</strong>、<strong>人工智能</strong>和<strong>语言学</strong>的交叉学科。虽然语言只是人工智能的一部分（人工智能还包括计算机视觉等），但它是非常独特的一部分。这个星球上有许多生物拥有超过人类的视觉系统，但只有人类才拥有这么高级的语言。</p>
+<p>自然语言处理的目标是让计算机处理或说“<strong>理解</strong>”自然语言，以完成有意义的任务，比如订机票购物或QA等。<strong>完全理解和表达语言是极其困难的，完美的语言理解等效于实现人工智能。</strong></p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -2048,7 +2045,7 @@ Overwrites the default Configuration directory. Default is ${HADOOP_HOME}/conf.
                 阅读全文 &raquo;
               </a>
             </div>
-          
+         
           <!--/noindex-->
         
       

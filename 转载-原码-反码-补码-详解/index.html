@@ -130,7 +130,7 @@
 <meta property="og:description" content="作者：张子秋出处：http://www.cnblogs.com/zhangziqiu/   本篇文章讲解了计算机的原码, 反码和补码. 并且进行了深入探求了为何要使用反码和补码, 以及更进一步的论证了为何可以用反码, 补码的加法计算原码的减法. 论证部分如有不对的地方请各位牛人帮忙指正! 希望本文对大家学习计算机基础有所帮助! 一. 机器数和真值在学习原码, 反码和补码之前, 需要先了解机器数和">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://images.cnblogs.com/cnblogs_com/zhangziqiu/201103/201103302155504514.jpg">
-<meta property="og:updated_time" content="2018-11-26T13:45:31.379Z">
+<meta property="og:updated_time" content="2018-12-07T05:21:53.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[转载]原码, 反码, 补码 详解">
 <meta name="twitter:description" content="作者：张子秋出处：http://www.cnblogs.com/zhangziqiu/   本篇文章讲解了计算机的原码, 反码和补码. 并且进行了深入探求了为何要使用反码和补码, 以及更进一步的论证了为何可以用反码, 补码的加法计算原码的减法. 论证部分如有不对的地方请各位牛人帮忙指正! 希望本文对大家学习计算机基础有所帮助! 一. 机器数和真值在学习原码, 反码和补码之前, 需要先了解机器数和">
@@ -529,6 +529,7 @@
 <p>因为第一位是符号位，所以机器数的形式值就不等于真正的数值。例如上面的有符号数 10000011，其最高位1代表负，其真正数值是 -3 而不是形式值131（10000011转换成十进制等于131）。所以，为区别起见，将带符号位的机器数对应的真正数值称为机器数的真值。</p>
 </blockquote>
 <p>例：0000 0001的真值 = +000 0001 = +1，1000 0001的真值 = –000 0001 = –1</p>
+ <a id="more"></a>
 <h2 id="二-原码-反码-补码的基础概念和计算方法"><a href="#二-原码-反码-补码的基础概念和计算方法" class="headerlink" title="二. 原码, 反码, 补码的基础概念和计算方法."></a>二. 原码, 反码, 补码的基础概念和计算方法.</h2><p>在探求为何机器要使用补码之前, 让我们先了解原码, 反码和补码的概念.对于一个数, 计算机要使用一定的编码方式进行存储. 原码, 反码, 补码是机器存储一个具体数字的编码方式.</p>
 <h3 id="1-原码"><a href="#1-原码" class="headerlink" title="1. 原码"></a>1. 原码</h3><p>原码就是符号位加上真值的绝对值, 即用第一位表示符号, 其余位表示值. 比如如果是8位二进制:</p>
 <blockquote>

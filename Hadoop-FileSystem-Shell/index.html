@@ -129,7 +129,7 @@
 <meta property="og:site_name" content="逍遥&#39;s Blog">
 <meta property="og:description" content="概览文件系统（FS）shell包括各种类似shell的命令，这些命令直接与Hadoop分布式文件系统（HDFS）以及Hadoop支持的其他文件系统交互，例如本地FS，HFTP FS，S3 FS等。FS shell由以下方式调用： 1bin/hadoop fs &amp;lt;args&amp;gt; 所有FS shell命令都将路径URI作为参数。URI格式为scheme：// authority / path。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-29T00:35:29.698Z">
+<meta property="og:updated_time" content="2018-12-07T05:20:41.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop: FileSystem Shell">
 <meta name="twitter:description" content="概览文件系统（FS）shell包括各种类似shell的命令，这些命令直接与Hadoop分布式文件系统（HDFS）以及Hadoop支持的其他文件系统交互，例如本地FS，HFTP FS，S3 FS等。FS shell由以下方式调用： 1bin/hadoop fs &amp;lt;args&amp;gt; 所有FS shell命令都将路径URI作为参数。URI格式为scheme：// authority / path。">
@@ -518,6 +518,7 @@
         <h2 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h2><p>文件系统（FS）shell包括各种类似shell的命令，这些命令直接与Hadoop分布式文件系统（HDFS）以及Hadoop支持的其他文件系统交互，例如本地FS，HFTP FS，S3 FS等。FS shell由以下方式调用：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/hadoop fs &lt;args&gt;</span><br></pre></td></tr></table></figure>
 <p>所有FS shell命令都将路径URI作为参数。URI格式为<code>scheme：// authority / path</code>。对于HDFS，方案是<code>hdfs</code>，对于本地FS，方案是<code>文件</code>。该计划和权限是可选的。如果未指定，则使用配置中指定的默认方案。可以将HDFS文件或目录（例如/ parent / child）指定为<code>hdfs：// namenodehost / parent / child</code>或简单地指定为<code>/ parent / child</code>（假设您的配置设置为指向<code>hdfs：// namenodehost</code>）。</p>
+<a id="more"></a>
 <p>FS shell中的大多数命令都表现得像对应的Unix命令。使用每个命令描述差异。错误信息发送到stderr，输出发送到stdout。</p>
 <p>如果正在使用HDFS，则<code>hdfs dfs</code>是同义词。</p>
 <p>可以使用相对路径。对于HDFS，当前工作目录是HDFS主目录<code>/ user / &lt;username&gt;</code>，通常必须手动创建。也可以隐式访问HDFS主目录，例如，当使用HDFS垃圾文件夹时，主目录中的<code>.Trash</code>目录。</p>

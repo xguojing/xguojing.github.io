@@ -714,18 +714,15 @@
 
       
         
-          
-          Hadoop文件系统采用分布式文件系统设计开发。它在普通硬件上运行。与其他分布式系统不同，HDFS具有很高的容错性，并且使用低成本的硬件进行设计。
-HDFS存储大量数据并提供更容易的访问。为了存储如此巨大的数据，文件被存储在多台机器上。这些文件以冗余的方式存储，以便在发生故障时将系统从可能的数据损失中拯救出来。HDFS还使应用程序可用于并行处理。
-HDFS的特点
-适用于分布式存储和处理。
-Hadoop提供了一个与HDFS交互的命令接口。
-namenode和datanode的内置服务器可以方便地检查集群的状态。
-对文件系统数据的流访问。
-HDFS提供文件权限和身份验证。
-
-HDFS架构下面给出H
-          ...
+          <p>Hadoop文件系统采用分布式文件系统设计开发。它在普通硬件上运行。与其他分布式系统不同，HDFS具有很高的容错性，并且使用低成本的硬件进行设计。</p>
+<p>HDFS存储大量数据并提供更容易的访问。为了存储如此巨大的数据，文件被存储在多台机器上。这些文件以冗余的方式存储，以便在发生故障时将系统从可能的数据损失中拯救出来。HDFS还使应用程序可用于并行处理。</p>
+<h2 id="HDFS的特点"><a href="#HDFS的特点" class="headerlink" title="HDFS的特点"></a>HDFS的特点</h2><ul>
+<li>适用于分布式存储和处理。</li>
+<li>Hadoop提供了一个与HDFS交互的命令接口。</li>
+<li>namenode和datanode的内置服务器可以方便地检查集群的状态。</li>
+<li>对文件系统数据的流访问。</li>
+<li>HDFS提供文件权限和身份验证。</li>
+</ul>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -733,7 +730,7 @@ HDFS架构下面给出H
                 阅读全文 &raquo;
               </a>
             </div>
-          
+         
           <!--/noindex-->
         
       
@@ -913,13 +910,8 @@ HDFS架构下面给出H
 
       
         
-          
-          Hadoop支持Windows, Mac, Linux, 但推荐是用Linux环境学习Hadoop。因此，我们必须安装一个Linux操作系统来设置Hadoop环境。如果您的操作系统不是Linux，那么您可以在其中安装一个Virtualbox软件，并在Virtualbox中包含Linux。
-安装前配置在将Hadoop安装到Linux环境之前，我们需要使用ssh(Secure Shell)来设置Linux。按照下面给出的步骤设置Linux环境。
-创建用户首先，建议为Hadoop创建一个单独的用户，以便将Hadoop文件系统与Unix文件系统隔离开来。按照以下步骤创建用户:
-
-使用“su”命令打开根
-          ...
+          <p>Hadoop支持Windows, Mac, Linux, 但推荐是用Linux环境学习Hadoop。因此，我们必须安装一个Linux操作系统来设置Hadoop环境。如果您的操作系统不是Linux，那么您可以在其中安装一个Virtualbox软件，并在Virtualbox中包含Linux。</p>
+<h2 id="安装前配置"><a href="#安装前配置" class="headerlink" title="安装前配置"></a>安装前配置</h2><p>在将Hadoop安装到Linux环境之前，我们需要使用ssh(Secure Shell)来设置Linux。按照下面给出的步骤设置Linux环境。</p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -927,7 +919,7 @@ HDFS架构下面给出H
                 阅读全文 &raquo;
               </a>
             </div>
-          
+         
           <!--/noindex-->
         
       
@@ -1107,14 +1099,14 @@ HDFS架构下面给出H
 
       
         
-          
-          Hadoop是一个用java编写的Apache开源框架，它允许使用简单的编程模型跨计算机集群分布式处理大型数据集。Hadoop框架工作的应用程序工作在一个跨计算机集群提供分布式存储和计算的环境中。Hadoop被设计成从单个服务器扩展到数千台机器，每台机器都提供本地计算和存储。
-Hadoop架构Hadoop框架包括以下四个模块:
-
-Hadoop Common: 这是其他Hadoop模块依赖的Java库和工具。这些库提供文件系统和操作系统级别的抽象，并包含启动Hadoop所需的Java文件和脚本。
-Hadoop YARN: 这是一个用于作业调度和集群资源管理的框架。
-Hadoop分布式文件系统(H
-          ...
+          <p>Hadoop是一个用java编写的Apache开源框架，它允许使用简单的编程模型跨计算机集群分布式处理大型数据集。Hadoop框架工作的应用程序工作在一个跨计算机集群提供分布式存储和计算的环境中。Hadoop被设计成从单个服务器扩展到数千台机器，每台机器都提供本地计算和存储。</p>
+<h2 id="Hadoop架构"><a href="#Hadoop架构" class="headerlink" title="Hadoop架构"></a>Hadoop架构</h2><p>Hadoop框架包括以下四个模块:</p>
+<ul>
+<li><strong>Hadoop Common:</strong> 这是其他Hadoop模块依赖的Java库和工具。这些库提供文件系统和操作系统级别的抽象，并包含启动Hadoop所需的Java文件和脚本。</li>
+<li><strong>Hadoop YARN: </strong>这是一个用于作业调度和集群资源管理的框架。</li>
+<li><strong>Hadoop分布式文件系统(HDFS™):</strong>  一种分布式文件系统，提供对应用程序数据的高吞吐量访问。</li>
+<li><strong>MapReduce:</strong> 这是一个基于YARN的大型数据集并行处理系统。</li>
+</ul>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1122,7 +1114,7 @@ Hadoop分布式文件系统(H
                 阅读全文 &raquo;
               </a>
             </div>
-          
+         
           <!--/noindex-->
         
       
@@ -1490,14 +1482,10 @@ Hadoop分布式文件系统(H
 
       
         
-          
-          由于新技术、新设备和社交网站等通信手段的出现，人类产生的数据量每年都在迅速增长。2003年之前的所有数据量总和是50亿G。如果你把数据以磁盘的形式堆起来，它可能会填满整个足球场。到了2011年，每两天就能创造同样的数量，2013年每十分钟创造同样的数量。这一比例仍在大幅增长。虽然所有这些信息都是有意义的，并且在处理时很有用，但它却被忽略了。
-
-世界上90%的数据是在过去几年生成的。
-
-什么是大数据大数据其实就是海量的数据，它是不能用传统计算技术处理的海量数据集的集合。大数据不仅仅是一种数据，它已经成为一门完整的学科，涉及到各种工具、技术和框架。
-大数据的来源大数据涉及不同设备和应用产生的数据。
-          ...
+          <p>由于新技术、新设备和社交网站等通信手段的出现，人类产生的数据量每年都在迅速增长。2003年之前的所有数据量总和是50亿G。如果你把数据以磁盘的形式堆起来，它可能会填满整个足球场。到了2011年，每两天就能创造同样的数量，2013年每十分钟创造同样的数量。这一比例仍在大幅增长。虽然所有这些信息都是有意义的，并且在处理时很有用，但它却被忽略了。</p>
+<blockquote>
+<p>世界上90%的数据是在过去几年生成的。</p>
+</blockquote>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1505,7 +1493,7 @@ Hadoop分布式文件系统(H
                 阅读全文 &raquo;
               </a>
             </div>
-          
+         
           <!--/noindex-->
         
       

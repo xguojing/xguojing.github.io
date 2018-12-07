@@ -130,7 +130,7 @@
 <meta property="og:description" content="MapReduce是一个框架，我们可以使用它编写应用程序，以一种可靠的方式，并行地在大型商品硬件集群上处理大量数据。 MapReduce是什么MapReduce是一种基于java的分布式计算处理技术和程序模型。MapReduce算法包含两个重要的任务，即Map和Reduce。Map接受一组数据并将其转换为另一组数据，其中单个元素被分解为元组(键/值对)。其次是reduce task，它将来自映射的">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://cdn.tangguangen.com/images/mapreduce_algorithm.jpg">
-<meta property="og:updated_time" content="2018-12-04T06:04:09.274Z">
+<meta property="og:updated_time" content="2018-12-07T05:21:14.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop教程：MapReduce">
 <meta name="twitter:description" content="MapReduce是一个框架，我们可以使用它编写应用程序，以一种可靠的方式，并行地在大型商品硬件集群上处理大量数据。 MapReduce是什么MapReduce是一种基于java的分布式计算处理技术和程序模型。MapReduce算法包含两个重要的任务，即Map和Reduce。Map接受一组数据并将其转换为另一组数据，其中单个元素被分解为元组(键/值对)。其次是reduce task，它将来自映射的">
@@ -527,6 +527,7 @@
         <p>MapReduce是一个框架，我们可以使用它编写应用程序，以一种可靠的方式，并行地在大型商品硬件集群上处理大量数据。</p>
 <h2 id="MapReduce是什么"><a href="#MapReduce是什么" class="headerlink" title="MapReduce是什么"></a>MapReduce是什么</h2><p>MapReduce是一种基于java的分布式计算处理技术和程序模型。MapReduce算法包含两个重要的任务，即Map和Reduce。Map接受一组数据并将其转换为另一组数据，其中单个元素被分解为元组(键/值对)。其次是reduce task，它将来自映射的输出作为输入，并将这些数据元组组合成较小的元组集合。顾名思义，reduce任务总是在映射作业之后执行。</p>
 <p>MapReduce的主要优点是，它很容易在多个计算节点上扩展数据处理。在MapReduce模型下，数据处理原语称为映射器和约简器。将数据处理应用程序分解为映射器和还原器有时是很重要的。但是，一旦我们在MapReduce表单中编写了一个应用程序，将应用程序扩展到集群中的成百上千甚至上万台机器上，这仅仅是一个配置更改。正是这种简单的可伸缩性吸引了许多程序员使用MapReduce模型。</p>
+<a id="more"></a>
 <h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><ul>
 <li>通常MapReduce范例是基于将计算机发送到数据所在的位置!</li>
 <li>MapReduce程序分三个阶段执行，即map阶段、shuffle阶段和reduce阶段。<ul>
