@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[xihulake snow]]></title>
+    <url>%2Fxihulake-snow%2F</url>
+    <content type="text"><![CDATA[今年杭州早早就下起了大雪，来杭州两年，有幸遇见两场大雪。 大雪恰逢周末，于是一大早就去西湖赏雪，看断桥残雪。 断桥上还是熟悉的场景 西湖的雪景还是非常美的 大爱西湖 雪后的码头 登上了宝石山，山顶的景色很特别 山顶看白堤 哈哈哈，我堆的 山顶雪景很美，人也非常多 冬菊]]></content>
+      <categories>
+        <category>生活随笔</category>
+      </categories>
+      <tags>
+        <tag>杭州</tag>
+        <tag>断桥残雪</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode 226. 翻转二叉树]]></title>
     <url>%2Fleetcode-226-invert-binary-tree%2F</url>
     <content type="text"><![CDATA[题目描述翻转一棵二叉树。 示例： 输入： 123456&gt; 4&gt; / \&gt; 2 7&gt; / \ / \&gt; 1 3 6 9&gt; 输出： 123456&gt; 4&gt; / \&gt; 7 2&gt; / \ / \&gt; 9 6 3 1&gt; 备注:这个问题是受到 Max Howell 的 原问题 启发的 ： 谷歌：我们90％的工程师使用您编写的软件(Homebrew)，但是您却无法在面试时在白板上写出翻转二叉树这道题，这太糟糕了。 思路递归 AC代码（Java）1234567891011121314151617181920/** * Definition for a binary tree node. * public class TreeNode &#123; * int val; * TreeNode left; * TreeNode right; * TreeNode(int x) &#123; val = x; &#125; * &#125; */class Solution &#123; public TreeNode invertTree(TreeNode root) &#123; if (root == null) return root; TreeNode tmp = root.left; root.left = invertTree(root.right); root.right = invertTree(tmp); return root; &#125;&#125;]]></content>
