@@ -122,9 +122,9 @@
 
 
   <meta name="description" content="原文出处：https://zhuanlan.zhihu.com/…  简介目标：本节将帮助读者对反向传播形成直观而专业的理解。反向传播是利用链式法则递归计算表达式的梯度的方法。理解反向传播过程及其精妙之处，对于理解、实现、设计和调试神经网络非常关键。 问题陈述：这节的核心问题是：给定函数 ，其中是输入数据的向量，需要计算函数关于的梯度，也就是。 目标：之所以关注上述问题，是因为在神经网络中对应的">
-<meta name="keywords" content="大数据, Java, NLP, 程序员">
+<meta name="keywords" content="CS231n,神经网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cs231n backpropagation">
+<meta property="og:title" content="CS231n 反向传播笔记">
 <meta property="og:url" content="https://tangguangen.com/cs231n-backpropagation/index.html">
 <meta property="og:site_name" content="逍遥&#39;s Blog">
 <meta property="og:description" content="原文出处：https://zhuanlan.zhihu.com/…  简介目标：本节将帮助读者对反向传播形成直观而专业的理解。反向传播是利用链式法则递归计算表达式的梯度的方法。理解反向传播过程及其精妙之处，对于理解、实现、设计和调试神经网络非常关键。 问题陈述：这节的核心问题是：给定函数 ，其中是输入数据的向量，需要计算函数关于的梯度，也就是。 目标：之所以关注上述问题，是因为在神经网络中对应的">
@@ -205,9 +205,9 @@
 <meta property="og:image" content="https://pic2.zhimg.com/80/39162d0c528144362cc09f1965d710d1_hd.jpg">
 <meta property="og:image" content="http://www.zhihu.com/equation?tex=w%5ETx_i">
 <meta property="og:image" content="http://www.zhihu.com/equation?tex=x_i">
-<meta property="og:updated_time" content="2018-12-11T12:59:00.976Z">
+<meta property="og:updated_time" content="2018-12-11T13:01:27.782Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cs231n backpropagation">
+<meta name="twitter:title" content="CS231n 反向传播笔记">
 <meta name="twitter:description" content="原文出处：https://zhuanlan.zhihu.com/…  简介目标：本节将帮助读者对反向传播形成直观而专业的理解。反向传播是利用链式法则递归计算表达式的梯度的方法。理解反向传播过程及其精妙之处，对于理解、实现、设计和调试神经网络非常关键。 问题陈述：这节的核心问题是：给定函数 ，其中是输入数据的向量，需要计算函数关于的梯度，也就是。 目标：之所以关注上述问题，是因为在神经网络中对应的">
 <meta name="twitter:image" content="http://www.zhihu.com/equation?tex=f%28x%29">
 
@@ -228,7 +228,7 @@
   };
 </script>
 
-  <title>cs231n backpropagation | 逍遥's Blog</title>
+  <title>CS231n 反向传播笔记 | 逍遥's Blog</title>
   
 
 
@@ -502,7 +502,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">cs231n backpropagation
+          <h2 class="post-title" itemprop="name headline">CS231n 反向传播笔记
               
             
           </h2>
@@ -536,6 +536,24 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS231n/" itemprop="url" rel="index"><span itemprop="name">CS231n</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -543,7 +561,7 @@
 
           
           
-             <span id="/cs231n-backpropagation/" class="leancloud_visitors" data-flag-title="cs231n backpropagation">
+             <span id="/cs231n-backpropagation/" class="leancloud_visitors" data-flag-title="CS231n 反向传播笔记">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -580,6 +598,7 @@
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>目标</strong>：本节将帮助读者对<strong>反向传播</strong>形成直观而专业的理解。反向传播是利用<strong>链式法则</strong>递归计算表达式的梯度的方法。理解反向传播过程及其精妙之处，对于理解、实现、设计和调试神经网络非常<strong>关键</strong>。</p>
 <p><strong>问题陈述</strong>：这节的核心问题是：给定函数<img src="http://www.zhihu.com/equation?tex=f%28x%29" alt="f(x)"> ，其中<img src="http://www.zhihu.com/equation?tex=x" alt="x">是输入数据的向量，需要计算函数<img src="http://www.zhihu.com/equation?tex=f" alt="f">关于<img src="http://www.zhihu.com/equation?tex=x" alt="x">的梯度，也就是<img src="http://www.zhihu.com/equation?tex=%5Cnabla+f%28x%29" alt="\nabla f(x)">。</p>
 <p><strong>目标</strong>：之所以关注上述问题，是因为在神经网络中<img src="http://www.zhihu.com/equation?tex=f" alt="f">对应的是损失函数（<img src="http://www.zhihu.com/equation?tex=L" alt="L">），输入<img src="http://www.zhihu.com/equation?tex=x" alt="x">里面包含训练数据和神经网络的权重。举个例子，损失函数可以是SVM的损失函数，输入则包含了训练数据<img src="http://www.zhihu.com/equation?tex=%28x_i%2Cy_i%29%2Ci%3D1...N" alt="(x_i,y_i),i=1...N">、权重<img src="http://www.zhihu.com/equation?tex=W" alt="W">和偏差<img src="http://www.zhihu.com/equation?tex=b" alt="b">。注意训练集是给定的（在机器学习中通常都是这样），而权重是可以控制的变量。因此，即使能用反向传播计算输入数据<img src="http://www.zhihu.com/equation?tex=x_i" alt="x_i"> 上的梯度，但在实践为了进行参数更新，通常也只计算参数（比如<img src="http://www.zhihu.com/equation?tex=W%2Cb" alt="W,b">）的梯度。然而<img src="http://www.zhihu.com/equation?tex=x_i%0A" alt="x_i "> 的梯度有时仍然是有用的：比如将神经网络所做的事情可视化便于直观理解的时候，就能用上。</p>
+<a id="more"></a>
 <p>如果读者之前对于利用链式法则计算偏微分已经很熟练，仍然建议浏览本篇笔记。因为它呈现了一个相对成熟的反向传播视角，在该视角中能看见基于实数值回路的反向传播过程，而对其细节的理解和收获将帮助读者更好地通过本课程。</p>
 <h2 id="简单表达式和理解梯度"><a href="#简单表达式和理解梯度" class="headerlink" title="简单表达式和理解梯度"></a>简单表达式和理解梯度</h2><p>从简单表达式入手可以为复杂表达式打好符号和规则基础。先考虑一个简单的二元乘法函数<img src="http://www.zhihu.com/equation?tex=f%28x%2Cy%29%3Dxy" alt="f(x,y)=xy">。对两个输入变量分别求偏导数还是很简单的：</p>
 <p><strong>解释</strong>：牢记这些导数的意义：函数变量在某个点周围的极小区域内变化，而导数就是变量变化导致的函数在该方向上的变化率。</p>
@@ -685,6 +704,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CS231n/" rel="tag"><i class="fa fa-tag"></i> CS231n</a>
+          
+            <a href="/tags/神经网络/" rel="tag"><i class="fa fa-tag"></i> 神经网络</a>
+          
+        </div>
       
 
       
@@ -825,7 +852,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -888,7 +917,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">25</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
