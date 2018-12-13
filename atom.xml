@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tangguangen.com/"/>
-  <updated>2018-12-11T12:45:18.231Z</updated>
+  <updated>2018-12-13T11:16:19.188Z</updated>
   <id>https://tangguangen.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何学习之回顾法</title>
+    <link href="https://tangguangen.com/how-to-learn-recall/"/>
+    <id>https://tangguangen.com/how-to-learn-recall/</id>
+    <published>2018-12-13T10:59:16.000Z</published>
+    <updated>2018-12-13T11:16:19.188Z</updated>
+    
+    <content type="html"><![CDATA[<p>最常见的学习方法之一 就是反复阅读， 不过心理学家Jeffrey Karpicke证明：这种方法的成效远不及另一种简单技巧，<strong>回顾——阅读材料后，移开视线，看看你能回忆起多少内容。</strong></p><p>在回顾知识时，我们并非机械地复述，而是在<strong>通过回顾</strong>这个过程<strong>加深理解</strong>，这有助于我们形成知识组块，就好像回忆过程帮助我们在神经上嵌入了“钩子” 以便我们串联起前后知识。</p><a id="more"></a><p>更让研究者们出乎意料的是，学生们单纯地阅读和回顾材料并不是最佳的学习方法。他们认为<strong>思维导图</strong>——即画出概念之间的联系才是最佳途径。然而根基还没打牢就开始空建框架联系，实属徒劳无功 。</p><p>比起被动重复阅读，<strong>回顾即在心里检索关键概念可以使你的学习更加专注高效</strong>。只有隔上一定时间后再重读才会有效果，因为重读就更像是间隔重复练习。</p><p>回顾是一种有效工具，不过这里有另一个小贴士：在常<strong>规学习场所以外回顾材料</strong>会帮助你加深对材料的理解。你可能没有意识到这一点，但是当你学习新事物的时候，你通常会把最开始接触材料的地方当作潜意识中的提示，但一到考试就乱了阵脚。因为考试与学习场所通常不同，通过在不同物理环境下回顾和思考学习资料，你会脱离对给定场所的依赖，这会帮助你避免由于考试与学习场所的不同而产生的问题。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最常见的学习方法之一 就是反复阅读， 不过心理学家Jeffrey Karpicke证明：这种方法的成效远不及另一种简单技巧，&lt;strong&gt;回顾——阅读材料后，移开视线，看看你能回忆起多少内容。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在回顾知识时，我们并非机械地复述，而是在&lt;strong&gt;通过回顾&lt;/strong&gt;这个过程&lt;strong&gt;加深理解&lt;/strong&gt;，这有助于我们形成知识组块，就好像回忆过程帮助我们在神经上嵌入了“钩子” 以便我们串联起前后知识。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="如何学习" scheme="https://tangguangen.com/categories/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>学术英语之12种动词时态</title>
@@ -580,45 +601,6 @@
 &lt;blockquote&gt;
 &lt;p&gt;世界上90%的数据是在过去几年生成的。&lt;/p&gt;
 &lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="大数据" scheme="https://tangguangen.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-      <category term="Hadoop" scheme="https://tangguangen.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop/"/>
-    
-    
-      <category term="Hadoop" scheme="https://tangguangen.com/tags/Hadoop/"/>
-    
-      <category term="大数据" scheme="https://tangguangen.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hadoop教程</title>
-    <link href="https://tangguangen.com/hadoop-tutorial-home/"/>
-    <id>https://tangguangen.com/hadoop-tutorial-home/</id>
-    <published>2018-11-30T11:53:46.000Z</published>
-    <updated>2018-12-05T03:31:08.034Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>Hadoop教程目录：</strong></p><ol><li><a href="https://tangguangen.com/hadoop-big-data-overview/">大数据概述</a></li><li><a href="https://tangguangen.com/hadoop-big-data-solutions/">大数据解决方案</a></li><li><a href="https://tangguangen.com/hadoop-introduction/">Hadoop介绍</a></li><li><a href="https://tangguangen.com/hadoop-enviornment-setup">Hadoop安装与环境设置</a></li><li><a href="https://tangguangen.com/hadoop-hdfs-overview">HDFS概述</a></li><li><a href="https://tangguangen.com/hadoop-hdfs-operations">HDFS操作</a></li><li><a href="https://tangguangen.com/hadoop-command-reference">Hadoop命令手册</a></li><li><a href="https://tangguangen.com/hadoop-mapreduce">MapReduce</a></li><li><a href="https://tangguangen.com/hadoop-streaming">Hadoop流</a></li><li><a href="https://tangguangen.com/hadoop-multi-node-cluster">Hadoop全分布式安装</a></li></ol><p>Hadoop以Apache 2.0许可协议发布的<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU1JUJDJTgwJUU2JUJBJTkw" title="https://zh.wikipedia.org/wiki/%E5%BC%80%E6%BA%90">开源<i class="fa fa-external-link"></i></span><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU4JUJCJTlGJUU5JUFCJTk0JUU2JUExJTg2JUU2JTlFJUI2" title="https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94%E6%A1%86%E6%9E%B6">软件框架<i class="fa fa-external-link"></i></span>。用户可以通过简单的程序模型在分布式环境集群中存储和处理大数据。 它旨在从单个服务器扩展到数千台计算机，每台计算机都提供本地计算和存储。</p><a id="more"></a><img title="Hadoop生态系统" alt="Hadoop生态系统" src="http://cdn.tangguangen.com/images/apache-hadoop-ecosystem.png"><p>本教程简要介绍了大数据，MapReduce算法和Hadoop分布式文件系统（HDFS）。</p><p><strong>Audience</strong></p><p>本教程是为希望学习使用Hadoop框架进行大数据分析的基础知识并成为Hadoop开发人员的专业人士准备的。软件专业人员、分析专业人员和ETL开发人员是本课程的主要受益者。</p><p><strong>Prerequisites</strong></p><p>在开始学习本教程之前，我们假设您已经接触过核心Java、数据库概念和任何Linux操作系统风格。</p><p><strong>原文链接：</strong><span class="exturl" data-url="aHR0cHM6Ly93d3cudHV0b3JpYWxzcG9pbnQuY29tL2hhZG9vcC9pbmRleC5odG0=" title="https://www.tutorialspoint.com/hadoop/index.htm">https://www.tutorialspoint.com/hadoop/index.htm<i class="fa fa-external-link"></i></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;Hadoop教程目录：&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://tangguangen.com/hadoop-big-data-overview/&quot;&gt;大数据概述&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://tangguangen.com/hadoop-big-data-solutions/&quot;&gt;大数据解决方案&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://tangguangen.com/hadoop-introduction/&quot;&gt;Hadoop介绍&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://tangguangen.com/hadoop-enviornment-setup&quot;&gt;Hadoop安装与环境设置&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://tangguangen.com/hadoop-hdfs-overview&quot;&gt;HDFS概述&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://tangguangen.com/hadoop-hdfs-operations&quot;&gt;HDFS操作&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://tangguangen.com/hadoop-command-reference&quot;&gt;Hadoop命令手册&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://tangguangen.com/hadoop-mapreduce&quot;&gt;MapReduce&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://tangguangen.com/hadoop-streaming&quot;&gt;Hadoop流&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://tangguangen.com/hadoop-multi-node-cluster&quot;&gt;Hadoop全分布式安装&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Hadoop以Apache 2.0许可协议发布的&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%BC%80%E6%BA%90&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;开源&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94%E6%A1%86%E6%9E%B6&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;软件框架&lt;/a&gt;。用户可以通过简单的程序模型在分布式环境集群中存储和处理大数据。 它旨在从单个服务器扩展到数千台计算机，每台计算机都提供本地计算和存储。&lt;/p&gt;
     
     </summary>
     
