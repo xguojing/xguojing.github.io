@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tangguangen.com/"/>
-  <updated>2018-12-13T11:16:19.188Z</updated>
+  <updated>2018-12-14T11:07:32.834Z</updated>
   <id>https://tangguangen.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何学习之“组块化”总结</title>
+    <link href="https://tangguangen.com/how-to-learn-chunkings-summary/"/>
+    <id>https://tangguangen.com/how-to-learn-chunkings-summary/</id>
+    <published>2018-12-14T11:00:01.000Z</published>
+    <updated>2018-12-14T11:07:32.834Z</updated>
+    
+    <content type="html"><![CDATA[<p>从神经科学的角度说，<strong>组块</strong>是信息片段通过使用，经常也通过实际意义联系在一起。你可以把组块看成是闪烁的神经网络，将关键想法或动作紧密联系在一起。组块可以扩大和复杂化，同时也是你调动记忆内容的捷径，可以像缎带一样落入工作记忆的插槽中。</p><p>构建组块的最佳方式是 高度集中的注意力 对基本概念的理解 以及通过练习帮助你加深对模式和更大范围的情境的理解。<strong>回顾</strong> 脱离书本努力想起关键点 是促进组块化的最佳方式之一 。这似乎能帮助形成神经挂钩 帮助你更好地理解材料。另一种方式是 尝试在最初的学习场所外来回忆材料 这会使记忆更加深刻 容易调动 任何地方都可以 这对于考试非常有帮助。</p><p><strong>知识迁移</strong>是指 你在某个领域掌握的组块 可以帮助你学习另一个领域的组块 两个领域可能具有惊人的共通性。</p><p><strong>交替学习</strong> 选出的各种不同概念 方法与技术 在同一段时间全部加以练习 组块非常重要 但并不意味着能提高灵活性 而这一点对于真正精通所学内容十分重要 学习时对能力的错觉 也有研究 学会意识到你是否在欺骗自己 你是否真的在对材料进行学习 时不时自测 用一些小测验看看自己是否真正理解材料 还是在欺骗自己 你认为自己在学习 事实却不是这样 回忆 也是一种小测验的方式 要避免过度依赖拿荧光笔给要点做标记 这会让你以为自己记住了那些内容 实际却并未掌握 学习时不要害怕犯错 这能让你察觉到对自己能力的错觉 不要只练习简单的部分 这会给你一种自己已完全掌握材料的错觉 有意练习你认为困难的部分 这样可以更好地全面掌握材料 思维定势 是对事物已有的看法 或者说是你已经充分发展巩固了的神经模式 这会妨碍你产生更好的想法 或者让你不能灵活地接受那些 更好或更合适的新方法 幸运法则也很有帮助 幸运女神会眷顾努力之人 从微不足道的点开始学起 一个接一个 不断努力 你会得到满意的结果。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;从神经科学的角度说，&lt;strong&gt;组块&lt;/strong&gt;是信息片段通过使用，经常也通过实际意义联系在一起。你可以把组块看成是闪烁的神经网络，将关键想法或动作紧密联系在一起。组块可以扩大和复杂化，同时也是你调动记忆内容的捷径，可以像缎带一样落入工作记忆的插槽中。&lt;/p&gt;
+&lt;
+      
+    
+    </summary>
+    
+      <category term="如何学习" scheme="https://tangguangen.com/categories/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>如何学习之回顾法</title>
@@ -572,35 +596,6 @@
     <summary type="html">
     
       &lt;h2 id=&quot;传统方法&quot;&gt;&lt;a href=&quot;#传统方法&quot; class=&quot;headerlink&quot; title=&quot;传统方法&quot;&gt;&lt;/a&gt;传统方法&lt;/h2&gt;&lt;p&gt;在这种方式下，企业将使用一台计算机来存储和处理数据，处理所需的数据，并将其呈现给用户以供分析之用。在这里，数据将存储在RDBMS，如：Oracle数据库、MS SQL Server或DB2以及可以与数据库交互的复杂软件。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="大数据" scheme="https://tangguangen.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-      <category term="Hadoop" scheme="https://tangguangen.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop/"/>
-    
-    
-      <category term="Hadoop" scheme="https://tangguangen.com/tags/Hadoop/"/>
-    
-      <category term="大数据" scheme="https://tangguangen.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hadoop教程：大数据概述</title>
-    <link href="https://tangguangen.com/hadoop-big-data-overview/"/>
-    <id>https://tangguangen.com/hadoop-big-data-overview/</id>
-    <published>2018-11-30T12:12:28.000Z</published>
-    <updated>2018-12-07T05:19:51.034Z</updated>
-    
-    <content type="html"><![CDATA[<p>由于新技术、新设备和社交网站等通信手段的出现，人类产生的数据量每年都在迅速增长。2003年之前的所有数据量总和是50亿G。如果你把数据以磁盘的形式堆起来，它可能会填满整个足球场。到了2011年，每两天就能创造同样的数量，2013年每十分钟创造同样的数量。这一比例仍在大幅增长。虽然所有这些信息都是有意义的，并且在处理时很有用，但它却被忽略了。</p><blockquote><p>世界上90%的数据是在过去几年生成的。</p></blockquote><a id="more"></a><h2 id="什么是大数据"><a href="#什么是大数据" class="headerlink" title="什么是大数据"></a>什么是大数据</h2><p>大数据其实就是海量的数据，它是不能用传统计算技术处理的海量数据集的集合。<strong>大数据不仅仅是一种数据，它已经成为一门完整的学科，涉及到各种工具、技术和框架。</strong></p><h2 id="大数据的来源"><a href="#大数据的来源" class="headerlink" title="大数据的来源"></a>大数据的来源</h2><p>大数据涉及不同设备和应用产生的数据。以下是大数据保护下的一些领域。</p><ul><li><strong>黑匣子数据</strong>：是直升机、飞机、喷气机等的组成部分，它可以捕捉机组人员的声音、麦克风和耳机的录音，以及飞机的性能信息。</li><li><strong>社交媒体数据：</strong>Facebook和Twitter等社交媒体包含全球数百万人发布的信息和观点。</li><li><strong>股票交易数据：</strong>股票交易数据包含客户对不同公司股票的“买入”和“卖出”决策的信息。</li><li><strong>电网数据：</strong>电网数据包含特定节点相对于基站所消耗的信息。</li><li><strong>搜索引擎数据：</strong>搜索引擎从不同的数据库检索大量数据。</li></ul><p>｛% qnimg big_data.jpg title: big data alt: Big Data %｝</p><p>因此，大数据包括大容量、高速度和可扩展的各种数据。其中的数据有三种类型。</p><ul><li><strong>结构化数据:</strong> 关系型数据库。</li><li><strong>半结构化数据: </strong>XML数据。</li><li><strong>非结构化数据:</strong> Word、PDF、文本、媒体日志。</li></ul><h2 id="大数据带来的好处"><a href="#大数据带来的好处" class="headerlink" title="大数据带来的好处"></a>大数据带来的好处</h2><p>大数据对我们的生活至关重要，它正在成为现代世界最重要的技术之一。下面是我们大家都知道的几个好处:</p><ul><li>利用Facebook等社交网络中保存的信息，营销机构正在了解他们的活动、促销和其他广告媒介的效果。</li><li>利用社交媒体上的信息，如消费者的喜好和对产品满意度，产品公司和零售组织正在优化他们的生产。</li><li>利用患者既往病史资料，医院提供更好、更快的服务。</li></ul><h2 id="大数据技术"><a href="#大数据技术" class="headerlink" title="大数据技术"></a>大数据技术</h2><p>大数据技术在提供更准确的分析方面有很重要的作用，这可以提供更具体的决策，从而提高运营效率，降低成本，降低业务风险。</p><p>想要利用大数据的力量，你需要一个能够实时管理和处理海量结构化和非结构化数据、能够保护数据隐私和安全的基础设施。</p><p>市场上有来自亚马逊、IBM、微软等不同厂商的各种处理大数据的技术。在研究处理大数据的技术时，我们考察了以下两类技术:</p><h3 id="大数据操作"><a href="#大数据操作" class="headerlink" title="大数据操作"></a>大数据操作</h3><p>这包括像MongoDB这样的系统，它提供了实时、交互式工作负载的操作能力，数据主要是在这些工作负载中捕获和存储的。</p><p>NoSQL大数据系统旨在利用过去十年出现的新的云计算架构，以低成本和高效率运行大量计算。这使得操作大数据工作负载更容易管理、更便宜、实现更快。</p><p>一些NoSQL系统可以提供基于实时数据的模式和趋势的洞察，而只需最少的编码，并且不需要数据科学家和额外的基础设施。</p><h3 id="大数据分析"><a href="#大数据分析" class="headerlink" title="大数据分析"></a>大数据分析</h3><p>这包括大规模并行处理(Massively Parallel Processing)数据库系统和MapReduce系统，它们提供可追溯和复杂的分析能力，可能涉及大部分或所有数据的分析。</p><p>MapReduce提供了一种新的数据分析方法，它是SQL提供的功能的补充，并且基于MapReduce的系统可以从单个服务器扩展到数千台高端和低端机器。</p><p>这两类技术是互补的，经常一起部署。</p><h3 id="操作VS分析"><a href="#操作VS分析" class="headerlink" title="操作VS分析"></a>操作VS分析</h3><table><thead><tr><th style="text-align:center"></th><th style="text-align:center">操作</th><th style="text-align:center">分析</th></tr></thead><tbody><tr><td style="text-align:center">延迟</td><td style="text-align:center">1 ms - 100 ms</td><td style="text-align:center">1 min - 100 min</td></tr><tr><td style="text-align:center">并发</td><td style="text-align:center">1000 - 100,000</td><td style="text-align:center">1 - 10</td></tr><tr><td style="text-align:center">访问模式</td><td style="text-align:center">Writes and Reads</td><td style="text-align:center">Reads</td></tr><tr><td style="text-align:center">查询</td><td style="text-align:center">Selective</td><td style="text-align:center">Unselective</td></tr><tr><td style="text-align:center">数据使用范围</td><td style="text-align:center">Operational</td><td style="text-align:center">Retrospective</td></tr><tr><td style="text-align:center">End User</td><td style="text-align:center">Customer</td><td style="text-align:center">Data Scientist</td></tr><tr><td style="text-align:center">技术</td><td style="text-align:center">NoSQL</td><td style="text-align:center">MapReduce, MPP Database</td></tr></tbody></table><h2 id="大数据的挑战"><a href="#大数据的挑战" class="headerlink" title="大数据的挑战"></a>大数据的挑战</h2><p>与大数据相关的主要挑战如下:</p><ul><li>数据采集</li><li>管理</li><li>存储</li><li>搜索</li><li>共享</li><li>传输</li><li>分析</li><li>展示</li></ul><p>为了完成上述挑战，通常需要企业服务器的帮助。</p><p><strong>原文链接：</strong><span class="exturl" data-url="aHR0cHM6Ly93d3cudHV0b3JpYWxzcG9pbnQuY29tL2hhZG9vcC9oYWRvb3BfYmlnX2RhdGFfb3ZlcnZpZXcuaHRt" title="https://www.tutorialspoint.com/hadoop/hadoop_big_data_overview.htm">https://www.tutorialspoint.com/hadoop/hadoop_big_data_overview.htm<i class="fa fa-external-link"></i></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;由于新技术、新设备和社交网站等通信手段的出现，人类产生的数据量每年都在迅速增长。2003年之前的所有数据量总和是50亿G。如果你把数据以磁盘的形式堆起来，它可能会填满整个足球场。到了2011年，每两天就能创造同样的数量，2013年每十分钟创造同样的数量。这一比例仍在大幅增长。虽然所有这些信息都是有意义的，并且在处理时很有用，但它却被忽略了。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;世界上90%的数据是在过去几年生成的。&lt;/p&gt;
-&lt;/blockquote&gt;
     
     </summary>
     
