@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tangguangen.com/"/>
-  <updated>2018-12-14T11:14:27.263Z</updated>
+  <updated>2018-12-19T07:40:30.407Z</updated>
   <id>https://tangguangen.com/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>看懂UML类图和时序图</title>
+    <link href="https://tangguangen.com/design-patterns-uml/"/>
+    <id>https://tangguangen.com/design-patterns-uml/</id>
+    <published>2018-12-19T07:25:30.000Z</published>
+    <updated>2018-12-19T07:40:30.407Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>参考：<span class="exturl" data-url="aHR0cHM6Ly9kZXNpZ24tcGF0dGVybnMucmVhZHRoZWRvY3MuaW8vemhfQ04vbGF0ZXN0L3JlYWRfdW1sLmh0bWw=" title="https://design-patterns.readthedocs.io/zh_CN/latest/read_uml.html">图说设计模式<i class="fa fa-external-link"></i></span></p></blockquote><h2 id="类之间的六种关系"><a href="#类之间的六种关系" class="headerlink" title="类之间的六种关系"></a>类之间的六种关系</h2><p>类的继承结构表现在UML中为：泛化(generalize)与实现(realize)。</p><h3 id="泛化关系-generalization"><a href="#泛化关系-generalization" class="headerlink" title="泛化关系(generalization)"></a>泛化关系(generalization)</h3><p>继承关系为 is-a的关系；两个对象之间如果可以用 is-a 来表示，就是继承关系：（..是..)</p><p>eg：自行车是车、猫是动物</p><p>泛化关系用一条<strong>带空心箭头的实线</strong>表示；如下图表示（A继承自B）；</p><p>注：最终代码中，<strong>泛化关系表现为继承非抽象类</strong>；</p><h3 id="实现关系-realize"><a href="#实现关系-realize" class="headerlink" title="实现关系(realize)"></a>实现关系(realize)</h3><p>实现关系用<strong>一条带空心箭头的虚线</strong>表示；</p><p>注：最终代码中，实现关系表现为继承抽象类；</p><h3 id="聚合关系-aggregation"><a href="#聚合关系-aggregation" class="headerlink" title="聚合关系(aggregation)"></a>聚合关系(aggregation)</h3><p>聚合关系用一条<strong>带空心菱形箭头的实线</strong>表示，如下图表示A聚合到B上，或者说B由A组成；</p><p>聚合关系用于表示实体对象之间的关系，<strong>表示整体由部分构成的语义</strong>；例如一个部门由多个员工组成；</p><p>与组合关系不同的是，整体和部分不是强依赖的，即使整体不存在了，部分仍然存在；例如， 部门撤销了，人员不会消失，他们依然存在；</p><h3 id="组合关系-composition"><a href="#组合关系-composition" class="headerlink" title="组合关系(composition)"></a>组合关系(composition)</h3><p>组合关系用<strong>一条带实心菱形箭头直线</strong>表示，如下图表示A组成B，或者B由A组成；</p><p>与聚合关系一样，组合关系同样表示整体由部分构成的语义；比如公司由多个部门组成；</p><p>但组合关系是一种强依赖的特殊聚合关系，如果整体不存在了，则部分也不存在了；例如， 公司不存在了，部门也将不存在了；</p><h3 id="关联关系-association"><a href="#关联关系-association" class="headerlink" title="关联关系(association)"></a>关联关系(association)</h3><p>关联关系是用<strong>一条直线</strong>表示的；它描述不同类的对象之间的结构关系；它是一种静态关系， 通常与运行状态无关，一般由常识等因素决定的；它一般用来定义对象之间静态的、天然的结构； 所以，关联关系是一种“强关联”的关系；</p><p>比如，乘车人和车票之间就是一种关联关系；学生和学校就是一种关联关系；</p><p>关联关系<strong>默认不强调方向</strong>，表示对象间相互知道；如果特别强调方向，如下图，表示A知道B，但 B不知道A；</p><p>注：在最终代码中，关联对象通常是以成员变量的形式实现的；</p><h3 id="依赖关系-dependency"><a href="#依赖关系-dependency" class="headerlink" title="依赖关系(dependency)"></a>依赖关系(dependency)</h3><p>依赖关系是用<strong>一套带箭头的虚线</strong>表示的；如下图表示A依赖于B；他描述一个对象在运行期间会用到另一个对象的关系；</p><p>与关联关系不同的是，它是一种临时性的关系，通常在运行期间产生，并且随着运行时的变化； 依赖关系也可能发生变化；</p><p>显然，依赖也有方向，双向依赖是一种非常糟糕的结构，我们总是应该保持单向依赖，杜绝双向依赖的产生；</p><p>注：在最终代码中，<strong>依赖关系体现为类构造方法及类方法的传入参数</strong>，箭头的指向为调用关系；依赖关系除了临时知道对方外，还是“使用”对方的方法和属性；</p><h2 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h2><p>时序图（Sequence Diagram）是显示对象之间交互的图，这些对象是按时间顺序排列的。时序图中显示的是参与交互的对象及其对象之间消息交互的顺序。</p><p>时序图包括的建模元素主要有：对象（Actor）、生命线（Lifeline）、控制焦点（Focus of control）、消息（Message）等等。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;参考：&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9kZXNpZ24tcGF0dGVybnMucmVhZHRoZWRvY3MuaW8vemhfQ04vbGF0ZXN0L3JlYWRfdW1sLmh0bWw=&quot; 
+      
+    
+    </summary>
+    
+      <category term="设计模式" scheme="https://tangguangen.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="UML" scheme="https://tangguangen.com/tags/UML/"/>
+    
+  </entry>
+  
+  <entry>
     <title>如何学习之“组块化”总结</title>
     <link href="https://tangguangen.com/how-to-learn-chunkings-summary/"/>
     <id>https://tangguangen.com/how-to-learn-chunkings-summary/</id>
     <published>2018-12-14T11:00:01.000Z</published>
-    <updated>2018-12-14T11:14:27.263Z</updated>
+    <updated>2018-12-14T11:16:52.609Z</updated>
     
     <content type="html"><![CDATA[<p>从神经科学的角度说，<strong>组块</strong>是信息片段通过使用，经常也通过实际意义联系在一起。你可以把组块看成是闪烁的神经网络，将关键想法或动作紧密联系在一起。组块可以扩大和复杂化，同时也是你调动记忆内容的捷径，可以像缎带一样落入工作记忆的插槽中。</p><p>构建组块的最佳方式是 高度集中的注意力 对基本概念的理解 以及通过练习帮助你加深对模式和更大范围的情境的理解。<strong>回顾</strong> 脱离书本努力想起关键点 是促进组块化的最佳方式之一 。这似乎能帮助形成神经挂钩 帮助你更好地理解材料。另一种方式是 尝试在最初的学习场所外来回忆材料 这会使记忆更加深刻 容易调动 任何地方都可以 这对于考试非常有帮助。</p><a id="more"></a><p><strong>知识迁移</strong>是指 你在某个领域掌握的组块 可以帮助你学习另一个领域的组块 两个领域可能具有惊人的共通性。</p><p><strong>交替学习</strong> 选出的各种不同概念 方法与技术 在同一段时间全部加以练习 组块非常重要 但并不意味着能提高灵活性 而这一点对于真正精通所学内容十分重要 学习时对能力的错觉 也有研究 学会意识到你是否在欺骗自己 你是否真的在对材料进行学习 时不时自测 用一些小测验看看自己是否真正理解材料 还是在欺骗自己 你认为自己在学习 事实却不是这样 回忆 也是一种小测验的方式 要避免过度依赖拿荧光笔给要点做标记 这会让你以为自己记住了那些内容 实际却并未掌握 学习时不要害怕犯错 这能让你察觉到对自己能力的错觉 不要只练习简单的部分 这会给你一种自己已完全掌握材料的错觉 有意练习你认为困难的部分 这样可以更好地全面掌握材料 思维定势 是对事物已有的看法 或者说是你已经充分发展巩固了的神经模式 这会妨碍你产生更好的想法 或者让你不能灵活地接受那些 更好或更合适的新方法 幸运法则也很有帮助 幸运女神会眷顾努力之人 从微不足道的点开始学起 一个接一个 不断努力 你会得到满意的结果。</p>]]></content>
     
@@ -567,32 +593,6 @@
 &lt;li&gt;&lt;strong&gt;Hadoop分布式文件系统(HDFS™):&lt;/strong&gt;  一种分布式文件系统，提供对应用程序数据的高吞吐量访问。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;MapReduce:&lt;/strong&gt; 这是一个基于YARN的大型数据集并行处理系统。&lt;/li&gt;
 &lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="大数据" scheme="https://tangguangen.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-      <category term="Hadoop" scheme="https://tangguangen.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop/"/>
-    
-    
-      <category term="Hadoop" scheme="https://tangguangen.com/tags/Hadoop/"/>
-    
-      <category term="大数据" scheme="https://tangguangen.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hadoop教程：大数据解决方案</title>
-    <link href="https://tangguangen.com/hadoop-big-data-solutions/"/>
-    <id>https://tangguangen.com/hadoop-big-data-solutions/</id>
-    <published>2018-11-30T12:50:44.000Z</published>
-    <updated>2018-12-04T06:05:01.499Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="传统方法"><a href="#传统方法" class="headerlink" title="传统方法"></a>传统方法</h2><p>在这种方式下，企业将使用一台计算机来存储和处理数据，处理所需的数据，并将其呈现给用户以供分析之用。在这里，数据将存储在RDBMS，如：Oracle数据库、MS SQL Server或DB2以及可以与数据库交互的复杂软件。</p><a id="more"></a><img title="traditional_approach" alt="traditional_approach" src="http://cdn.tangguangen.com/images/traditional_approach.jpg"><h3 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h3><p>这种方法在标准数据库服务器可以容纳的数据量更少或处理数据的处理器的极限的情况下工作得很好。但是当涉及到处理大量数据时，通过传统的数据库服务器来处理这些数据确实是一项非常繁琐的任务。</p><h2 id="Google的解决方案"><a href="#Google的解决方案" class="headerlink" title="Google的解决方案"></a>Google的解决方案</h2><p>谷歌使用<strong>MapReduce</strong>算法解决了这个问题。该算法将任务划分为多个小部分，并将这些小部分分配给通过网络连接的多台计算机，最后收集结果形成最终的结果数据集。</p><img title="mapreduce" alt="mapreduce" src="http://cdn.tangguangen.com/images/mapreduce.jpg"><p>上图显示了各种各样的商品硬件，这些硬件可以是单CPU机器，也可以是容量更大的服务器。</p><h2 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h2><p>Doug Cutting、Mike Cafarella和团队采用了谷歌提供的解决方案，并在2005年启动了一个名为HADOOP 的开源项目，Doug以他儿子的玩具大象命名了这个项目。现在Apache Hadoop是Apache软件基金会的注册商标。</p><p>Hadoop使用MapReduce算法运行应用程序，数据在不同的CPU节点上并行处理。简而言之，Hadoop框架有足够的能力开发能够在计算机集群上运行的应用程序，并且能够对大量数据执行完整的统计分析。</p><img title="hadoop_framework" alt="hadoop_framework" src="http://cdn.tangguangen.com/images/hadoop_framework.jpg"><p><strong>原文链接：</strong><span class="exturl" data-url="aHR0cHM6Ly93d3cudHV0b3JpYWxzcG9pbnQuY29tL2hhZG9vcC9oYWRvb3BfYmlnX2RhdGFfc29sdXRpb25zLmh0bWw=" title="https://www.tutorialspoint.com/hadoop/hadoop_big_data_solutions.html">https://www.tutorialspoint.com/hadoop/hadoop_big_data_solutions.html<i class="fa fa-external-link"></i></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;传统方法&quot;&gt;&lt;a href=&quot;#传统方法&quot; class=&quot;headerlink&quot; title=&quot;传统方法&quot;&gt;&lt;/a&gt;传统方法&lt;/h2&gt;&lt;p&gt;在这种方式下，企业将使用一台计算机来存储和处理数据，处理所需的数据，并将其呈现给用户以供分析之用。在这里，数据将存储在RDBMS，如：Oracle数据库、MS SQL Server或DB2以及可以与数据库交互的复杂软件。&lt;/p&gt;
     
     </summary>
     
