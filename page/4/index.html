@@ -408,6 +408,198 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tangguangen.com/转载-原码-反码-补码-详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="逍遥">
+      <meta itemprop="description" content="路漫漫其修远兮，吾将上下而求索">
+      <meta itemprop="image" content="/images/唐_big.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="逍遥's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/转载-原码-反码-补码-详解/" class="post-title-link" itemprop="https://tangguangen.com/page/4/index.html">[转载]原码, 反码, 补码 详解</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          
+
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-26 21:42:58" itemprop="dateCreated datePublished" datetime="2018-11-26T21:42:58+08:00">2018-11-26</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机基础/" itemprop="url" rel="index"><span itemprop="name">计算机基础</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/转载-原码-反码-补码-详解/" class="leancloud_visitors" data-flag-title="[转载]原码, 反码, 补码 详解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>作者：<a href="http://www.cnblogs.com/zhangziqiu/" target="_blank" rel="noopener">张子秋</a><br>出处：<a href="http://www.cnblogs.com/zhangziqiu/" target="_blank" rel="noopener">http://www.cnblogs.com/zhangziqiu/</a> </p>
+</blockquote>
+<p>本篇文章讲解了计算机的原码, 反码和补码. 并且进行了深入探求了为何要使用反码和补码, 以及更进一步的论证了为何可以用反码, 补码的加法计算原码的减法. 论证部分如有不对的地方请各位牛人帮忙指正! 希望本文对大家学习计算机基础有所帮助!</p>
+<h2 id="一-机器数和真值"><a href="#一-机器数和真值" class="headerlink" title="一. 机器数和真值"></a>一. 机器数和真值</h2><p>在学习原码, 反码和补码之前, 需要先了解机器数和真值的概念.</p>
+<h3 id="1、机器数"><a href="#1、机器数" class="headerlink" title="1、机器数"></a>1、机器数</h3><p>一个数在计算机中的二进制表示形式,  叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号, 正数为0, 负数为1.</p>
+<p>比如，十进制中的数 +3 ，计算机字长为8位，转换成二进制就是00000011。如果是 -3 ，就是 10000011 。</p>
+<p>那么，这里的 00000011 和 10000011 就是机器数。</p>
+<h3 id="2、真值"><a href="#2、真值" class="headerlink" title="2、真值"></a>2、真值</h3><blockquote>
+<p>因为第一位是符号位，所以机器数的形式值就不等于真正的数值。例如上面的有符号数 10000011，其最高位1代表负，其真正数值是 -3 而不是形式值131（10000011转换成十进制等于131）。所以，为区别起见，将带符号位的机器数对应的真正数值称为机器数的真值。</p>
+</blockquote>
+<p>例：0000 0001的真值 = +000 0001 = +1，1000 0001的真值 = –000 0001 = –1</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/转载-原码-反码-补码-详解/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+  
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://tangguangen.com/Hadoop兼容性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2089,206 +2281,6 @@ Xshell5
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tangguangen.com/什么是大数据/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="逍遥">
-      <meta itemprop="description" content="路漫漫其修远兮，吾将上下而求索">
-      <meta itemprop="image" content="/images/唐_big.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="逍遥's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/什么是大数据/" class="post-title-link" itemprop="https://tangguangen.com/page/4/index.html">什么是大数据</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          
-
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-09-27 07:47:13" itemprop="dateCreated datePublished" datetime="2018-09-27T07:47:13+08:00">2018-09-27</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/大数据/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/什么是大数据/" class="leancloud_visitors" data-flag-title="什么是大数据">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          概述根据IBM前首席执行官郭士纳的观点，IT领域每隔十五年就会迎来一次重大变革。
-
-物联网改变了数据产生的方式，迎来了大数据时代。
-大数据时代的技术支撑：存储、计算、网络能力的大幅提升。
-大数据的四个特性：4V
-
-数据量大：大数据摩尔定律、人类在最近两年产生的数据量相当于之前产生的全部数据量；
-数据类型多：大数据是由结构化数据和非结构化数据组成，90%都是非结构化数据，结构化数据是存储在关系型数据库中的数据。
-数据处理速度快
-数据价值密度低，商业价值高
-
-大数据的影响Jim Gray博士，98年图灵奖得主，提出了事务理论
-四种研究方式：
-
-实验，通过实验解决科学问题。
-理论
-计算
-数据，以数据
-          ...
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/什么是大数据/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-  
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2342,7 +2334,7 @@ Xshell5
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">47</span>
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2535,7 +2527,7 @@ Xshell5
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">  <span class="exturl" data-url="aHR0cDovL3d3dy5taWl0YmVpYW4uZ292LmNu">浙ICP备18019569号 </span>&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">  <span class="exturl" data-url="aHR0cDovL3d3dy5taWl0YmVpYW4uZ292LmNu">浙ICP备18019569号 </span>&copy; 2017 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
